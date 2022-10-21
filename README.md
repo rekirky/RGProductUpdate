@@ -3,6 +3,9 @@ Redgate Product Update scraper
 Can be used to get the latest version of a product quickly. 
 Check when a product has been updated without checking the release notes, forum or in program.
 
+Status:
+[![kirky-run-python-updated](https://github.com/rekirky/RGProductUpdate/actions/workflows/pythonaction.yml/badge.svg)](https://github.com/rekirky/RGProductUpdate/actions/workflows/pythonaction.yml)
+
 #Versions
 ##V 0.1 
 Testing and git setup
