@@ -58,7 +58,7 @@ def get_updates(products):
     return(prod_list)
     
 def create_html(prod_list):
-    file_out = open(f"c:\\temp\\Python Scratchpad\\file.html","w")
+    file_out = open(f"index.html","w")
     file_out.write("<head>\n<title>Redgate Product Download Links</title>\n<link rel='stylesheet' href='https://cdn.rd.gt/assets/styles/isw.css?v=1637587319771'>\n<link rel='stylesheet' href='redgate.css'>\n</head>\n")
     file_out.write("<body>\n<script src='redgate.js'></script>\n")
     file_out.write(f"<h1>Page updated: {date.today().strftime('%Y/%m/%d')} | {datetime.now().strftime('%H:%M:%S')}</h1>\n")
@@ -88,7 +88,7 @@ def create_html(prod_list):
     file_out.close()    
 
 def create_css(): #write the css file
-    file_out = open(f"c:\\temp\Python Scratchpad\\redgate.css","w")
+    file_out = open(f"redgate.css","w")
     file_out.write("body {\n\tbackground:whitesmoke;\n}\n")
     file_out.write("h1 {\n\ttext-decoration: underline;\n}\n")
     file_out.write("ul .current {\n\tcolor:green;\n}\n")
@@ -99,7 +99,7 @@ def create_css(): #write the css file
     file_out.close()
 
 def create_js(): #write the js file for searching
-    file_out = open(f"c:\\temp\Python Scratchpad\\redgate.js","w")
+    file_out = open(f"redgate.js","w")
     file_out.write("function myFunction() {\n\tvar input, filter, ul, li, a, i, txtValue;\n\tinput = document.getElementById('myInput');\n\t")
     file_out.write("filter = input.value.toUpperCase();\n\tul = document.getElementById('myUL');\n\tli = ul.getElementsByTagName('li');\n\t")
     file_out.write("for (i = 0; i < li.length; i++) {\n\t\ta = li[i].getElementsByTagName('a')[0];\n\t\ttxtValue = a.textContent || a.innerText;\n\t\t")
