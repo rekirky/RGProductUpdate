@@ -1,5 +1,26 @@
 # RGProductUpdate
 Redgate Product Update scraper
+Can be used to get the latest version of a product quickly. 
+Check when a product has been updated without checking the release notes, forum or in program.
 
-V 0.1 
-Testing
+#Versions
+##V 0.1 
+Testing and git setup
+Configure automation 
+
+##V 1.0
+Website automation implemented. 
+Daily update
+
+
+# Usage
+Filter products by name or release date
+e.g. entering '2022-10' into the date field will return all products updated in October
+
+
+# Feature Request
+* Sorting by release date, product name
+* Include/Exclude specific products
+* Release notes available on hover
+* Add link to download main site
+* Add links to product document site
