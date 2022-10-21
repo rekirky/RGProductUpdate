@@ -104,11 +104,11 @@ def create_js(): #write the js file for searching
     file_out.write("filter = input.value.toUpperCase();\n\tul = document.getElementById('myUL');\n\tli = ul.getElementsByTagName('li');\n\t")
     file_out.write("for (i = 0; i < li.length; i++) {\n\t\ta = li[i].getElementsByTagName('a')[0];\n\t\ttxtValue = a.textContent || a.innerText;\n\t\t")
     file_out.write("if (txtValue.toUpperCase().indexOf(filter) > -1) {\n\t\t\tli[i].style.display = '';\n\t\t} else {\n\t\t\t")
-    file_out.write("li[i].style.display = 'none';\n\t\t}\n\t}\n}")
+    file_out.write("li[i].style.display = 'none';\n\t\t}\n\t}\n}\n")
     file_out.write("function myFilter() {\n\tvar input, filter, ul, li, a, i, txtValue;\n\tinput = document.getElementById('myYear');\n\tfilter = input.value.toUpperCase();\n\t")
-    file_out.write("ul = document.getElementById('myUL');\n\tli = ul.getElementsByTagName('li');\n\tfor (i = 0; i < li.length; i++) {\n\t\t	a = li[i].getElementsByTagName('span')[0];\n\t\t")
+    file_out.write("ul = document.getElementById('myUL');\n\tli = ul.getElementsByTagName('li');\n\tfor (i = 0; i < li.length; i++) {\n\ta = li[i].getElementsByTagName('span')[0];\n\t\t")
     file_out.write("txtValue = a.textContent || a.innerText;\n\t\tif (txtValue.toUpperCase().indexOf(filter) > -1) {\n\t\t\tli[i].style.display = '';\n\t\t")
-    file_out.write("} else {\n\t\t\tli[i].style.display = 'none';\n\t\t	}\n\t}\n}")
+    file_out.write("} else {\n\t\t\tli[i].style.display = 'none';\n\t\t	}\n\t}\n}\n")
     file_out.close
 
 # run program
