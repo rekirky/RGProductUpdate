@@ -1,5 +1,16 @@
 name: kirky-run-python-updated
 on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
   schedule:
     - cron: '0 12 * * *' # Run at 12:00 UTC daily
 
