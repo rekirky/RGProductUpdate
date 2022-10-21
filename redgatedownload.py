@@ -8,7 +8,6 @@ from datetime import datetime, date
 #add functionality to check for changes since last update / last week
 
 def main():
-    print("Running Redgate Product Link program")
     #testing - use a shorter list / change test to True
     test = False
     if test == True:
@@ -20,7 +19,6 @@ def main():
     create_html(prod_list)
     create_css()
     create_js()
-    print("File created")
 
 def get_products():
     product = []
@@ -110,4 +108,5 @@ def create_js(): #write the js file for searching
     file_out.close
 
 # run program
-main()
+if __name__ == '__main__':
+    main()
