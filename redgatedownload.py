@@ -62,7 +62,7 @@ def get_updates(products):
 def create_html(prod_list):
     file_out = open(f"c:\\temp\\Python Scratchpad\\file.html","w")
     file_out.write("<head>\n<title>Redgate Product Download Links</title>\n<link rel='stylesheet' href='https://cdn.rd.gt/assets/styles/isw.css?v=1637587319771'>\n<link rel='stylesheet' href='redgate.css'>\n</head>\n")
-    file_out.write("<body>\n<script src='redgatetemp.js'></script>\n")
+    file_out.write("<body>\n<script src='redgate.js'></script>\n")
     file_out.write(f"<h1>Page updated: {date.today().strftime('%Y/%m/%d')} | {datetime.now().strftime('%H:%M:%S')}</h1>\n")
     file_out.write(f"<input type='text' id='myInput' onkeyup='myFunction()' placeholder='Search for product..'>")
     file_out.write(f"<input type='text' id='myYear' onkeyup='myFilter()' placeholder='Search for updated date..'>\n")
