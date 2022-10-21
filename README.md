@@ -6,12 +6,13 @@ Check when a product has been updated without checking the release notes, forum 
 Status:
 [![kirky-run-python-updated](https://github.com/rekirky/RGProductUpdate/actions/workflows/pythonaction.yml/badge.svg)](https://github.com/rekirky/RGProductUpdate/actions/workflows/pythonaction.yml)  
 
-#Versions
-##V 0.1 
+
+# Versions
+## V 0.1 
 Testing and git setup
 Configure automation 
 
-##V 1.0
+## V 1.0
 Website automation implemented. 
 Daily update
 
