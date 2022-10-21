@@ -1,0 +1,20 @@
+body {
+	background:whitesmoke;
+}
+h1 {
+	text-decoration: underline;
+}
+ul .current {
+	color:green;
+}
+ul .previous {
+	color:orange;
+}
+ul .old {
+	color:red;
+}
+#myInput {
+	width: 25%;
+}#myYear {
+	width: 25%;
+}
