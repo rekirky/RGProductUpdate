@@ -27,7 +27,7 @@ e.g. entering '2022-10' into the date field will return all products updated in 
 
 # Feature Request
 * Sorting by release date, product name
-* Include/Exclude specific products
+* Include/Exclude specific products  
 ~~* Release notes available on hover~~
 * Add link to download main site
 * Add links to product document site
