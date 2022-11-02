@@ -12,9 +12,12 @@ Status:
 Testing and git setup
 Configure automation 
 
-## V 1.0
+## V 1.0 Oct 2022
 Website automation implemented. 
 Daily update
+
+## V1.1 Nov 2022
+Added patch notes as tooltip
 
 
 # Usage

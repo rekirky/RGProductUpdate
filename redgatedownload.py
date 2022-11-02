@@ -61,7 +61,7 @@ def get_updates(products):
     return(prod_list)
     
 def create_html(prod_list):
-    tooltip = ""
+    
     file_out = open(f"index.html","w")
     file_out.write("<head>\n<title>Redgate Product Download Links</title>\n<link rel='stylesheet' href='https://cdn.rd.gt/assets/styles/isw.css?v=1637587319771'>\n<link rel='stylesheet' href='redgate.css'>\n</head>\n")
     file_out.write("<body>\n<script src='redgate.js'></script>\n")
@@ -89,6 +89,7 @@ def create_html(prod_list):
             except:
                 xclass = 'old'
             try:
+                tooltip=""
                 ver = re.search("[0-9]*\.[0-9]*\.[0-9]*",xlink)
                 tooltip = patch_notes(xproduct)
                 file_out.write(f"<li title='{tooltip}' class={xclass}>\n\t\t<a href={xlink}><b>{xproduct} - {ver.group()}</b></a><span> - Updated {xdate}</span></li>\n\t")
