@@ -7,8 +7,6 @@ import csv
 from csv import DictReader
 from bs4 import BeautifulSoup
 
-# Files in project
-
 #to-do 
 #add functionality to check for changes since last update / last week
 
