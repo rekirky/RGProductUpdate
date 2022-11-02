@@ -7,6 +7,18 @@ Status:
 [![kirky-run-python-updated](https://github.com/rekirky/RGProductUpdate/actions/workflows/pythonaction.yml/badge.svg)](https://github.com/rekirky/RGProductUpdate/actions/workflows/pythonaction.yml)  
 
 
+# Usage
+Filter products by name or release date
+e.g. entering '2022-10' into the date field will return all products updated in October
+
+# Feature Request
+* Sorting by release date, product name
+* Include/Exclude specific products  
+* ~~Release notes available on hover (V1.1)~~
+* Add link to download main site
+* Add links to product document site
+
+
 # Versions
 ## V 0.1 
 Testing and git setup
@@ -18,16 +30,3 @@ Daily update
 
 ## V1.1 Nov 2022
 Added patch notes as tooltip
-
-
-# Usage
-Filter products by name or release date
-e.g. entering '2022-10' into the date field will return all products updated in October
-
-
-# Feature Request
-* Sorting by release date, product name
-* Include/Exclude specific products  
-* ~~Release notes available on hover~~
-* Add link to download main site
-* Add links to product document site
