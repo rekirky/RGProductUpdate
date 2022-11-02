@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 
 def main():
     #testing - use a shorter list / change test to True
-    test = False
+    test = True
     if test == True:
         common = ['SQLBackup','SQLDataCompare','FlywayDesktop']
         prod_list = get_updates(common)
@@ -63,7 +63,9 @@ def get_updates(products):
 def create_html(prod_list):
     
     file_out = open(f"index.html","w")
-    file_out.write("<head>\n<title>Redgate Product Download Links</title>\n<link rel='stylesheet' href='https://cdn.rd.gt/assets/styles/isw.css?v=1637587319771'>\n<link rel='stylesheet' href='redgate.css'>\n</head>\n")
+    file_out.write("<head>\n<title>Redgate Product Download Links</title>\n")
+    file_out.write("<link rel='stylesheet' href='https://cdn.rd.gt/assets/styles/isw.css?v=1637587319771'>\n<link rel='stylesheet' href='redgate.css'>\n")
+    file_out.write("<link rel='icon type='image/x-icon' href='favicon.ico'>\n</head>\n")
     file_out.write("<body>\n<script src='redgate.js'></script>\n")
     file_out.write(f"<h1>Redgate Product Links</h1>\n\t")
     file_out.write(f"<div>Links to the most recent version of Redgate products allowing searching by product & release date</div>\n\t")
