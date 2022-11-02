@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 
 def main():
     #testing - use a shorter list / change test to True
-    test = True
+    test = False
     if test == True:
         common = ['SQLBackup','SQLDataCompare','FlywayDesktop']
         prod_list = get_updates(common)
