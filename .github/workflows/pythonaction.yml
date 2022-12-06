@@ -19,10 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo Content
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: '3.11.0'
       
@@ -42,7 +42,7 @@ jobs:
           git commit -m "update data" -a
         
       - name: Push Changes
-        uses: ad-m/github-push-action@v0.6.0
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
