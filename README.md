@@ -30,3 +30,7 @@ Daily update
 
 ## V1.1 Nov 2022
 Added patch notes as tooltip
+
+## V1.2 Apr 2023
+Added Flyway CLI - patch notes not there yet, working on scraping them
+Connected search boxes for dual-searching capabilities

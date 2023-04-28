@@ -22,7 +22,52 @@ def main():
     create_html(prod_list)
     create_css()
     create_js()
+    
+def version_compare(v1, v2):
+    #Strip beta strings
+    v1 = re.sub(r'-.*','',v1)
+    v2 = re.sub(r'-.*','',v2)
+    
+    # Split version strings into integers    
+    v1_parts = list(map(int, v1.split('.')))
+    v2_parts = list(map(int, v2.split('.')))
 
+    # Compare the major, minor, and patch version numbers in order
+    for i in range(len(v1_parts)):
+        # Newer version is higher, keep
+        if v1_parts[i] < v2_parts[i]:
+            return v2
+        # Current version is higher, keep
+        elif v1_parts[i] > v2_parts[i]:
+            return v1
+    # Versions are equal, keep current
+    return v1
+
+def get_flywaycli(prod_list):
+    version = '0.0.0'
+    product = []
+    url = f"https://redgate-download.s3.eu-west-1.amazonaws.com/?delimiter=/&prefix=maven/release/org/flywaydb/enterprise/flyway-commandline/"
+    file = urllib.request.urlopen(url)
+    data = file.read()
+    file.close()
+    data = xmltodict.parse(data)
+    for i in data["ListBucketResult"]["CommonPrefixes"]:
+        product.append(i["Prefix"].replace("maven/release/org/flywaydb/enterprise/flyway-commandline/","").replace("/",""))
+
+    for i in range(len(product)):
+        version = version_compare(version,product[i])
+    url = f"{url}{version}/"
+    file = urllib.request.urlopen(url)
+    data = file.read()
+    file.close()
+    data = xmltodict.parse(data)
+    for x in data["ListBucketResult"]["Contents"]:
+        if x["Key"].endswith("zip"):
+            date = x["LastModified"]
+    link = f"https://download.red-gate.com/maven/release/org/flywaydb/enterprise/flyway-commandline/{version}"
+    prod_list.append([{"product":f"Flyway CLI - {version}","link":link,"date":date}])
+    return(prod_list)
+    
 def get_products():
     product = []
     url = f"https://redgate-download.s3.eu-west-1.amazonaws.com/?delimiter=/&prefix=checkforupdates/"
@@ -58,6 +103,7 @@ def get_updates(products):
             except:
                 pass
         prod_list.append([{"product":i,"link":link,"date":date}])
+    get_flywaycli(prod_list)
     return(prod_list)
     
 def create_html(prod_list):
@@ -73,8 +119,8 @@ def create_html(prod_list):
     file_out.write(f"<div>Tooltips may be available when hovering over products updated this year</div>\n\t")
     file_out.write(f"This is a passion project and is an ongoing work in progress</div>\n")
     file_out.write(f"<h2>Page updated: {date.today().strftime('%Y/%m/%d')} | {datetime.now().strftime('%H:%M:%S')}</h2>\n\n")
-    file_out.write(f"<input type='text' id='myInput' onkeyup='myFunction()' placeholder='Search by product..'>\n")
-    file_out.write(f"<input type='text' id='myYear' onkeyup='myFilter()' placeholder='Search by updated date..'>\n")
+    file_out.write(f"<input type='text' id='myInput' onkeyup='filterResults()' placeholder='Search by product..'>\n")
+    file_out.write(f"<input type='text' id='myYear' onkeyup='filterResults()' placeholder='Search by updated date..'>\n")
     file_out.write("<ul id = 'myUL'>\n\t")
     for i in prod_list:
         for x in i:
@@ -124,6 +170,13 @@ def create_js(): #write the js file for searching
     file_out.write("for (i = 0; i < li.length; i++) {\n\t\ta = li[i].getElementsByTagName('span')[0];\n\t\ttxtValue = a.textContent || a.innerText;\n\t\t")
     file_out.write("if (txtValue.toUpperCase().indexOf(filter) > -1) {\n\t\t\tli[i].style.display = '';\n\t\t} else {\n\t\t\t")
     file_out.write("li[i].style.display = 'none';\n\t\t}\n\t}\n}\n")
+    
+    file_out.write("function filterResults() {\n\tvar input1, input2, filter1, filter2, ul, li, a, i, txtValue;\n\tinput1 = document.getElementById('myInput');\n\t")
+    file_out.write("input2 = document.getElementById('myYear');\n\tfilter1 = input1.value.toUpperCase();\n\tfilter2 = input2.value.toUpperCase();\n\t")
+    file_out.write("ul = document.getElementById('myUL');\n\tli = ul.getElementsByTagName('li');\n\tfor (i = 0; i < li.length; i++) {\n\t\t")
+    file_out.write("a = li[i].getElementsByTagName('a')[0];\n\t\ttxtValue = a.textContent || a.innerText;\n\t\tif (txtValue.toUpperCase().indexOf(filter1) > -1 &&\n\t\t\t")
+    file_out.write("li[i].getElementsByTagName('span')[0].textContent.toUpperCase().indexOf(filter2) > -1) {\n\t\t\tli[i].style.display = '';\n\t\t} else {\n\t\t\t")
+    file_out.write("li[i].style.display = 'none';\n\t\t}\n\t}\n}")
     file_out.close
 
 def patch_notes(product_list):
