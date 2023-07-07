@@ -12,10 +12,10 @@ Filter products by name or release date
 e.g. entering '2022-10' into the date field will return all products updated in October
 
 # Feature Request
-* Sorting by release date, product name
+* ~~Sorting by release date, product name~~
 * Include/Exclude specific products  
 * ~~Release notes available on hover (V1.1)~~
-* Add link to download main site
+* ~~Add link to download main site~~
 * Add links to product document site
 
 
@@ -34,3 +34,6 @@ Added patch notes as tooltip
 ## V1.2 Apr 2023
 Added Flyway CLI - patch notes not there yet, working on scraping them  
 Connected search boxes for dual-searching capabilities
+
+## Ver 1.3 Jul 2023
+Added links to main product download site & flyway cli

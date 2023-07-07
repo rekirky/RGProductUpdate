@@ -119,6 +119,11 @@ def create_html(prod_list):
     file_out.write(f"<div>Tooltips may be available when hovering over products updated this year</div>\n\t")
     file_out.write(f"This is a passion project and is an ongoing work in progress</div>\n")
     file_out.write(f"<h2>Page updated: {date.today().strftime('%Y/%m/%d')} | {datetime.now().strftime('%H:%M:%S')}</h2>\n\n")
+    file_out.write(f"<h3> Download links</h3>\n")
+    file_out.write(f"<ul>\n\t")
+    file_out.write(f"<li><a href=https://download.red-gate.com/checkforupdates  target='_blank'>Product Download Site</a></li>\n\t")
+    file_out.write(f"<li><a href=https://download.red-gate.com/maven/release/org/flywaydb/enterprise/ target='_blank'>Flyway CLI</a></li>\n")
+    file_out.write(f"</ul>\n\n")
     file_out.write(f"<input type='text' id='myInput' onkeyup='filterResults()' placeholder='Search by product..'>\n")
     file_out.write(f"<input type='text' id='myYear' onkeyup='filterResults()' placeholder='Search by updated date..'>\n")
     file_out.write("<ul id = 'myUL'>\n\t")
@@ -204,8 +209,6 @@ def tool_tip_html(tool_tip):
         html += i.replace('\n',' ')
         html += '&#013'
     return(html)
-
-
 
 # run program
 if __name__ == '__main__':
