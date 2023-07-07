@@ -16,7 +16,7 @@ e.g. entering '2022-10' into the date field will return all products updated in 
 * Include/Exclude specific products  
 * ~~Release notes available on hover (V1.1)~~
 * ~~Add link to download main site~~
-* Add links to product document site
+* ~~Add links to product document site~~
 
 
 # Versions
@@ -37,3 +37,6 @@ Connected search boxes for dual-searching capabilities
 
 ## Ver 1.3 Jul 2023
 Added links to main product download site & flyway cli
+
+## Ver 1.4 Jul 2023
+Added links to document site for products, defaults to main document site when no specific product site is found

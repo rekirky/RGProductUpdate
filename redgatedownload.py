@@ -14,15 +14,24 @@ def main():
     #testing - use a shorter list / change test to True
     test = False
     if test == True:
-        common = ['SQLBackup','SQLDataCompare','FlywayDesktop']
-        prod_list = get_updates(common)
+        products = ['SQLBackup','SQLDataCompare','FlywayDesktop']
     else:
         products = get_products()
-        prod_list = get_updates(products)
+    prod_list = get_updates(products)
     create_html(prod_list)
     create_css()
     create_js()
     
+
+def get_doc_link(product_list):
+    doc_link = "https://documentation.red-gate.com"
+    with open('releasenotes.csv','r') as data:
+        reader = csv.reader(data)
+        url_dict = dict((rows[0],rows[2]) for rows in reader)
+        data.close()
+        doc_link = f"{url_dict[product_list]}"
+    return(doc_link)
+
 def version_compare(v1, v2):
     #Strip beta strings
     v1 = re.sub(r'-.*','',v1)
@@ -145,9 +154,14 @@ def create_html(prod_list):
                 tooltip=""
                 ver = re.search("[0-9]*\.[0-9]*\.[0-9]*",xlink)
                 tooltip = patch_notes(xproduct)
-                file_out.write(f"<li title='{tooltip}' class={xclass}>\n\t\t<a href={xlink}><b>{xproduct} - {ver.group()}</b></a><span> - Updated {xdate}</span></li>\n\t")
+                doc_link = get_doc_link(xproduct)
+                file_out.write(f"<li title='{tooltip}' class={xclass}>\n\t\t<a href={xlink}><b>{xproduct} - {ver.group()}</b></a><span> - Updated {xdate}</span> <span><a href={doc_link} target='_blank'>Document Site</a></span></li>\n\t")
             except:
-                file_out.write(f"<li class={xclass}>\n\t\t<a href={xlink}><b>{xproduct}</b></a><span> - Updated {xdate}</span></li>\n\t")
+                if xproduct.startswith("Flyway CLI"):
+                    doc_link = f"https://documentation.red-gate.com/fd"
+                else:
+                    doc_link = f"https://documentation.red-gate.com"
+                file_out.write(f"<li class={xclass}>\n\t\t<a href={xlink}><b>{xproduct}</b></a><span> - Updated {xdate}</span> <span><a href={doc_link} target='_blank'>Document Site</a></span></li>\n\t")
     file_out.write(f"</ul>\n</body>\n")
     file_out.close()    
 
@@ -201,7 +215,6 @@ def patch_notes(product_list):
                 else:
                     break
     return(tool_tip_html(tool_tip))
-
 
 def tool_tip_html(tool_tip):
     html = ""
