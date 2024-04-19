@@ -40,3 +40,6 @@ Added links to main product download site & flyway cli
 
 ## Ver 1.4 Jul 2023
 Added links to document site for products, defaults to main document site when no specific product site is found
+
+## Ver 1.5 Apr 2024
+Added Redgate Monitor
