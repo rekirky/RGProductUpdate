@@ -55,13 +55,13 @@ def version_compare(v1, v2):
 def get_flywaycli(prod_list):
     version = '0.0.0'
     product = []
-    url = f"https://redgate-download.s3.eu-west-1.amazonaws.com/?delimiter=/&prefix=maven/release/org/flywaydb/enterprise/flyway-commandline/"
+    url = f"https://redgate-download.s3.eu-west-1.amazonaws.com/?delimiter=/&prefix=maven/release/com/redgate/flyway/flyway-commandline/"
     file = urllib.request.urlopen(url)
     data = file.read()
     file.close()
     data = xmltodict.parse(data)
     for i in data["ListBucketResult"]["CommonPrefixes"]:
-        product.append(i["Prefix"].replace("maven/release/org/flywaydb/enterprise/flyway-commandline/","").replace("/",""))
+        product.append(i["Prefix"].replace("maven/release/com/redgate/flyway/flyway-commandline/","").replace("/",""))
 
     for i in range(len(product)):
         version = version_compare(version,product[i])
@@ -73,7 +73,7 @@ def get_flywaycli(prod_list):
     for x in data["ListBucketResult"]["Contents"]:
         if x["Key"].endswith("zip"):
             date = x["LastModified"]
-    link = f"https://download.red-gate.com/maven/release/org/flywaydb/enterprise/flyway-commandline/{version}"
+    link = f"https://download.red-gate.com/maven/release/com/redgate/flyway/flyway-commandline/{version}"
     prod_list.append([{"product":f"Flyway CLI - {version}","link":link,"date":date}])
     return(prod_list)
     
