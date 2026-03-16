@@ -131,7 +131,7 @@ def create_html(prod_list):
     file_out.write(f"<h3> Download links</h3>\n")
     file_out.write(f"<ul>\n\t")
     file_out.write(f"<li><a href=https://download.red-gate.com/checkforupdates  target='_blank'>Product Download Site</a></li>\n\t")
-    file_out.write(f"<li><a href=https://download.red-gate.com/maven/release/org/flywaydb/enterprise/ target='_blank'>Flyway CLI</a></li>\n")
+    file_out.write(f"<li><a href=https://download.red-gate.com/maven/release/com/redgate/flyway/ target='_blank'>Flyway CLI</a></li>\n")
     file_out.write(f"</ul>\n\n")
     file_out.write(f"<input type='text' id='myInput' onkeyup='filterResults()' placeholder='Search by product..'>\n")
     file_out.write(f"<input type='text' id='myYear' onkeyup='filterResults()' placeholder='Search by updated date..'>\n")
