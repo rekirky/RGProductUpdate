@@ -71,16 +71,32 @@ function renderTable() {
   tbody.innerHTML = filtered.map(buildRow).join('');
 }
 
+// ── Filter definitions ────────────────────────────────────────────────────────
+// Each entry is a function that receives the lowercased product name and key.
+// Add new category filters here — no other code changes needed.
+
+const NAME_FILTERS = {
+  all:     () => true,
+  flyway:  (name, key) => name.includes('flyway'),
+  dotnet:  (name, key) => name.includes('reflector') || name.includes('ants') || name.includes('smartassembly'),
+  sqltoolbelt: (name, key) => [
+    'sql change automation', 'sql compare', 'sql data compare', 'sql data generator',
+    'sql dependency', 'sql doc', 'sql multi script', 'sql prompt',
+    'sql search', 'sql source control', 'sql test', 'sql backup',
+  ].some(k => name.includes(k)),
+  monitor: (name, key) => key.toLowerCase().includes('redgatemonitor') || name.includes('redgate monitor'),
+};
+
 // ── Filtering ────────────────────────────────────────────────────────────────
 
 function filteredProducts() {
   const q = searchQuery;
+  const nameFilterFn = NAME_FILTERS[activeNameFilter] || NAME_FILTERS.all;
   return allProducts.filter(p => {
-    const matchesSearch = !q ||
-      p.name.toLowerCase().includes(q) ||
-      (p.version && p.version.includes(q));
+    const name = p.name.toLowerCase();
+    const matchesSearch = !q || name.includes(q) || (p.version && p.version.includes(q));
     const matchesStatus = activeFilter === 'all' || p.status === activeFilter;
-    const matchesName = activeNameFilter === 'all' || p.name.toLowerCase().includes(activeNameFilter);
+    const matchesName   = nameFilterFn(name, p.key);
     return matchesSearch && matchesStatus && matchesName;
   });
 }
