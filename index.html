@@ -1,234 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Redgate Product Download Links</title>
-<link rel='stylesheet' href='https://cdn.rd.gt/assets/styles/isw.css?v=1637587319771'>
-<link rel='stylesheet' href='redgate.css'>
-<link rel='icon type='image/x-icon' href='favicon.ico'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redgate Product Updates</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
-<script src='redgate.js'></script>
-<h1>Redgate Product Links</h1>
-	<div>Links to the most recent version of Redgate products allowing searching by product & release date</div>
-	<div>Products updated this year are Green, last year Orange & previous years Red</div>
-	<div>Tooltips may be available when hovering over products updated this year</div>
-	This is a passion project and is an ongoing work in progress</div>
-<h2>Page updated: 2026/03/26 | 18:55:08</h2>
 
-<h3> Download links</h3>
-<ul>
-	<li><a href=https://download.red-gate.com/checkforupdates  target='_blank'>Product Download Site</a></li>
-	<li><a href=https://download.red-gate.com/maven/release/com/redgate/flyway/ target='_blank'>Flyway CLI</a></li>
-</ul>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-brand">
+        <svg class="header-logo" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="16" fill="white"/>
+          <text x="16" y="22" text-anchor="middle" fill="#CC2027"
+                font-family="Georgia, 'Times New Roman', serif"
+                font-size="20" font-weight="bold">R</text>
+        </svg>
+        <span class="header-title">Product Update Tracker</span>
+      </div>
+      <nav class="header-nav">
+        <a href="https://download.red-gate.com/checkforupdates" target="_blank" rel="noopener">Downloads</a>
+        <a href="https://download.red-gate.com/maven/release/com/redgate/flyway/" target="_blank" rel="noopener">Flyway CLI</a>
+        <a href="https://documentation.red-gate.com" target="_blank" rel="noopener">Documentation</a>
+      </nav>
+    </div>
+  </header>
 
-<input type='text' id='myInput' onkeyup='filterResults()' placeholder='Search by product..'>
-<input type='text' id='myYear' onkeyup='filterResults()' placeholder='Search by updated date..'>
-<ul id = 'myUL'>
-	<li title='Fixes&#013Internal library updates.&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/ANTSMemoryProfiler/ANTSMemoryProfiler_11.6.11.3436.exe><b>ANTSMemoryProfiler - 11.6.11</b></a><span> - Updated 2026-02-23</span> <span><a href= https://documentation.red-gate.com/amp target='_blank'>Document Site</a></span></li>
-	<li title='Fixes&#013Internal library updates.&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/ANTSPerformanceProfiler/ANTSPerformanceProfiler_11.4.11.4780.exe><b>ANTSPerformanceProfiler - 11.4.11</b></a><span> - Updated 2026-02-23</span> <span><a href= https://documentation.red-gate.com/app target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/ANTSProfiler/ANTSProfiler130.exe><b>ANTSProfiler</b></a><span> - Updated 2019-09-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/ANTSVSAddin/ANTSVSAddin_1.0.0.292.exe><b>ANTSVSAddin</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/CodeAnalysisforOracle/CodeAnalysisforOracle_1.14.4919.0.exe><b>CodeAnalysisforOracle</b></a><span> - Updated 2021-05-06</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/DLMAutomation/DLMAutomation_2.1.3.2175.exe><b>DLMAutomation</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/DLMAutomationSuite/DLMAutomationSuite_1.2.0.2409.exe><b>DLMAutomationSuite</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/DLMAutomationSuiteforOracle/DLMAutomationSuiteforOracle_1.2.4.275.exe><b>DLMAutomationSuiteforOracle</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/DataCompareForOracle/DataCompareForOracle_1.0.2.78.exe><b>DataCompareForOracle</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Compatibility with Schema Compare for Oracle 6.2.5&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/DataCompareforOracle/DataCompareforOracle_6.3.58.6857.exe><b>DataCompareforOracle - 6.3.58</b></a><span> - Updated 2026-03-24</span> <span><a href= https://documentation.red-gate.com/dco target='_blank'>Document Site</a></span></li>
-	<li title='' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/DataMaskerforOracle/DataMaskerforOracle_6.1.58.8097.exe><b>DataMaskerforOracle - 6.1.58</b></a><span> - Updated 2026-03-17</span> <span><a href= https://documentation.red-gate.com/dms target='_blank'>Document Site</a></span></li>
-	<li title='' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/DataMaskerforSQLServer/DataMaskerforSQLServer_7.1.49.9747.exe><b>DataMaskerforSQLServer - 7.1.49</b></a><span> - Updated 2026-03-17</span> <span><a href= https://documentation.red-gate.com/dms target='_blank'>Document Site</a></span></li>
-	<li class=previous>
-		<a href=https://download.red-gate.com/checkforupdates/DataModeler/reverse-engineering-without-jre-2.0.15.zip><b>DataModeler</b></a><span> - Updated 2025-10-10</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/DeploymentManager/DeploymentManager_2.4.8.34.msi><b>DeploymentManager</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/DeploymentManagerSSMSaddin/DeploymentManagerSSMSaddin_1.1.1.968.exe><b>DeploymentManagerSSMSaddin</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/DeploymentManagerVSextension/DeploymentManagerVSextension_1.1.1.953.exe><b>DeploymentManagerVSextension</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/DeploymentSuiteForOracle/DeploymentSuiteForOracle.exe><b>DeploymentSuiteForOracle</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/ExceptionHunter/Exception_Hunter_2.1.0.2.exe><b>ExceptionHunter</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/ExchangeServerArchiver/ExchangeServerArchiver_3.0.0.922.exe><b>ExchangeServerArchiver</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/Figleaf/Figleaf_7.0.36.5701.exe><b>Figleaf</b></a><span> - Updated 2019-09-19</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Changes&#013&#013Clicking on an indeterminate checkbox in a table will now select all descendants instead of deselecting them&#013&#013Fixes&#013&#013Fixed issue where banner reporting on how the shadow database was updated was not being displayed on the Generate migrations page&#013&#013Fixed issue where static data and comparisons modal might close if it was opened while a comparison was in progress and the comparison then completed successfully&#013&#013Library Versions&#013&#013Flyway: 11.8.1-rc70&#013&#013Electron: 34.3.0&#013&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/FlywayDesktop/FlywayDesktop_9.2.2.0.exe><b>FlywayDesktop - 9.2.2</b></a><span> - Updated 2026-03-19</span> <span><a href= https://documentation.red-gate.com/fd target='_blank'>Document Site</a></span></li>
-	<li class=current>
-		<a href=https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinArm64/FlywayDesktopDarwinArm64_9.2.2.0.zip><b>FlywayDesktopDarwinArm64</b></a><span> - Updated 2026-03-19</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Changes&#013&#013Clicking on an indeterminate checkbox in a table will now select all descendants instead of deselecting them&#013&#013Fixes&#013&#013Fixed issue where banner reporting on how the shadow database was updated was not being displayed on the Generate migrations page&#013&#013Fixed issue where static data and comparisons modal might close if it was opened while a comparison was in progress and the comparison then completed successfully&#013&#013Library Versions&#013&#013Flyway: 11.8.1-rc70&#013&#013Electron: 34.3.0&#013&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinX64/FlywayDesktopDarwinX64_9.2.2.0.zip><b>FlywayDesktopDarwinX64 - 9.2.2</b></a><span> - Updated 2026-03-19</span> <span><a href= https://documentation.red-gate.com/fd target='_blank'>Document Site</a></span></li>
-	<li class=current>
-		<a href=https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64/FlywayDesktopLinuxX64_9.2.2.0.tar.gz><b>FlywayDesktopLinuxX64</b></a><span> - Updated 2026-03-19</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Changes&#013&#013Clicking on an indeterminate checkbox in a table will now select all descendants instead of deselecting them&#013&#013Fixes&#013&#013Fixed issue where banner reporting on how the shadow database was updated was not being displayed on the Generate migrations page&#013&#013Fixed issue where static data and comparisons modal might close if it was opened while a comparison was in progress and the comparison then completed successfully&#013&#013Library Versions&#013&#013Flyway: 11.8.1-rc70&#013&#013Electron: 34.3.0&#013&#013' class=old>
-		<a href=https://download.red-gate.com/checkforupdates/FlywayDesktopMac/FlywayDesktopMac_5.13.0.0.zip><b>FlywayDesktopMac - 5.13.0</b></a><span> - Updated 2022-01-24</span> <span><a href= https://documentation.red-gate.com/fd target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/MySQLCompare/MySQLCompare_1.0.0.666.exe><b>MySQLCompare</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/MySQLDataCompare/MySQLDataCompare_1.0.1.1.exe><b>MySQLDataCompare</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/NETReflectorDesktop/NETReflectorDesktop_9.0.2.546.exe><b>NETReflectorDesktop</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/PSTImporter2010/PST_Importer_2010_1.1.0.111.msi><b>PSTImporter2010</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/ReadyRoll/ReadyRoll_1.17.18158.17.exe><b>ReadyRoll</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/RedGateSQLServer/RedGateSQLServer.zip><b>RedGateSQLServer</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/RedgateChangeAutomation/RedgateChangeAutomation_4.15.18431.0.exe><b>RedgateChangeAutomation</b></a><span> - Updated 2021-12-15</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/RedgateChangeAutomationBeta/RedgateChangeAutomationBeta_2.15.7160.0.exe><b>RedgateChangeAutomationBeta</b></a><span> - Updated 2020-04-16</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/RedgateChangeControl/RedgateChangeControl_4.11.194.0.exe><b>RedgateChangeControl</b></a><span> - Updated 2021-10-19</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/RedgateChangeControlBeta/RedgateChangeControlBeta_1.6.3492.0.exe><b>RedgateChangeControlBeta</b></a><span> - Updated 2019-12-04</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/RedgateClient/RedgateClient_11.1.9.3436.zip><b>RedgateClient</b></a><span> - Updated 2024-07-15</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=current>
-		<a href=https://download.red-gate.com/checkforupdates/RedgateMonitorSBOM/RedgateMonitorSBOM_14.13.0.17984.zip><b>RedgateMonitorSBOM</b></a><span> - Updated 2026-03-26</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/RedgateMonitorWebService/RedgateMonitorWebService_14.13.0.17984.exe><b>RedgateMonitorWebService - 14.13.0</b></a><span> - Updated 2026-03-26</span> <span><a href= https://documentation.red-gate.com/monitor target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/ReflectorInstaller/ReflectorInstaller_11.1.0.2167.exe><b>ReflectorInstaller</b></a><span> - Updated 2021-10-04</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Not Found&#013&#013&#013&#013Didn't find what you were looking for?&#013&#013Visit theRedgate forumContact Support&#013&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SCAPowerShell/SCAPowerShell_5.1.26082.8038.exe><b>SCAPowerShell - 5.1.26082</b></a><span> - Updated 2026-03-23</span> <span><a href= https://documentation.red-gate.com/sca target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SIP/build26.package><b>SIP</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SOC-CFU/SOC-CFU.exe><b>SOC-CFU</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLAutomationPack/SQLAutomationPack_1.1.2.2238.exe><b>SQLAutomationPack</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLAzureBackup/SQLAzureBackup_2.6.1.131.zip><b>SQLAzureBackup</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Features&#013SQL Backup now uses an alternative method to match server names when checking high availability groups.&#013' class=previous>
-		<a href=https://download.red-gate.com/checkforupdates/SQLBackup/SQLBackup_10.1.34.3119.exe><b>SQLBackup - 10.1.34</b></a><span> - Updated 2025-07-16</span> <span><a href= https://documentation.red-gate.com/sbu target='_blank'>Document Site</a></span></li>
-	<li title='Improvements:&#013&#013Updated SQL Compare Engine to 16.0.0.30179&#013&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SQLChangeAutomation/SQLChangeAutomation_5.1.26058.7953.exe><b>SQLChangeAutomation - 5.1.26058</b></a><span> - Updated 2026-03-02</span> <span><a href= https://documentation.red-gate.com/sca target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLChangeAutomationPowerShell/SCA_PowerShell_3.3.19233.10102.exe><b>SQLChangeAutomationPowerShell</b></a><span> - Updated 2019-09-19</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLClone/SQLClone_1.0.0.4590.exe><b>SQLClone</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='This release of SQL Clone includes the following enhancements and bug fixes:&#013Fixes&#013&#013Internal fixes and improvements.&#013&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SQLCloneServer/SQLCloneServer_5.6.26.8702.exe><b>SQLCloneServer - 5.6.26</b></a><span> - Updated 2026-03-13</span> <span><a href= https://documentation.red-gate.com/clone target='_blank'>Document Site</a></span></li>
-	<li title='Strengthening security when saving passwords&#013When you choose to remember credentials while saving a project file, SQL Compare will now save your password to the Windows Credential Store, whereas older versions also saved a copy to the project file.This makes surethat database passwordsaren’taccidentally shared with otherusers,and only users that know the password can connect to the database.&#013Support for connecting to the new SQL Server 2025 database&#013We have been busy upgrading our tests and fixing issues to make sure we’re ready for when you start using SQL Server 2025.  You can connect to SQL Server 2025 databases and use them as aSourceorTargetfor comparisons and deployments.&#013There are some new features that we already support, like the JSON data type.&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SQLCompare/SQLCompare_16.0.9.28654.exe><b>SQLCompare - 16.0.9</b></a><span> - Updated 2026-03-24</span> <span><a href= https://documentation.red-gate.com/sc target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLCompareEAP/SQLCompareEAP_10.1.0.428.exe><b>SQLCompareEAP</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLCompareFrequentUpdates/SQLCompareFrequentUpdates_11.1.9.26.exe><b>SQLCompareFrequentUpdates</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLComparisonSDK/SQLComparisonSDK_12.4.11.627.exe><b>SQLComparisonSDK</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLConnect/SQLConnect_1.0.exe><b>SQLConnect</b></a><span> - Updated 2019-09-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLDBABundle/SQLDBABundle.zip><b>SQLDBABundle</b></a><span> - Updated 2020-11-18</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Fixes&#013We will no longer automatically register database snapshots as part of our database discovery process, as we have learned that only the source database (current version) is of interest to our customers.&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SQLDataCatalog/SQLDataCatalog_2.0.43.8619.exe><b>SQLDataCatalog - 2.0.43</b></a><span> - Updated 2026-02-02</span> <span><a href= https://documentation.red-gate.com/sql-data-catalog target='_blank'>Document Site</a></span></li>
-	<li title='Strengthening security when saving passwords&#013When you choose to remember credentials while saving a project file, SQL Compare will now save your password to the Windows Credential Store, whereas older versions also saved a copy to the project file.This makes surethat database passwordsaren’taccidentally shared with otherusers,and only users that know the password can connect to the database.&#013Support for connecting to the new SQL Server 2025 database&#013We have been busy upgrading our tests and fixing issues to make sure we’re ready for when you start using SQL Server 2025.  You can connect to SQL Server 2025 databases and use them as a&#013Source&#013or&#013Target&#013for comparisons and deployments.&#013&#013&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SQLDataCompare/SQLDataCompare_16.0.9.28654.exe><b>SQLDataCompare - 16.0.9</b></a><span> - Updated 2026-03-24</span> <span><a href= https://documentation.red-gate.com/sdc target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLDataCompareFrequentUpdates/SQLDataCompareFrequentUpdates_11.1.11.2.exe><b>SQLDataCompareFrequentUpdates</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Features&#013Internal library updates&#013Fixes&#013Upgraded to main-line SQL Compare Engine as SSMS versions discontinued.&#013Code fixed done to stop using methods that have been removed in the latest version.&#013&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SQLDataGenerator/SQLDataGenerator_4.8.5.7412.exe><b>SQLDataGenerator - 4.8.5</b></a><span> - Updated 2026-03-10</span> <span><a href= https://documentation.red-gate.com/sdg target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLDataMasker/SQLDataMasker_1.0.0.235.exe><b>SQLDataMasker</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLDataPrivacySuite/SQLDataPrivacySuite.exe><b>SQLDataPrivacySuite</b></a><span> - Updated 2020-11-18</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLDataRefresh/SQLDataRefresh_1.0.0.361.exe><b>SQLDataRefresh</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Features&#013Internal library updates&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SQLDependencyTracker/SQLDependencyTracker_3.6.4.7091.exe><b>SQLDependencyTracker - 3.6.4</b></a><span> - Updated 2026-03-11</span> <span><a href= https://documentation.red-gate.com/sdt target='_blank'>Document Site</a></span></li>
-	<li title='Fixes&#013Fixed an issue where SQL Doc throws an error while connecting to SQL Server.&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SQLDoc/SQLDoc_5.5.4.6276.exe><b>SQLDoc - 5.5.4</b></a><span> - Updated 2026-03-11</span> <span><a href= https://documentation.red-gate.com/sdoc target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLEstateManager/SQLEstateManager_1.1.9.599.exe><b>SQLEstateManager</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLIndexManager/SQLIndexManager_1.2.3.1998.exe><b>SQLIndexManager</b></a><span> - Updated 2022-07-15</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLLock/SQLLock_1.0.2.7.exe><b>SQLLock</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLMonitorSBOM/SQLMonitorSBOM_14.0.0.7532.zip><b>SQLMonitorSBOM</b></a><span> - Updated 2024-04-18</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='' class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLMonitorWeb/SQLMonitorWeb_13.0.61.6402.exe><b>SQLMonitorWeb - 13.0.61</b></a><span> - Updated 2024-04-04</span> <span><a href= https://documentation.red-gate.com/sm target='_blank'>Document Site</a></span></li>
-	<li title='Internal library updates&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SQLMultiScript/SQLMultiScript_1.7.3.4456.exe><b>SQLMultiScript - 1.7.3</b></a><span> - Updated 2026-03-24</span> <span><a href= https://documentation.red-gate.com/sms target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLPackager/SQL Packager_6.4.1.2.exe><b>SQLPackager</b></a><span> - Updated 2019-09-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Fixes&#013&#013Fixed SQL Prompt not loading correctly on start up in SSMS 22.4.&#013&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SQLPrompt/SQLPrompt_11.3.8.22342.exe><b>SQLPrompt - 11.3.8</b></a><span> - Updated 2026-03-19</span> <span><a href= https://documentation.red-gate.com/sp target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLPromptDownload/SQLPromptDownload.exe><b>SQLPromptDownload</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLRefactor/SQL_Refactor_1.3.0.207.exe><b>SQLRefactor</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLResponse/SQL_Response_1.2.0.219.exe><b>SQLResponse</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLScripts/SQLScripts_1.1.0.278.exe><b>SQLScripts</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Fixes&#013Removed log4net as a dependency as it contains a security vulnerability.&#013Internal library updates&#013&#013' class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLScriptsManager/SQLScriptsManager_2.1.1.1013.exe><b>SQLScriptsManager - 2.1.1</b></a><span> - Updated 2022-07-11</span> <span><a href= https://documentation.red-gate.com/ssm target='_blank'>Document Site</a></span></li>
-	<li title='Features&#013Internal library updates&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SQLSearch/SQLSearch_3.9.6.6522.exe><b>SQLSearch - 3.9.6</b></a><span> - Updated 2026-03-02</span> <span><a href= https://documentation.red-gate.com/ss target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLServerCentralforWindows/SQLServerCentralforWindows_1.0.0.200.exe><b>SQLServerCentralforWindows</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Not Found&#013&#013&#013&#013Didn't find what you were looking for?&#013&#013Visit theRedgate forumContact Support&#013&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SQLSourceControl/SQLSourceControl_8.1.10.23527.exe><b>SQLSourceControl - 8.1.10</b></a><span> - Updated 2026-03-12</span> <span><a href= https://documentation.red-gate.com/soc target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLSourceControlFrequentUpdate/SQLSourceControlFrequentUpdate_3.8.8.28.exe><b>SQLSourceControlFrequentUpdate</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLSourceControlFrequentUpdates/SQLSourceControlFrequentUpdates_4.2.3.575.exe><b>SQLSourceControlFrequentUpdates</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLSourceControlupdate/SQLSourceControlupdate_3.8.13.180.exe><b>SQLSourceControlupdate</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLStorageCompress/SQLStorageCompress_6.1.0.157.exe><b>SQLStorageCompress</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLTabMagic/SQLTabMagic_0.4.2.64.exe><b>SQLTabMagic</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Features&#013Internal library updates&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SQLTest/SQLTest_4.4.4.5252.exe><b>SQLTest - 4.4.4</b></a><span> - Updated 2026-03-11</span> <span><a href= https://documentation.red-gate.com/sqt target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLToolbelt/SQLToolbelt.exe><b>SQLToolbelt</b></a><span> - Updated 2020-11-18</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SQLToolkit/SQL_Toolkit_6.1.0.3.exe><b>SQLToolkit</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SSASCompare/SSASCompare_0.3.0.99.exe><b>SSASCompare</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SchemaCompareForOracle/Oracle Compare_1.0.0.860.zip><b>SchemaCompareForOracle</b></a><span> - Updated 2019-09-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Fixes&#013ZD-297922: Prevent scripting of LOB clauses for extended datatypes.&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SchemaCompareforOracle/SchemaCompareforOracle_6.3.58.6857.exe.sha256><b>SchemaCompareforOracle - 6.3.58</b></a><span> - Updated 2026-03-24</span> <span><a href= https://documentation.red-gate.com/sco target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SchemaDocForOracle/SchemaDocForOracle_1.0.1.47.exe><b>SchemaDocForOracle</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/SchemaDocforOracle/SchemaDocforOracle_2.5.0.42.exe><b>SchemaDocforOracle</b></a><span> - Updated 2019-09-19</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/ScriptsManager/ScriptsManager_1.3.4.15.exe><b>ScriptsManager</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li title='Features&#013Support for.NET 7assemblies.&#013Improvements&#013Internal optimizations and improvements in preparation for .NET 8 support and future features.&#013Fixes&#013Fixed issues related to incorrect dependency resolution.&#013Fixed WPF exception handling.&#013Fixed OS version reporting.&#013Fixed issue with import module attributes being pruned.&#013Fixed issue with multiple instances of SmartAssembly sharing the same resource and can now be run concurrently.&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SmartAssembly/SmartAssembly_8.4.3.6747.exe><b>SmartAssembly - 8.4.3</b></a><span> - Updated 2026-02-19</span> <span><a href= https://documentation.red-gate.com/sa target='_blank'>Document Site</a></span></li>
-	<li title='Features&#013&#013Internal library updates&#013&#013Fixes&#013&#013Improve parser support for the "JSON_value_return_type"-clause syntax of the JSON_VALUE function&#013&#013' class=current>
-		<a href=https://download.red-gate.com/checkforupdates/SourceControlforOracle/SourceControlforOracle_6.1.0.6688.exe><b>SourceControlforOracle - 6.1.0</b></a><span> - Updated 2026-03-13</span> <span><a href= https://documentation.red-gate.com/soco target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/caolinux/caolinux_1.14.4919.0.zip><b>caolinux</b></a><span> - Updated 2021-05-06</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/caoosx/caoosx_1.14.4919.0.zip><b>caoosx</b></a><span> - Updated 2021-05-06</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/caowindows/caowindows_1.14.4919.0.zip><b>caowindows</b></a><span> - Updated 2021-05-06</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=><b>reflector</b></a><span> - Updated </span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/sqlci-teamcity/sqlci-teamcity.zip><b>sqlci-teamcity</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/sqlciteamcity/sqlciteamcity.zip><b>sqlciteamcity</b></a><span> - Updated 2018-10-30</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=old>
-		<a href=https://download.red-gate.com/checkforupdates/temp/><b>temp</b></a><span> - Updated 2021-11-12</span> <span><a href=https://documentation.red-gate.com target='_blank'>Document Site</a></span></li>
-	<li class=current>
-		<a href=https://download.red-gate.com/maven/release/com/redgate/flyway/flyway-commandline/12.2.0><b>Flyway CLI - 12.2.0</b></a><span> - Updated 2026-03-26</span> <span><a href=https://documentation.red-gate.com/fd target='_blank'>Document Site</a></span></li>
-	</ul>
+  <main>
+    <div class="container">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Redgate Product Updates</h1>
+          <p class="page-subtitle">Latest versions and release dates for all Redgate products, refreshed daily.</p>
+        </div>
+        <div id="last-updated" class="last-updated" aria-live="polite">Loading&hellip;</div>
+      </div>
+
+      <div class="controls">
+        <div class="search-wrapper">
+          <svg class="search-icon" viewBox="0 0 20 20" aria-hidden="true">
+            <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <line x1="13" y1="13" x2="18" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input type="text" id="search-name" placeholder="Search products&hellip;" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="filter-group" role="group" aria-label="Filter by update status">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="current">This year</button>
+          <button class="filter-btn" data-filter="previous">Last year</button>
+          <button class="filter-btn" data-filter="old">Older</button>
+        </div>
+      </div>
+
+      <div id="summary-bar" class="summary-bar" aria-live="polite"></div>
+
+      <div class="table-wrapper">
+        <table id="products-table" aria-label="Redgate product versions">
+          <thead>
+            <tr>
+              <th scope="col" class="col-product">Product</th>
+              <th scope="col" class="col-version">Version</th>
+              <th scope="col" class="col-updated">Last Updated</th>
+              <th scope="col" class="col-status">Status</th>
+              <th scope="col" class="col-links">Links</th>
+            </tr>
+          </thead>
+          <tbody id="products-body">
+            <tr class="state-row">
+              <td colspan="5">Loading products&hellip;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p id="no-results" class="no-results" hidden>No products match your search.</p>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        Unofficial tracker &mdash; not affiliated with Redgate Software.
+        Data sourced from <a href="https://download.red-gate.com" target="_blank" rel="noopener">Redgate's download servers</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
+</html>

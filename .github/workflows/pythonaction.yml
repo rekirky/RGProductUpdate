@@ -1,47 +1,39 @@
-name: kirky-run-python-updated
+name: Update product data
+
 on:
   workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-        - info
-        - warning
-        - debug
   schedule:
-    - cron: '0 18 * * *' # Run at 18:00 UTC daily (4am QLD)
+    - cron: '0 18 * * *'  # 18:00 UTC daily (4am AEST)
 
 jobs:
-  build:
+  scrape:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repo Content
-        uses: actions/checkout@v3
-      
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11.0'
-      
-      - name: Install Python Packages
-        run: | 
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Python Script
-        run: python redgatedownload.py
-      
-      - name: Commit Files
-        run: | 
+      - name: Run scraper
+        run: python backend/scraper.py
+
+      - name: Commit data if changed
+        run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add -A
-          git commit -m "update data" -a
-        
-      - name: Push Changes
+          git add data/products.json
+          git diff --cached --quiet || git commit -m "Update product data"
+
+      - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
