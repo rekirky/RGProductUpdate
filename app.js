@@ -4,6 +4,7 @@ const DATA_URL = 'data/products.json';
 
 let allProducts = [];
 let activeFilter = 'all';
+let activeNameFilter = 'all';
 let searchQuery = '';
 
 // ── Bootstrap ──────────────────────────────────────────────────────────────
@@ -78,8 +79,9 @@ function filteredProducts() {
     const matchesSearch = !q ||
       p.name.toLowerCase().includes(q) ||
       (p.version && p.version.includes(q));
-    const matchesFilter = activeFilter === 'all' || p.status === activeFilter;
-    return matchesSearch && matchesFilter;
+    const matchesStatus = activeFilter === 'all' || p.status === activeFilter;
+    const matchesName = activeNameFilter === 'all' || p.name.toLowerCase().includes(activeNameFilter);
+    return matchesSearch && matchesStatus && matchesName;
   });
 }
 
@@ -139,6 +141,15 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     activeFilter = btn.dataset.filter;
+    renderTable();
+  });
+});
+
+document.querySelectorAll('.filter-btn-tag').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn-tag').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeNameFilter = btn.dataset.nameFilter;
     renderTable();
   });
 });
