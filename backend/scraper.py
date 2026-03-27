@@ -147,6 +147,34 @@ def get_flyway_cli():
     }
 
 
+def get_tdm():
+    """Fetch TDM package last-modified date from S3 and return a product entry.
+
+    TDM is not in checkforupdates/ — the GUI lives under EAP/TDM.zip and is
+    used only to determine the last-modified date. The displayed download link
+    points to the documentation download links page which covers all components
+    (GUI, Anonymize, Subsetter, Workflows).
+    """
+    url = 'https://redgate-download.s3.eu-west-1.amazonaws.com/?prefix=EAP/TDM.zip'
+    data = fetch_xml(url)
+    contents = data['ListBucketResult'].get('Contents')
+    if not contents:
+        raise ValueError('EAP/TDM.zip not found in S3')
+    if isinstance(contents, list):
+        contents = contents[0]
+    updated = contents['LastModified'][:10]
+    return {
+        'key': 'TDM',
+        'name': 'Test Data Manager',
+        'version': '',
+        'download_url': 'https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links',
+        'updated': updated,
+        'status': status_for_date(updated),
+        'doc_url': 'https://documentation.red-gate.com/tdm',
+        'release_notes_url': 'https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/gui-release-notes',
+    }
+
+
 def main():
     config = load_config()
     logger.info('Fetching product list from S3...')
@@ -177,6 +205,13 @@ def main():
         products.append(flyway)
     except Exception as e:
         logger.error(f'Failed to get Flyway CLI: {e}')
+
+    logger.info('Fetching Test Data Manager...')
+    try:
+        tdm = get_tdm()
+        products.append(tdm)
+    except Exception as e:
+        logger.error(f'Failed to get TDM: {e}')
 
     products.sort(key=lambda x: x['name'].lower())
 
