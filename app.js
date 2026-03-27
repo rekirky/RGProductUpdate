@@ -85,6 +85,7 @@ const NAME_FILTERS = {
     'sql search', 'sql source control', 'sql test', 'sql backup',
   ].some(k => name.includes(k)),
   monitor: (name, key) => key.toLowerCase().includes('redgatemonitor') || name.includes('redgate monitor'),
+  tdm:     (name, key) => name.includes('test data manager'),
 };
 
 // ── Filtering ────────────────────────────────────────────────────────────────

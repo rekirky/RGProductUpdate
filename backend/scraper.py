@@ -147,13 +147,15 @@ def get_flyway_cli():
     }
 
 
-def get_tdm():
-    """Fetch TDM package last-modified date from S3 and return a product entry.
+_TDM_DOWNLOAD = 'https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links'
+_TDM_RELEASE_NOTES = 'https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/gui-release-notes'
 
-    TDM is not in checkforupdates/ — the GUI lives under EAP/TDM.zip and is
-    used only to determine the last-modified date. The displayed download link
-    points to the documentation download links page which covers all components
-    (GUI, Anonymize, Subsetter, Workflows).
+
+def get_tdm():
+    """Fetch TDM package last-modified date from S3.
+
+    EAP/TDM.zip is used only to determine the last-modified date shared by
+    all TDM components. Each component gets its own product entry.
     """
     url = 'https://redgate-download.s3.eu-west-1.amazonaws.com/?prefix=EAP/TDM.zip'
     data = fetch_xml(url)
@@ -163,16 +165,40 @@ def get_tdm():
     if isinstance(contents, list):
         contents = contents[0]
     updated = contents['LastModified'][:10]
-    return {
-        'key': 'TDM',
-        'name': 'Test Data Manager',
-        'version': '',
-        'download_url': 'https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links',
-        'updated': updated,
-        'status': status_for_date(updated),
-        'doc_url': 'https://documentation.red-gate.com/tdm',
-        'release_notes_url': 'https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/gui-release-notes',
-    }
+    status = status_for_date(updated)
+
+    return [
+        {
+            'key': 'TDMGui',
+            'name': 'Test Data Manager GUI',
+            'version': '',
+            'download_url': _TDM_DOWNLOAD,
+            'updated': updated,
+            'status': status,
+            'doc_url': 'https://documentation.red-gate.com/tdm',
+            'release_notes_url': _TDM_RELEASE_NOTES,
+        },
+        {
+            'key': 'TDMAnonymize',
+            'name': 'Test Data Manager Anonymize',
+            'version': '',
+            'download_url': _TDM_DOWNLOAD,
+            'updated': updated,
+            'status': status,
+            'doc_url': 'https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/anonymization-treatments',
+            'release_notes_url': _TDM_RELEASE_NOTES,
+        },
+        {
+            'key': 'TDMSubsetting',
+            'name': 'Test Data Manager Subsetting',
+            'version': '',
+            'download_url': _TDM_DOWNLOAD,
+            'updated': updated,
+            'status': status,
+            'doc_url': 'https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/subsetting-treatments',
+            'release_notes_url': _TDM_RELEASE_NOTES,
+        },
+    ]
 
 
 def main():
@@ -208,8 +234,7 @@ def main():
 
     logger.info('Fetching Test Data Manager...')
     try:
-        tdm = get_tdm()
-        products.append(tdm)
+        products.extend(get_tdm())
     except Exception as e:
         logger.error(f'Failed to get TDM: {e}')
 
