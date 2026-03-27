@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-27T07:02:52.775764+00:00",
+  "generated_at": "2026-03-27T08:11:43.398058+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -1030,6 +1030,16 @@
       "status": "old",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
+    },
+    {
+      "key": "TDM",
+      "name": "Test Data Manager",
+      "version": "",
+      "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
+      "updated": "2026-03-26",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/tdm",
+      "release_notes_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/gui-release-notes"
     }
   ]
 }
