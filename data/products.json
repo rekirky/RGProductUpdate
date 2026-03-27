@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-27T08:20:54.726533+00:00",
+  "generated_at": "2026-03-27T08:32:48.730841+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -690,6 +690,26 @@
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sqt",
       "release_notes_url": "https://documentation.red-gate.com/sqt/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLToolbelt",
+      "name": "SQL Toolbelt",
+      "version": "",
+      "download_url": "http://download.red-gate.com/SQLToolbelt.exe",
+      "updated": "2026-03-24",
+      "status": "current",
+      "doc_url": "",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLToolbeltEssentials",
+      "name": "SQL Toolbelt Essentials",
+      "version": "",
+      "download_url": "http://download.red-gate.com/SQLToolbeltEssentials.exe",
+      "updated": "2026-03-24",
+      "status": "current",
+      "doc_url": "",
+      "release_notes_url": ""
     },
     {
       "key": "SQLAutomationPack",
