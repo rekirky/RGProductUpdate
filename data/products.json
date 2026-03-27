@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-27T08:32:48.730841+00:00",
+  "generated_at": "2026-03-27T08:37:19.138106+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -1012,16 +1012,6 @@
       "release_notes_url": ""
     },
     {
-      "key": "SQLToolbelt",
-      "name": "SQLToolbelt",
-      "version": "",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLToolbelt/SQLToolbelt.exe",
-      "updated": "2020-11-18",
-      "status": "old",
-      "doc_url": "https://documentation.red-gate.com",
-      "release_notes_url": ""
-    },
-    {
       "key": "SQLToolkit",
       "name": "SQLToolkit",
       "version": "6.1.0",
@@ -1037,16 +1027,6 @@
       "version": "0.3.0",
       "download_url": "https://download.red-gate.com/checkforupdates/SSASCompare/SSASCompare_0.3.0.99.exe",
       "updated": "2018-10-30",
-      "status": "old",
-      "doc_url": "https://documentation.red-gate.com",
-      "release_notes_url": ""
-    },
-    {
-      "key": "temp",
-      "name": "temp",
-      "version": "",
-      "download_url": "https://download.red-gate.com/checkforupdates/temp/",
-      "updated": "2021-11-12",
       "status": "old",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
