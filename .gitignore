@@ -1,5 +1,4 @@
-*.html
-*.css
-*.js
-index.html
-*.html
+# Legacy generated files (no longer produced)
+redgate.js
+redgate.css
+redgatetemp.js
