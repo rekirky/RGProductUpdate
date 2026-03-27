@@ -193,17 +193,17 @@ def get_tdm():
             'updated': updated,
             'status': status,
             'doc_url': 'https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/anonymization-treatments',
-            'release_notes_url': _TDM_RELEASE_NOTES,
+            'release_notes_url': 'https://documentation.red-gate.com/testdatamanager/command-line-interface-cli/anonymization/anonymize-release-notes',
         },
         {
-            'key': 'TDMSubsetting',
-            'name': 'Test Data Manager Subsetting',
+            'key': 'TDMSubsetter',
+            'name': 'Test Data Manager Subsetter',
             'version': '',
             'download_url': _TDM_DOWNLOAD,
             'updated': updated,
             'status': status,
             'doc_url': 'https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/subsetting-treatments',
-            'release_notes_url': _TDM_RELEASE_NOTES,
+            'release_notes_url': 'https://documentation.red-gate.com/testdatamanager/command-line-interface-cli/subsetting/subsetter-release-notes',
         },
     ]
 
