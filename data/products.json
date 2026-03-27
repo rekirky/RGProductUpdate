@@ -1,4 +1,1035 @@
 {
-  "generated_at": null,
-  "products": []
+  "generated_at": "2026-03-27T07:02:52.775764+00:00",
+  "products": [
+    {
+      "key": "ANTSMemoryProfiler",
+      "name": "ANTS Memory Profiler",
+      "version": "11.6.11",
+      "download_url": "https://download.red-gate.com/checkforupdates/ANTSMemoryProfiler/ANTSMemoryProfiler_11.6.11.3436.exe",
+      "updated": "2026-02-23",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/amp",
+      "release_notes_url": "https://documentation.red-gate.com/amp/release-notes-and-other-versions"
+    },
+    {
+      "key": "ANTSPerformanceProfiler",
+      "name": "ANTS Performance Profiler",
+      "version": "11.4.11",
+      "download_url": "https://download.red-gate.com/checkforupdates/ANTSPerformanceProfiler/ANTSPerformanceProfiler_11.4.11.4780.exe",
+      "updated": "2026-02-23",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/app",
+      "release_notes_url": "https://documentation.red-gate.com/app/release-notes-and-other-versions"
+    },
+    {
+      "key": "ANTSProfiler",
+      "name": "ANTSProfiler",
+      "version": "",
+      "download_url": "https://download.red-gate.com/checkforupdates/ANTSProfiler/ANTSProfiler130.exe",
+      "updated": "2019-09-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "ANTSVSAddin",
+      "name": "ANTSVSAddin",
+      "version": "1.0.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/ANTSVSAddin/ANTSVSAddin_1.0.0.292.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "caolinux",
+      "name": "caolinux",
+      "version": "1.14.4919",
+      "download_url": "https://download.red-gate.com/checkforupdates/caolinux/caolinux_1.14.4919.0.zip",
+      "updated": "2021-05-06",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "caoosx",
+      "name": "caoosx",
+      "version": "1.14.4919",
+      "download_url": "https://download.red-gate.com/checkforupdates/caoosx/caoosx_1.14.4919.0.zip",
+      "updated": "2021-05-06",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "caowindows",
+      "name": "caowindows",
+      "version": "1.14.4919",
+      "download_url": "https://download.red-gate.com/checkforupdates/caowindows/caowindows_1.14.4919.0.zip",
+      "updated": "2021-05-06",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "CodeAnalysisforOracle",
+      "name": "CodeAnalysisforOracle",
+      "version": "1.14.4919",
+      "download_url": "https://download.red-gate.com/checkforupdates/CodeAnalysisforOracle/CodeAnalysisforOracle_1.14.4919.0.exe",
+      "updated": "2021-05-06",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "DataCompareforOracle",
+      "name": "Data Compare for Oracle",
+      "version": "6.3.58",
+      "download_url": "https://download.red-gate.com/checkforupdates/DataCompareforOracle/DataCompareforOracle_6.3.58.6857.exe",
+      "updated": "2026-03-24",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/dco",
+      "release_notes_url": "https://documentation.red-gate.com/dco"
+    },
+    {
+      "key": "DataMaskerforOracle",
+      "name": "Data Masker for Oracle",
+      "version": "6.1.58",
+      "download_url": "https://download.red-gate.com/checkforupdates/DataMaskerforOracle/DataMaskerforOracle_6.1.58.8097.exe",
+      "updated": "2026-03-17",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/dms",
+      "release_notes_url": "https://documentation.red-gate.com/dms/release-notes-and-other-versions"
+    },
+    {
+      "key": "DataMaskerforSQLServer",
+      "name": "Data Masker for SQL Server",
+      "version": "7.1.49",
+      "download_url": "https://download.red-gate.com/checkforupdates/DataMaskerforSQLServer/DataMaskerforSQLServer_7.1.49.9747.exe",
+      "updated": "2026-03-17",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/dms",
+      "release_notes_url": "https://documentation.red-gate.com/dms/release-notes-and-other-versions"
+    },
+    {
+      "key": "DataCompareForOracle",
+      "name": "DataCompareForOracle",
+      "version": "1.0.2",
+      "download_url": "https://download.red-gate.com/checkforupdates/DataCompareForOracle/DataCompareForOracle_1.0.2.78.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "DataModeler",
+      "name": "DataModeler",
+      "version": "2.0.15",
+      "download_url": "https://download.red-gate.com/checkforupdates/DataModeler/reverse-engineering-without-jre-2.0.15.zip",
+      "updated": "2025-10-10",
+      "status": "previous",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "DeploymentManager",
+      "name": "DeploymentManager",
+      "version": "2.4.8",
+      "download_url": "https://download.red-gate.com/checkforupdates/DeploymentManager/DeploymentManager_2.4.8.34.msi",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "DeploymentManagerSSMSaddin",
+      "name": "DeploymentManagerSSMSaddin",
+      "version": "1.1.1",
+      "download_url": "https://download.red-gate.com/checkforupdates/DeploymentManagerSSMSaddin/DeploymentManagerSSMSaddin_1.1.1.968.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "DeploymentManagerVSextension",
+      "name": "DeploymentManagerVSextension",
+      "version": "1.1.1",
+      "download_url": "https://download.red-gate.com/checkforupdates/DeploymentManagerVSextension/DeploymentManagerVSextension_1.1.1.953.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "DeploymentSuiteForOracle",
+      "name": "DeploymentSuiteForOracle",
+      "version": "",
+      "download_url": "https://download.red-gate.com/checkforupdates/DeploymentSuiteForOracle/DeploymentSuiteForOracle.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "DLMAutomation",
+      "name": "DLMAutomation",
+      "version": "2.1.3",
+      "download_url": "https://download.red-gate.com/checkforupdates/DLMAutomation/DLMAutomation_2.1.3.2175.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "DLMAutomationSuite",
+      "name": "DLMAutomationSuite",
+      "version": "1.2.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/DLMAutomationSuite/DLMAutomationSuite_1.2.0.2409.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "DLMAutomationSuiteforOracle",
+      "name": "DLMAutomationSuiteforOracle",
+      "version": "1.2.4",
+      "download_url": "https://download.red-gate.com/checkforupdates/DLMAutomationSuiteforOracle/DLMAutomationSuiteforOracle_1.2.4.275.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "ExceptionHunter",
+      "name": "ExceptionHunter",
+      "version": "2.1.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/ExceptionHunter/Exception_Hunter_2.1.0.2.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "ExchangeServerArchiver",
+      "name": "ExchangeServerArchiver",
+      "version": "3.0.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/ExchangeServerArchiver/ExchangeServerArchiver_3.0.0.922.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "Figleaf",
+      "name": "Figleaf",
+      "version": "7.0.36",
+      "download_url": "https://download.red-gate.com/checkforupdates/Figleaf/Figleaf_7.0.36.5701.exe",
+      "updated": "2019-09-19",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "FlywayCLI",
+      "name": "Flyway CLI",
+      "version": "12.2.0",
+      "download_url": "https://download.red-gate.com/maven/release/com/redgate/flyway/flyway-commandline/12.2.0",
+      "updated": "2026-03-26",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/fd",
+      "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
+    },
+    {
+      "key": "FlywayDesktop",
+      "name": "Flyway Desktop",
+      "version": "9.2.2",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktop/FlywayDesktop_9.2.2.0.exe",
+      "updated": "2026-03-19",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/fd",
+      "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
+    },
+    {
+      "key": "FlywayDesktopMac",
+      "name": "Flyway Desktop (macOS ARM)",
+      "version": "5.13.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopMac/FlywayDesktopMac_5.13.0.0.zip",
+      "updated": "2022-01-24",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com/fd",
+      "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
+    },
+    {
+      "key": "FlywayDesktopDarwinX64",
+      "name": "Flyway Desktop (macOS Intel)",
+      "version": "9.2.2",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinX64/FlywayDesktopDarwinX64_9.2.2.0.zip",
+      "updated": "2026-03-19",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/fd",
+      "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
+    },
+    {
+      "key": "FlywayDesktopDarwinArm64",
+      "name": "FlywayDesktopDarwinArm64",
+      "version": "9.2.2",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinArm64/FlywayDesktopDarwinArm64_9.2.2.0.zip",
+      "updated": "2026-03-19",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "FlywayDesktopLinuxX64",
+      "name": "FlywayDesktopLinuxX64",
+      "version": "9.2.2",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64/FlywayDesktopLinuxX64_9.2.2.0.tar.gz",
+      "updated": "2026-03-19",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "MySQLCompare",
+      "name": "MySQLCompare",
+      "version": "1.0.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/MySQLCompare/MySQLCompare_1.0.0.666.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "MySQLDataCompare",
+      "name": "MySQLDataCompare",
+      "version": "1.0.1",
+      "download_url": "https://download.red-gate.com/checkforupdates/MySQLDataCompare/MySQLDataCompare_1.0.1.1.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "NETReflectorDesktop",
+      "name": "NETReflectorDesktop",
+      "version": "9.0.2",
+      "download_url": "https://download.red-gate.com/checkforupdates/NETReflectorDesktop/NETReflectorDesktop_9.0.2.546.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "PSTImporter2010",
+      "name": "PSTImporter2010",
+      "version": "1.1.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/PSTImporter2010/PST_Importer_2010_1.1.0.111.msi",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "ReadyRoll",
+      "name": "ReadyRoll",
+      "version": "1.17.18158",
+      "download_url": "https://download.red-gate.com/checkforupdates/ReadyRoll/ReadyRoll_1.17.18158.17.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "RedgateMonitorWebService",
+      "name": "Redgate Monitor",
+      "version": "14.13.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorWebService/RedgateMonitorWebService_14.13.0.17984.exe",
+      "updated": "2026-03-26",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/monitor",
+      "release_notes_url": "https://documentation.red-gate.com/monitor/release-notes"
+    },
+    {
+      "key": "RedgateChangeAutomation",
+      "name": "RedgateChangeAutomation",
+      "version": "4.15.18431",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedgateChangeAutomation/RedgateChangeAutomation_4.15.18431.0.exe",
+      "updated": "2021-12-15",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "RedgateChangeAutomationBeta",
+      "name": "RedgateChangeAutomationBeta",
+      "version": "2.15.7160",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedgateChangeAutomationBeta/RedgateChangeAutomationBeta_2.15.7160.0.exe",
+      "updated": "2020-04-16",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "RedgateChangeControl",
+      "name": "RedgateChangeControl",
+      "version": "4.11.194",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedgateChangeControl/RedgateChangeControl_4.11.194.0.exe",
+      "updated": "2021-10-19",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "RedgateChangeControlBeta",
+      "name": "RedgateChangeControlBeta",
+      "version": "1.6.3492",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedgateChangeControlBeta/RedgateChangeControlBeta_1.6.3492.0.exe",
+      "updated": "2019-12-04",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "RedgateClient",
+      "name": "RedgateClient",
+      "version": "11.1.9",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedgateClient/RedgateClient_11.1.9.3436.zip",
+      "updated": "2024-07-15",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "RedgateMonitorSBOM",
+      "name": "RedgateMonitorSBOM",
+      "version": "14.13.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorSBOM/RedgateMonitorSBOM_14.13.0.17984.zip",
+      "updated": "2026-03-26",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "RedGateSQLServer",
+      "name": "RedGateSQLServer",
+      "version": "",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedGateSQLServer/RedGateSQLServer.zip",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "ReflectorInstaller",
+      "name": "ReflectorInstaller",
+      "version": "11.1.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/ReflectorInstaller/ReflectorInstaller_11.1.0.2167.exe",
+      "updated": "2021-10-04",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SchemaCompareforOracle",
+      "name": "Schema Compare for Oracle",
+      "version": "6.3.58",
+      "download_url": "https://download.red-gate.com/checkforupdates/SchemaCompareforOracle/SchemaCompareforOracle_6.3.58.6857.exe.sha256",
+      "updated": "2026-03-24",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/sco",
+      "release_notes_url": "https://documentation.red-gate.com/sco"
+    },
+    {
+      "key": "SchemaCompareForOracle",
+      "name": "SchemaCompareForOracle",
+      "version": "1.0.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SchemaCompareForOracle/Oracle Compare_1.0.0.860.zip",
+      "updated": "2019-09-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SchemaDocForOracle",
+      "name": "SchemaDocForOracle",
+      "version": "1.0.1",
+      "download_url": "https://download.red-gate.com/checkforupdates/SchemaDocForOracle/SchemaDocForOracle_1.0.1.47.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SchemaDocforOracle",
+      "name": "SchemaDocforOracle",
+      "version": "2.5.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SchemaDocforOracle/SchemaDocforOracle_2.5.0.42.exe",
+      "updated": "2019-09-19",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "ScriptsManager",
+      "name": "ScriptsManager",
+      "version": "1.3.4",
+      "download_url": "https://download.red-gate.com/checkforupdates/ScriptsManager/ScriptsManager_1.3.4.15.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SIP",
+      "name": "SIP",
+      "version": "",
+      "download_url": "https://download.red-gate.com/checkforupdates/SIP/build26.package",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SmartAssembly",
+      "name": "SmartAssembly",
+      "version": "8.4.3",
+      "download_url": "https://download.red-gate.com/checkforupdates/SmartAssembly/SmartAssembly_8.4.3.6747.exe",
+      "updated": "2026-02-19",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/sa",
+      "release_notes_url": "https://documentation.red-gate.com/sa/release-notes-and-other-versions"
+    },
+    {
+      "key": "SOC-CFU",
+      "name": "SOC-CFU",
+      "version": "",
+      "download_url": "https://download.red-gate.com/checkforupdates/SOC-CFU/SOC-CFU.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SourceControlforOracle",
+      "name": "Source Control for Oracle",
+      "version": "6.1.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SourceControlforOracle/SourceControlforOracle_6.1.0.6688.exe",
+      "updated": "2026-03-13",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/soco",
+      "release_notes_url": "https://documentation.red-gate.com/soco/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLBackup",
+      "name": "SQL Backup Pro",
+      "version": "10.1.34",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLBackup/SQLBackup_10.1.34.3119.exe",
+      "updated": "2025-07-16",
+      "status": "previous",
+      "doc_url": "https://documentation.red-gate.com/sbu",
+      "release_notes_url": "https://documentation.red-gate.com/sbu/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLChangeAutomation",
+      "name": "SQL Change Automation",
+      "version": "5.1.26058",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLChangeAutomation/SQLChangeAutomation_5.1.26058.7953.exe",
+      "updated": "2026-03-02",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/sca",
+      "release_notes_url": "https://documentation.red-gate.com/sca/release-notes-and-other-versions/sql-server-management-studio-add-in-release-notes"
+    },
+    {
+      "key": "SCAPowerShell",
+      "name": "SQL Change Automation PowerShell",
+      "version": "5.1.26082",
+      "download_url": "https://download.red-gate.com/checkforupdates/SCAPowerShell/SCAPowerShell_5.1.26082.8038.exe",
+      "updated": "2026-03-23",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/sca",
+      "release_notes_url": "https://documentation.red-gate.com/sca/release-notes-and-other-versions/powershell-module-release-notes"
+    },
+    {
+      "key": "SQLCloneServer",
+      "name": "SQL Clone",
+      "version": "5.6.26",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLCloneServer/SQLCloneServer_5.6.26.8702.exe",
+      "updated": "2026-03-13",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/clone",
+      "release_notes_url": "https://documentation.red-gate.com/clone/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLCompare",
+      "name": "SQL Compare",
+      "version": "16.0.9",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLCompare/SQLCompare_16.0.9.28654.exe",
+      "updated": "2026-03-24",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/sc",
+      "release_notes_url": "https://documentation.red-gate.com/sc/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLDataCatalog",
+      "name": "SQL Data Catalog",
+      "version": "2.0.43",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDataCatalog/SQLDataCatalog_2.0.43.8619.exe",
+      "updated": "2026-02-02",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/sql-data-catalog",
+      "release_notes_url": "https://documentation.red-gate.com/sql-data-catalog/release-notes"
+    },
+    {
+      "key": "SQLDataCompare",
+      "name": "SQL Data Compare",
+      "version": "16.0.9",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDataCompare/SQLDataCompare_16.0.9.28654.exe",
+      "updated": "2026-03-24",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/sdc",
+      "release_notes_url": "https://documentation.red-gate.com/sdc/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLDataGenerator",
+      "name": "SQL Data Generator",
+      "version": "4.8.5",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDataGenerator/SQLDataGenerator_4.8.5.7412.exe",
+      "updated": "2026-03-10",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/sdg",
+      "release_notes_url": "https://documentation.red-gate.com/sdg/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLDependencyTracker",
+      "name": "SQL Dependency Tracker",
+      "version": "3.6.4",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDependencyTracker/SQLDependencyTracker_3.6.4.7091.exe",
+      "updated": "2026-03-11",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/sdt",
+      "release_notes_url": "https://documentation.red-gate.com/sdt/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLDoc",
+      "name": "SQL Doc",
+      "version": "5.5.4",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDoc/SQLDoc_5.5.4.6276.exe",
+      "updated": "2026-03-11",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/sdoc",
+      "release_notes_url": "https://documentation.red-gate.com/sdoc/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLMonitorWeb",
+      "name": "SQL Monitor",
+      "version": "13.0.61",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLMonitorWeb/SQLMonitorWeb_13.0.61.6402.exe",
+      "updated": "2024-04-04",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com/sm",
+      "release_notes_url": "https://documentation.red-gate.com/sm/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLMultiScript",
+      "name": "SQL Multi Script",
+      "version": "1.7.3",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLMultiScript/SQLMultiScript_1.7.3.4456.exe",
+      "updated": "2026-03-24",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/sms",
+      "release_notes_url": "https://documentation.red-gate.com/sms/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLPrompt",
+      "name": "SQL Prompt",
+      "version": "11.3.8",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLPrompt/SQLPrompt_11.3.8.22342.exe",
+      "updated": "2026-03-19",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/sp",
+      "release_notes_url": "https://documentation.red-gate.com/sp/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLScriptsManager",
+      "name": "SQL Scripts Manager",
+      "version": "2.1.1",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLScriptsManager/SQLScriptsManager_2.1.1.1013.exe",
+      "updated": "2022-07-11",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com/ssm",
+      "release_notes_url": "https://documentation.red-gate.com/ssm/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLSearch",
+      "name": "SQL Search",
+      "version": "3.9.6",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLSearch/SQLSearch_3.9.6.6522.exe",
+      "updated": "2026-03-02",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/ss",
+      "release_notes_url": "https://documentation.red-gate.com/ss/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLSourceControl",
+      "name": "SQL Source Control",
+      "version": "8.1.10",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLSourceControl/SQLSourceControl_8.1.10.23527.exe",
+      "updated": "2026-03-12",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/soc",
+      "release_notes_url": "https://documentation.red-gate.com/soc/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLTest",
+      "name": "SQL Test",
+      "version": "4.4.4",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLTest/SQLTest_4.4.4.5252.exe",
+      "updated": "2026-03-11",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/sqt",
+      "release_notes_url": "https://documentation.red-gate.com/sqt/release-notes-and-other-versions"
+    },
+    {
+      "key": "SQLAutomationPack",
+      "name": "SQLAutomationPack",
+      "version": "1.1.2",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLAutomationPack/SQLAutomationPack_1.1.2.2238.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLAzureBackup",
+      "name": "SQLAzureBackup",
+      "version": "2.6.1",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLAzureBackup/SQLAzureBackup_2.6.1.131.zip",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLChangeAutomationPowerShell",
+      "name": "SQLChangeAutomationPowerShell",
+      "version": "3.3.19233",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLChangeAutomationPowerShell/SCA_PowerShell_3.3.19233.10102.exe",
+      "updated": "2019-09-19",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "sqlci-teamcity",
+      "name": "sqlci-teamcity",
+      "version": "",
+      "download_url": "https://download.red-gate.com/checkforupdates/sqlci-teamcity/sqlci-teamcity.zip",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "sqlciteamcity",
+      "name": "sqlciteamcity",
+      "version": "",
+      "download_url": "https://download.red-gate.com/checkforupdates/sqlciteamcity/sqlciteamcity.zip",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLClone",
+      "name": "SQLClone",
+      "version": "1.0.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLClone/SQLClone_1.0.0.4590.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLCompareEAP",
+      "name": "SQLCompareEAP",
+      "version": "10.1.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLCompareEAP/SQLCompareEAP_10.1.0.428.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLCompareFrequentUpdates",
+      "name": "SQLCompareFrequentUpdates",
+      "version": "11.1.9",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLCompareFrequentUpdates/SQLCompareFrequentUpdates_11.1.9.26.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLComparisonSDK",
+      "name": "SQLComparisonSDK",
+      "version": "12.4.11",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLComparisonSDK/SQLComparisonSDK_12.4.11.627.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLConnect",
+      "name": "SQLConnect",
+      "version": "",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLConnect/SQLConnect_1.0.exe",
+      "updated": "2019-09-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLDataCompareFrequentUpdates",
+      "name": "SQLDataCompareFrequentUpdates",
+      "version": "11.1.11",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDataCompareFrequentUpdates/SQLDataCompareFrequentUpdates_11.1.11.2.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLDataMasker",
+      "name": "SQLDataMasker",
+      "version": "1.0.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDataMasker/SQLDataMasker_1.0.0.235.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLDataPrivacySuite",
+      "name": "SQLDataPrivacySuite",
+      "version": "",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDataPrivacySuite/SQLDataPrivacySuite.exe",
+      "updated": "2020-11-18",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLDataRefresh",
+      "name": "SQLDataRefresh",
+      "version": "1.0.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDataRefresh/SQLDataRefresh_1.0.0.361.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLDBABundle",
+      "name": "SQLDBABundle",
+      "version": "",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDBABundle/SQLDBABundle.zip",
+      "updated": "2020-11-18",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLEstateManager",
+      "name": "SQLEstateManager",
+      "version": "1.1.9",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLEstateManager/SQLEstateManager_1.1.9.599.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLIndexManager",
+      "name": "SQLIndexManager",
+      "version": "1.2.3",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLIndexManager/SQLIndexManager_1.2.3.1998.exe",
+      "updated": "2022-07-15",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLLock",
+      "name": "SQLLock",
+      "version": "1.0.2",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLLock/SQLLock_1.0.2.7.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLMonitorSBOM",
+      "name": "SQLMonitorSBOM",
+      "version": "14.0.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLMonitorSBOM/SQLMonitorSBOM_14.0.0.7532.zip",
+      "updated": "2024-04-18",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLPackager",
+      "name": "SQLPackager",
+      "version": "6.4.1",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLPackager/SQL Packager_6.4.1.2.exe",
+      "updated": "2019-09-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLPromptDownload",
+      "name": "SQLPromptDownload",
+      "version": "",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLPromptDownload/SQLPromptDownload.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLRefactor",
+      "name": "SQLRefactor",
+      "version": "1.3.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLRefactor/SQL_Refactor_1.3.0.207.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLResponse",
+      "name": "SQLResponse",
+      "version": "1.2.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLResponse/SQL_Response_1.2.0.219.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLScripts",
+      "name": "SQLScripts",
+      "version": "1.1.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLScripts/SQLScripts_1.1.0.278.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLServerCentralforWindows",
+      "name": "SQLServerCentralforWindows",
+      "version": "1.0.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLServerCentralforWindows/SQLServerCentralforWindows_1.0.0.200.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLSourceControlFrequentUpdate",
+      "name": "SQLSourceControlFrequentUpdate",
+      "version": "3.8.8",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLSourceControlFrequentUpdate/SQLSourceControlFrequentUpdate_3.8.8.28.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLSourceControlFrequentUpdates",
+      "name": "SQLSourceControlFrequentUpdates",
+      "version": "4.2.3",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLSourceControlFrequentUpdates/SQLSourceControlFrequentUpdates_4.2.3.575.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLSourceControlupdate",
+      "name": "SQLSourceControlupdate",
+      "version": "3.8.13",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLSourceControlupdate/SQLSourceControlupdate_3.8.13.180.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLStorageCompress",
+      "name": "SQLStorageCompress",
+      "version": "6.1.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLStorageCompress/SQLStorageCompress_6.1.0.157.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLTabMagic",
+      "name": "SQLTabMagic",
+      "version": "0.4.2",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLTabMagic/SQLTabMagic_0.4.2.64.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLToolbelt",
+      "name": "SQLToolbelt",
+      "version": "",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLToolbelt/SQLToolbelt.exe",
+      "updated": "2020-11-18",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SQLToolkit",
+      "name": "SQLToolkit",
+      "version": "6.1.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLToolkit/SQL_Toolkit_6.1.0.3.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "SSASCompare",
+      "name": "SSASCompare",
+      "version": "0.3.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/SSASCompare/SSASCompare_0.3.0.99.exe",
+      "updated": "2018-10-30",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "temp",
+      "name": "temp",
+      "version": "",
+      "download_url": "https://download.red-gate.com/checkforupdates/temp/",
+      "updated": "2021-11-12",
+      "status": "old",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    }
+  ]
 }
