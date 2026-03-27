@@ -12,6 +12,13 @@ logger = logging.getLogger(__name__)
 CONFIG_FILE = 'config/products.csv'
 OUTPUT_FILE = 'data/products.json'
 
+# Products present in checkforupdates/ that should not be scraped.
+# Add keys here when a product is handled manually or is junk data.
+EXCLUDED_KEYS = {
+    'SQLToolbelt',  # handled manually via get_sql_toolbelts()
+    'temp',         # junk entry
+}
+
 
 def load_config():
     """Load product config keyed by S3 product key."""
@@ -237,8 +244,8 @@ def get_sql_toolbelts():
 def main():
     config = load_config()
     logger.info('Fetching product list from S3...')
-    product_keys = get_products()
-    logger.info(f'Found {len(product_keys)} products')
+    product_keys = [k for k in get_products() if k not in EXCLUDED_KEYS]
+    logger.info(f'Found {len(product_keys)} products (after exclusions)')
 
     logger.info('Fetching update info...')
     updates = get_updates(product_keys)
