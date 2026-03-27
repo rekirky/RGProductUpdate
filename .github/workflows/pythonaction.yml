@@ -26,15 +26,11 @@ jobs:
       - name: Run scraper
         run: python backend/scraper.py
 
-      - name: Commit data if changed
+      - name: Commit and push if changed
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add data/products.json
-          git diff --cached --quiet || git commit -m "Update product data"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "Update product data"
+          git push
