@@ -80,12 +80,13 @@ const NAME_FILTERS = {
   flyway:  (name, key) => name.includes('flyway'),
   dotnet:  (name, key) => name.includes('reflector') || name.includes('ants') || name.includes('smartassembly'),
   sqltoolbelt: (name, key) => [
-    'sql change automation', 'sql compare', 'sql data compare', 'sql data generator',
-    'sql dependency', 'sql doc', 'sql multi script', 'sql prompt',
-    'sql search', 'sql source control', 'sql test', 'sql backup',
+    'sql toolbelt', 'sql change automation', 'sql compare', 'sql data compare',
+    'sql data generator', 'sql dependency', 'sql doc', 'sql multi script',
+    'sql prompt', 'sql search', 'sql source control', 'sql test', 'sql backup',
   ].some(k => name.includes(k)),
   monitor: (name, key) => key.toLowerCase().includes('redgatemonitor') || name.includes('redgate monitor'),
   tdm:     (name, key) => name.includes('test data manager'),
+  bundles: (name, key) => ['SQLToolbelt', 'SQLToolbeltEssentials'].includes(key),
 };
 
 // ── Filtering ────────────────────────────────────────────────────────────────

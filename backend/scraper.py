@@ -201,6 +201,39 @@ def get_tdm():
     ]
 
 
+def get_sql_toolbelts():
+    """Fetch SQL Toolbelt and SQL Toolbelt Essentials from S3 root."""
+    entries = [
+        ('SQLToolbelt',           'SQL Toolbelt',            'http://download.red-gate.com/SQLToolbelt.exe'),
+        ('SQLToolbeltEssentials', 'SQL Toolbelt Essentials', 'http://download.red-gate.com/SQLToolbeltEssentials.exe'),
+    ]
+    products = []
+    for key, name, download_url in entries:
+        url = f'https://redgate-download.s3.eu-west-1.amazonaws.com/?prefix={key}.exe'
+        try:
+            data = fetch_xml(url)
+            contents = data['ListBucketResult'].get('Contents')
+            if not contents:
+                raise ValueError(f'{key}.exe not found in S3')
+            if isinstance(contents, list):
+                contents = contents[0]
+            updated = contents['LastModified'][:10]
+        except Exception as e:
+            logger.warning(f'Could not get date for {name}: {e}')
+            updated = ''
+        products.append({
+            'key': key,
+            'name': name,
+            'version': '',
+            'download_url': download_url,
+            'updated': updated,
+            'status': status_for_date(updated),
+            'doc_url': '',
+            'release_notes_url': '',
+        })
+    return products
+
+
 def main():
     config = load_config()
     logger.info('Fetching product list from S3...')
@@ -237,6 +270,12 @@ def main():
         products.extend(get_tdm())
     except Exception as e:
         logger.error(f'Failed to get TDM: {e}')
+
+    logger.info('Fetching SQL Toolbelt bundles...')
+    try:
+        products.extend(get_sql_toolbelts())
+    except Exception as e:
+        logger.error(f'Failed to get SQL Toolbelts: {e}')
 
     products.sort(key=lambda x: x['name'].lower())
 
