@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-27T08:11:43.398058+00:00",
+  "generated_at": "2026-03-27T08:20:54.726533+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -1032,13 +1032,33 @@
       "release_notes_url": ""
     },
     {
-      "key": "TDM",
-      "name": "Test Data Manager",
+      "key": "TDMAnonymize",
+      "name": "Test Data Manager Anonymize",
+      "version": "",
+      "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
+      "updated": "2026-03-26",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/anonymization-treatments",
+      "release_notes_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/gui-release-notes"
+    },
+    {
+      "key": "TDMGui",
+      "name": "Test Data Manager GUI",
       "version": "",
       "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
       "updated": "2026-03-26",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/tdm",
+      "release_notes_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/gui-release-notes"
+    },
+    {
+      "key": "TDMSubsetting",
+      "name": "Test Data Manager Subsetting",
+      "version": "",
+      "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
+      "updated": "2026-03-26",
+      "status": "current",
+      "doc_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/subsetting-treatments",
       "release_notes_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/gui-release-notes"
     }
   ]
