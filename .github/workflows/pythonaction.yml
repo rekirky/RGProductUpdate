@@ -8,6 +8,8 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout repo
@@ -24,7 +26,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run scraper
-        run: python backend/scraper.py
+        run: |
+          mkdir -p data
+          python backend/scraper.py
 
       - name: Commit and push if changed
         run: |
