@@ -6,6 +6,7 @@ let allProducts = [];
 let activeFilter = 'all';
 let activeNameFilter = 'all';
 let searchQuery = '';
+let hideOld = localStorage.getItem('hideOld') !== 'false'; // default true
 
 // ── Bootstrap ──────────────────────────────────────────────────────────────
 
@@ -77,27 +78,38 @@ function renderTable() {
 
 const NAME_FILTERS = {
   all:     () => true,
-  flyway:  (name, key) => name.includes('flyway'),
-  dotnet:  (name, key) => name.includes('reflector') || name.includes('ants') || name.includes('smartassembly'),
-  sqltoolbelt: (name, key) => [
+  flyway:  (name, _key) => name.includes('flyway'),
+  dotnet:  (name, _key) => name.includes('reflector') || name.includes('ants') || name.includes('smartassembly'),
+  sqltoolbelt: (name, _key) => [
     'sql toolbelt', 'sql change automation', 'sql compare', 'sql data compare',
     'sql data generator', 'sql dependency', 'sql doc', 'sql multi script',
     'sql prompt', 'sql search', 'sql source control', 'sql test', 'sql backup',
   ].some(k => name.includes(k)),
   monitor: (name, key) => key.toLowerCase().includes('redgatemonitor') || name.includes('redgate monitor'),
-  tdm:     (name, key) => name.includes('test data manager'),
-  bundles: (name, key) => ['SQLToolbelt', 'SQLToolbeltEssentials'].includes(key),
+  tdm:     (name, _key) => name.includes('test data manager'),
+  bundles: (_name, key) => ['SQLToolbelt', 'SQLToolbeltEssentials'].includes(key),
 };
 
 // ── Filtering ────────────────────────────────────────────────────────────────
+
+function isUpdatedThisWeek(dateStr) {
+  if (!dateStr) return false;
+  const updated = new Date(dateStr);
+  const cutoff  = new Date();
+  cutoff.setDate(cutoff.getDate() - 7);
+  return updated >= cutoff;
+}
 
 function filteredProducts() {
   const q = searchQuery;
   const nameFilterFn = NAME_FILTERS[activeNameFilter] || NAME_FILTERS.all;
   return allProducts.filter(p => {
+    if (hideOld && p.status === 'old') return false;
     const name = p.name.toLowerCase();
     const matchesSearch = !q || name.includes(q) || (p.version && p.version.includes(q));
-    const matchesStatus = activeFilter === 'all' || p.status === activeFilter;
+    const matchesStatus = activeFilter === 'all'    ? true
+                        : activeFilter === 'week'   ? isUpdatedThisWeek(p.updated)
+                        : p.status === activeFilter;
     const matchesName   = nameFilterFn(name, p.key);
     return matchesSearch && matchesStatus && matchesName;
   });
@@ -170,6 +182,14 @@ document.querySelectorAll('.filter-btn-tag').forEach(btn => {
     activeNameFilter = btn.dataset.nameFilter;
     renderTable();
   });
+});
+
+const hideOldCheckbox = document.getElementById('hide-old');
+hideOldCheckbox.checked = hideOld;
+hideOldCheckbox.addEventListener('change', () => {
+  hideOld = hideOldCheckbox.checked;
+  localStorage.setItem('hideOld', hideOld);
+  renderTable();
 });
 
 // ── Start ────────────────────────────────────────────────────────────────────

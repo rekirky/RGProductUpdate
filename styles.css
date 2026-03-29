@@ -262,6 +262,30 @@ main {
   color: var(--rg-white);
 }
 
+/* ---- Secondary controls ---- */
+.controls-secondary {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.825rem;
+  color: var(--rg-text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-label input[type="checkbox"] {
+  accent-color: var(--rg-red);
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
 /* ---- Summary bar ---- */
 .summary-bar {
   display: flex;

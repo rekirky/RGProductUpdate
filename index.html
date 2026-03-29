@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redgate Product Updates</title>
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=6">
   <link rel="icon" href="favicon.ico">
 </head>
 <body>
@@ -49,6 +49,7 @@
         </div>
         <div class="filter-group" role="group" aria-label="Filter by update status">
           <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="week">This week</button>
           <button class="filter-btn" data-filter="current">This year</button>
           <button class="filter-btn" data-filter="previous">Last year</button>
           <button class="filter-btn" data-filter="old">Older</button>
@@ -62,6 +63,13 @@
           <button class="filter-btn-tag" data-name-filter="dotnet">.NET</button>
           <button class="filter-btn-tag" data-name-filter="bundles">Bundles</button>
         </div>
+      </div>
+
+      <div class="controls-secondary">
+        <label class="toggle-label">
+          <input type="checkbox" id="hide-old" checked>
+          Hide older products
+        </label>
       </div>
 
       <div id="summary-bar" class="summary-bar" aria-live="polite"></div>
@@ -99,6 +107,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>
