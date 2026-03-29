@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-27T08:37:19.138106+00:00",
+  "generated_at": "2026-03-28T18:29:08.722330+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -494,9 +494,9 @@
     {
       "key": "SmartAssembly",
       "name": "SmartAssembly",
-      "version": "8.4.3",
-      "download_url": "https://download.red-gate.com/checkforupdates/SmartAssembly/SmartAssembly_8.4.3.6747.exe",
-      "updated": "2026-02-19",
+      "version": "8.4.4",
+      "download_url": "https://download.red-gate.com/checkforupdates/SmartAssembly/SmartAssembly_8.4.4.6815.exe",
+      "updated": "2026-03-27",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sa",
       "release_notes_url": "https://documentation.red-gate.com/sa/release-notes-and-other-versions"
@@ -1039,7 +1039,7 @@
       "updated": "2026-03-26",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/anonymization-treatments",
-      "release_notes_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/gui-release-notes"
+      "release_notes_url": "https://documentation.red-gate.com/testdatamanager/command-line-interface-cli/anonymization/anonymize-release-notes"
     },
     {
       "key": "TDMGui",
@@ -1052,14 +1052,14 @@
       "release_notes_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/gui-release-notes"
     },
     {
-      "key": "TDMSubsetting",
-      "name": "Test Data Manager Subsetting",
+      "key": "TDMSubsetter",
+      "name": "Test Data Manager Subsetter",
       "version": "",
       "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
       "updated": "2026-03-26",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/subsetting-treatments",
-      "release_notes_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/gui-release-notes"
+      "release_notes_url": "https://documentation.red-gate.com/testdatamanager/command-line-interface-cli/subsetting/subsetter-release-notes"
     }
   ]
 }
