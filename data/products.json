@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T18:49:45.335578+00:00",
+  "generated_at": "2026-04-02T18:44:31.108014+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -614,9 +614,9 @@
     {
       "key": "SQLDoc",
       "name": "SQL Doc",
-      "version": "5.5.4",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLDoc/SQLDoc_5.5.4.6276.exe",
-      "updated": "2026-03-11",
+      "version": "5.5.5",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDoc/SQLDoc_5.5.5.6319.exe",
+      "updated": "2026-04-02",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sdoc",
       "release_notes_url": "https://documentation.red-gate.com/sdoc/release-notes-and-other-versions"
@@ -696,7 +696,7 @@
       "name": "SQL Toolbelt",
       "version": "",
       "download_url": "http://download.red-gate.com/SQLToolbelt.exe",
-      "updated": "2026-03-31",
+      "updated": "2026-04-02",
       "status": "current",
       "doc_url": "",
       "release_notes_url": ""
@@ -706,7 +706,7 @@
       "name": "SQL Toolbelt Essentials",
       "version": "",
       "download_url": "http://download.red-gate.com/SQLToolbeltEssentials.exe",
-      "updated": "2026-03-31",
+      "updated": "2026-04-02",
       "status": "current",
       "doc_url": "",
       "release_notes_url": ""
