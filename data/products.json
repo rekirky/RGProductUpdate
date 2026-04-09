@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-08T19:04:41.292074+00:00",
+  "generated_at": "2026-04-09T18:52:20.805144+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -84,9 +84,9 @@
     {
       "key": "DataCompareforOracle",
       "name": "Data Compare for Oracle",
-      "version": "6.3.59",
-      "download_url": "https://download.red-gate.com/checkforupdates/DataCompareforOracle/DataCompareforOracle_6.3.59.6949.exe",
-      "updated": "2026-03-31",
+      "version": "6.3.60",
+      "download_url": "https://download.red-gate.com/checkforupdates/DataCompareforOracle/DataCompareforOracle_6.3.60.7045.exe",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/dco",
       "release_notes_url": "https://documentation.red-gate.com/dco"
@@ -244,9 +244,9 @@
     {
       "key": "FlywayDesktop",
       "name": "Flyway Desktop",
-      "version": "9.2.5",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktop/FlywayDesktop_9.2.5.0.exe",
-      "updated": "2026-04-08",
+      "version": "9.3.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktop/FlywayDesktop_9.3.0.0.exe",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/fd",
       "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
@@ -264,9 +264,9 @@
     {
       "key": "FlywayDesktopDarwinX64",
       "name": "Flyway Desktop (macOS Intel)",
-      "version": "9.2.5",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinX64/FlywayDesktopDarwinX64_9.2.5.0.zip",
-      "updated": "2026-04-08",
+      "version": "9.3.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinX64/FlywayDesktopDarwinX64_9.3.0.0.zip",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/fd",
       "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
@@ -274,9 +274,9 @@
     {
       "key": "FlywayDesktopDarwinArm64",
       "name": "FlywayDesktopDarwinArm64",
-      "version": "9.2.5",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinArm64/FlywayDesktopDarwinArm64_9.2.5.0.zip",
-      "updated": "2026-04-08",
+      "version": "9.3.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinArm64/FlywayDesktopDarwinArm64_9.3.0.0.zip",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
@@ -284,10 +284,20 @@
     {
       "key": "FlywayDesktopLinuxX64",
       "name": "FlywayDesktopLinuxX64",
-      "version": "9.2.5",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64/FlywayDesktopLinuxX64_9.2.5.0.tar.gz",
-      "updated": "2026-04-08",
+      "version": "9.3.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64/FlywayDesktopLinuxX64_9.3.0.0.tar.gz",
+      "updated": "2026-04-09",
       "status": "current",
+      "doc_url": "https://documentation.red-gate.com",
+      "release_notes_url": ""
+    },
+    {
+      "key": "MySQLCompare",
+      "name": "MySQLCompare",
+      "version": "1.0.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/MySQLCompare/MySQLCompare_1.0.0.666.exe",
+      "updated": "2018-10-30",
+      "status": "old",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
     },
@@ -334,9 +344,9 @@
     {
       "key": "RedgateMonitorWebService",
       "name": "Redgate Monitor",
-      "version": "14.13.0",
-      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorWebService/RedgateMonitorWebService_14.13.0.17984.exe",
-      "updated": "2026-03-26",
+      "version": "14.14.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorWebService/RedgateMonitorWebService_14.14.0.19593.exe",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/monitor",
       "release_notes_url": "https://documentation.red-gate.com/monitor/release-notes"
@@ -394,9 +404,9 @@
     {
       "key": "RedgateMonitorSBOM",
       "name": "RedgateMonitorSBOM",
-      "version": "14.13.0",
-      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorSBOM/RedgateMonitorSBOM_14.13.0.17984.zip",
-      "updated": "2026-03-26",
+      "version": "14.14.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorSBOM/RedgateMonitorSBOM_14.14.0.19593.zip",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
@@ -424,9 +434,9 @@
     {
       "key": "SchemaCompareforOracle",
       "name": "Schema Compare for Oracle",
-      "version": "6.3.59",
-      "download_url": "https://download.red-gate.com/checkforupdates/SchemaCompareforOracle/SchemaCompareforOracle_6.3.59.6949.exe",
-      "updated": "2026-03-31",
+      "version": "6.3.60",
+      "download_url": "https://download.red-gate.com/checkforupdates/SchemaCompareforOracle/SchemaCompareforOracle_6.3.60.7045.exe",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sco",
       "release_notes_url": "https://documentation.red-gate.com/sco"
@@ -584,9 +594,9 @@
     {
       "key": "SQLDataGenerator",
       "name": "SQL Data Generator",
-      "version": "4.8.5",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLDataGenerator/SQLDataGenerator_4.8.5.7412.exe",
-      "updated": "2026-03-10",
+      "version": "4.8.6",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDataGenerator/SQLDataGenerator_4.8.6.7457.exe",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sdg",
       "release_notes_url": "https://documentation.red-gate.com/sdg/release-notes-and-other-versions"
@@ -594,9 +604,9 @@
     {
       "key": "SQLDependencyTracker",
       "name": "SQL Dependency Tracker",
-      "version": "3.6.4",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLDependencyTracker/SQLDependencyTracker_3.6.4.7091.exe",
-      "updated": "2026-03-11",
+      "version": "3.6.5",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDependencyTracker/SQLDependencyTracker_3.6.5.7161.exe",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sdt",
       "release_notes_url": "https://documentation.red-gate.com/sdt/release-notes-and-other-versions"
@@ -664,9 +674,9 @@
     {
       "key": "SQLSourceControl",
       "name": "SQL Source Control",
-      "version": "8.1.11",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLSourceControl/SQLSourceControl_8.1.11.23596.exe",
-      "updated": "2026-03-31",
+      "version": "8.1.12",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLSourceControl/SQLSourceControl_8.1.12.23635.exe",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/soc",
       "release_notes_url": "https://documentation.red-gate.com/soc/release-notes-and-other-versions"
@@ -686,7 +696,7 @@
       "name": "SQL Toolbelt",
       "version": "",
       "download_url": "http://download.red-gate.com/SQLToolbelt.exe",
-      "updated": "2026-04-08",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "",
       "release_notes_url": ""
@@ -696,7 +706,7 @@
       "name": "SQL Toolbelt Essentials",
       "version": "",
       "download_url": "http://download.red-gate.com/SQLToolbeltEssentials.exe",
-      "updated": "2026-04-08",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "",
       "release_notes_url": ""
@@ -1026,7 +1036,7 @@
       "name": "Test Data Manager Anonymize",
       "version": "",
       "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
-      "updated": "2026-03-26",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/anonymization-treatments",
       "release_notes_url": "https://documentation.red-gate.com/testdatamanager/command-line-interface-cli/anonymization/anonymize-release-notes"
@@ -1036,7 +1046,7 @@
       "name": "Test Data Manager GUI",
       "version": "",
       "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
-      "updated": "2026-03-26",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/tdm",
       "release_notes_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/gui-release-notes"
@@ -1046,7 +1056,7 @@
       "name": "Test Data Manager Subsetter",
       "version": "",
       "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
-      "updated": "2026-03-26",
+      "updated": "2026-04-09",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/subsetting-treatments",
       "release_notes_url": "https://documentation.red-gate.com/testdatamanager/command-line-interface-cli/subsetting/subsetter-release-notes"
