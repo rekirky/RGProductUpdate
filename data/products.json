@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T18:52:20.805144+00:00",
+  "generated_at": "2026-04-10T18:40:43.842461+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -244,9 +244,9 @@
     {
       "key": "FlywayDesktop",
       "name": "Flyway Desktop",
-      "version": "9.3.0",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktop/FlywayDesktop_9.3.0.0.exe",
-      "updated": "2026-04-09",
+      "version": "9.3.1",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktop/FlywayDesktop_9.3.1.0.exe",
+      "updated": "2026-04-10",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/fd",
       "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
@@ -264,9 +264,9 @@
     {
       "key": "FlywayDesktopDarwinX64",
       "name": "Flyway Desktop (macOS Intel)",
-      "version": "9.3.0",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinX64/FlywayDesktopDarwinX64_9.3.0.0.zip",
-      "updated": "2026-04-09",
+      "version": "9.3.1",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinX64/FlywayDesktopDarwinX64_9.3.1.0.zip",
+      "updated": "2026-04-10",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/fd",
       "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
@@ -274,9 +274,9 @@
     {
       "key": "FlywayDesktopDarwinArm64",
       "name": "FlywayDesktopDarwinArm64",
-      "version": "9.3.0",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinArm64/FlywayDesktopDarwinArm64_9.3.0.0.zip",
-      "updated": "2026-04-09",
+      "version": "9.3.1",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinArm64/FlywayDesktopDarwinArm64_9.3.1.0.zip",
+      "updated": "2026-04-10",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
@@ -284,9 +284,9 @@
     {
       "key": "FlywayDesktopLinuxX64",
       "name": "FlywayDesktopLinuxX64",
-      "version": "9.3.0",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64/FlywayDesktopLinuxX64_9.3.0.0.tar.gz",
-      "updated": "2026-04-09",
+      "version": "9.3.1",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64/FlywayDesktopLinuxX64_9.3.1.0.tar.gz",
+      "updated": "2026-04-10",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
