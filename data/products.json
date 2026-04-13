@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-12T18:35:29.443608+00:00",
+  "generated_at": "2026-04-13T19:03:52.556643+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -684,9 +684,9 @@
     {
       "key": "SQLTest",
       "name": "SQL Test",
-      "version": "4.4.4",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLTest/SQLTest_4.4.4.5252.exe",
-      "updated": "2026-03-11",
+      "version": "4.4.5",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLTest/SQLTest_4.4.5.5330.exe",
+      "updated": "2026-04-13",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sqt",
       "release_notes_url": "https://documentation.red-gate.com/sqt/release-notes-and-other-versions"
@@ -696,7 +696,7 @@
       "name": "SQL Toolbelt",
       "version": "",
       "download_url": "http://download.red-gate.com/SQLToolbelt.exe",
-      "updated": "2026-04-09",
+      "updated": "2026-04-13",
       "status": "current",
       "doc_url": "",
       "release_notes_url": ""
@@ -706,7 +706,7 @@
       "name": "SQL Toolbelt Essentials",
       "version": "",
       "download_url": "http://download.red-gate.com/SQLToolbeltEssentials.exe",
-      "updated": "2026-04-09",
+      "updated": "2026-04-13",
       "status": "current",
       "doc_url": "",
       "release_notes_url": ""
