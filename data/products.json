@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-14T19:00:50.228054+00:00",
+  "generated_at": "2026-04-15T19:03:08.109875+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -84,9 +84,9 @@
     {
       "key": "DataCompareforOracle",
       "name": "Data Compare for Oracle",
-      "version": "6.3.60",
-      "download_url": "https://download.red-gate.com/checkforupdates/DataCompareforOracle/DataCompareforOracle_6.3.60.7045.exe",
-      "updated": "2026-04-09",
+      "version": "6.3.61",
+      "download_url": "https://download.red-gate.com/checkforupdates/DataCompareforOracle/DataCompareforOracle_6.3.61.7152.exe",
+      "updated": "2026-04-15",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/dco",
       "release_notes_url": "https://documentation.red-gate.com/dco"
@@ -434,9 +434,9 @@
     {
       "key": "SchemaCompareforOracle",
       "name": "Schema Compare for Oracle",
-      "version": "6.3.60",
-      "download_url": "https://download.red-gate.com/checkforupdates/SchemaCompareforOracle/SchemaCompareforOracle_6.3.60.7045.exe",
-      "updated": "2026-04-09",
+      "version": "6.3.61",
+      "download_url": "https://download.red-gate.com/checkforupdates/SchemaCompareforOracle/SchemaCompareforOracle_6.3.61.7152.exe",
+      "updated": "2026-04-15",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sco",
       "release_notes_url": "https://documentation.red-gate.com/sco"
