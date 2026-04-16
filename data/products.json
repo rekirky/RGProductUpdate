@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T19:03:08.109875+00:00",
+  "generated_at": "2026-04-16T19:00:30.528392+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -244,9 +244,9 @@
     {
       "key": "FlywayDesktop",
       "name": "Flyway Desktop",
-      "version": "9.3.2",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktop/FlywayDesktop_9.3.2.0.exe",
-      "updated": "2026-04-14",
+      "version": "9.3.3",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktop/FlywayDesktop_9.3.3.0.exe",
+      "updated": "2026-04-16",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/fd",
       "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
@@ -264,9 +264,9 @@
     {
       "key": "FlywayDesktopDarwinX64",
       "name": "Flyway Desktop (macOS Intel)",
-      "version": "9.3.2",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinX64/FlywayDesktopDarwinX64_9.3.2.0.zip",
-      "updated": "2026-04-14",
+      "version": "9.3.3",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinX64/FlywayDesktopDarwinX64_9.3.3.0.zip",
+      "updated": "2026-04-16",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/fd",
       "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
@@ -274,9 +274,9 @@
     {
       "key": "FlywayDesktopDarwinArm64",
       "name": "FlywayDesktopDarwinArm64",
-      "version": "9.3.2",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinArm64/FlywayDesktopDarwinArm64_9.3.2.0.zip",
-      "updated": "2026-04-14",
+      "version": "9.3.3",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinArm64/FlywayDesktopDarwinArm64_9.3.3.0.zip",
+      "updated": "2026-04-16",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
@@ -284,9 +284,9 @@
     {
       "key": "FlywayDesktopLinuxX64",
       "name": "FlywayDesktopLinuxX64",
-      "version": "9.3.2",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64/FlywayDesktopLinuxX64_9.3.2.0.tar.gz",
-      "updated": "2026-04-14",
+      "version": "9.3.3",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64/FlywayDesktopLinuxX64_9.3.3.0.tar.gz",
+      "updated": "2026-04-16",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
@@ -344,9 +344,9 @@
     {
       "key": "RedgateMonitorWebService",
       "name": "Redgate Monitor",
-      "version": "14.14.0",
-      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorWebService/RedgateMonitorWebService_14.14.0.19593.exe",
-      "updated": "2026-04-09",
+      "version": "14.15.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorWebService/RedgateMonitorWebService_14.15.0.20815.exe",
+      "updated": "2026-04-16",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/monitor",
       "release_notes_url": "https://documentation.red-gate.com/monitor/release-notes"
@@ -404,9 +404,9 @@
     {
       "key": "RedgateMonitorSBOM",
       "name": "RedgateMonitorSBOM",
-      "version": "14.14.0",
-      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorSBOM/RedgateMonitorSBOM_14.14.0.19593.zip",
-      "updated": "2026-04-09",
+      "version": "14.15.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorSBOM/RedgateMonitorSBOM_14.15.0.20815.zip",
+      "updated": "2026-04-16",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
