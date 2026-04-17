@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T19:00:30.528392+00:00",
+  "generated_at": "2026-04-17T18:45:15.612575+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -244,9 +244,9 @@
     {
       "key": "FlywayDesktop",
       "name": "Flyway Desktop",
-      "version": "9.3.3",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktop/FlywayDesktop_9.3.3.0.exe",
-      "updated": "2026-04-16",
+      "version": "9.3.4",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktop/FlywayDesktop_9.3.4.0.exe",
+      "updated": "2026-04-17",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/fd",
       "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
@@ -264,9 +264,9 @@
     {
       "key": "FlywayDesktopDarwinX64",
       "name": "Flyway Desktop (macOS Intel)",
-      "version": "9.3.3",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinX64/FlywayDesktopDarwinX64_9.3.3.0.zip",
-      "updated": "2026-04-16",
+      "version": "9.3.4",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinX64/FlywayDesktopDarwinX64_9.3.4.0.zip",
+      "updated": "2026-04-17",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/fd",
       "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
@@ -274,9 +274,9 @@
     {
       "key": "FlywayDesktopDarwinArm64",
       "name": "FlywayDesktopDarwinArm64",
-      "version": "9.3.3",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinArm64/FlywayDesktopDarwinArm64_9.3.3.0.zip",
-      "updated": "2026-04-16",
+      "version": "9.3.4",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopDarwinArm64/FlywayDesktopDarwinArm64_9.3.4.0.zip",
+      "updated": "2026-04-17",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
@@ -284,9 +284,9 @@
     {
       "key": "FlywayDesktopLinuxX64",
       "name": "FlywayDesktopLinuxX64",
-      "version": "9.3.3",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64/FlywayDesktopLinuxX64_9.3.3.0.tar.gz",
-      "updated": "2026-04-16",
+      "version": "9.3.4",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64/FlywayDesktopLinuxX64_9.3.4.0.tar.gz",
+      "updated": "2026-04-17",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
@@ -514,9 +514,9 @@
     {
       "key": "SourceControlforOracle",
       "name": "Source Control for Oracle",
-      "version": "6.1.0",
-      "download_url": "https://download.red-gate.com/checkforupdates/SourceControlforOracle/SourceControlforOracle_6.1.0.6688.exe",
-      "updated": "2026-03-13",
+      "version": "6.1.1",
+      "download_url": "https://download.red-gate.com/checkforupdates/SourceControlforOracle/SourceControlforOracle_6.1.1.7191.exe",
+      "updated": "2026-04-17",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/soco",
       "release_notes_url": "https://documentation.red-gate.com/soco/release-notes-and-other-versions"
@@ -1036,7 +1036,7 @@
       "name": "Test Data Manager Anonymize",
       "version": "",
       "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
-      "updated": "2026-04-14",
+      "updated": "2026-04-17",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/anonymization-treatments",
       "release_notes_url": "https://documentation.red-gate.com/testdatamanager/command-line-interface-cli/anonymization/anonymize-release-notes"
@@ -1046,7 +1046,7 @@
       "name": "Test Data Manager GUI",
       "version": "",
       "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
-      "updated": "2026-04-14",
+      "updated": "2026-04-17",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/tdm",
       "release_notes_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/gui-release-notes"
@@ -1056,7 +1056,7 @@
       "name": "Test Data Manager Subsetter",
       "version": "",
       "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
-      "updated": "2026-04-14",
+      "updated": "2026-04-17",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/subsetting-treatments",
       "release_notes_url": "https://documentation.red-gate.com/testdatamanager/command-line-interface-cli/subsetting/subsetter-release-notes"
