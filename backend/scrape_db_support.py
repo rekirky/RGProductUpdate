@@ -159,9 +159,18 @@ def expand_rowspans(table_elem):
     if not all_rows:
         return [], []
 
-    # Treat first row as headers if all cells were <th>
-    first_cells = rows[0].find_all(['th', 'td'])
-    if first_cells and all(c.name == 'th' for c in first_cells):
+    # Promote the first row to headers when:
+    #   (a) every cell is a <th>, OR
+    #   (b) the row lives inside a <thead> element
+    # Confluence renders headers as <thead><tr><td> (not <th>), so checking
+    # only for <th> misses most real-world pages.
+    first_row_elem = rows[0]
+    first_cells = first_row_elem.find_all(['th', 'td'])
+    is_header_row = (
+        (first_cells and all(c.name == 'th' for c in first_cells))
+        or first_row_elem.parent.name == 'thead'
+    )
+    if is_header_row:
         return all_rows[0], all_rows[1:]
 
     return [], all_rows
@@ -345,10 +354,23 @@ def scrape_product(source):
     engines, cloud_matrix = find_cloud_matrix(tables)
     if source['key'] == 'flyway':
         version_support = find_flyway_tier_tables(tables)
+        if not version_support:
+            logger.info('Flyway: no tier tables found — falling back to find_version_tables')
+            version_support = find_version_tables(tables)
     else:
         version_support = find_version_tables(tables)
 
     if not cloud_matrix and not version_support:
+        # Log table headers to help diagnose why nothing matched.
+        for i, t in enumerate(tables[:10]):
+            hdrs, _ = expand_rowspans(t)
+            if hdrs:
+                logger.warning(f'  table[{i}] headers: {hdrs}')
+            else:
+                first = t.find('tr')
+                if first:
+                    sample = [c.get_text(strip=True)[:30] for c in first.find_all(['th', 'td'])[:6]]
+                    logger.warning(f'  table[{i}] no headers detected, first-row cells: {sample}')
         logger.warning(f'No usable data extracted from {url}')
         return None
 
