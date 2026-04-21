@@ -50,8 +50,10 @@ SOURCES = [
 ]
 
 STATUS_MAP = {
-    '✅': 'supported',      # ✅ green — fully supported
-    '✔': 'compatible',     # ✔ orange — community-compatible tier
+    '✅': 'supported',      # ✅ green emoji — fully supported
+    '☑': 'supported',      # ☑ U+2611 ballot box with check — Flyway supported
+    '✔': 'compatible',     # ✔ orange heavy check — community-compatible tier
+    '◩': 'compatible',     # ◩ U+25E9 half-filled square — Flyway compatible
     '🧪': 'preview',       # 🧪 test tube — preview/beta
     '❌': 'not_supported',  # ❌
     '✖': 'not_supported',  # ✖
@@ -290,11 +292,25 @@ def find_flyway_tier_tables(tables):
     results = []
     for table in tables:
         headers, data_rows = expand_rowspans(table)
-        if not headers:
+        if not headers or not data_rows:
             continue
         norm = [h.strip().lower() for h in headers]
 
         present_tiers = [col for col in FLYWAY_TIER_COLS if col in norm]
+
+        # The Flyway docs use a two-row header: row 1 contains group labels
+        # ('Flyway Edition', 'Capabilities'), row 2 has the actual column names
+        # (Community, Teams, Enterprise, Foundational, Advanced).
+        # If the first promoted header row doesn't match, check data_rows[0].
+        if len(present_tiers) < 2:
+            sub_norm = [h.strip().lower() for h in data_rows[0]]
+            sub_tiers = [col for col in FLYWAY_TIER_COLS if col in sub_norm]
+            if len(sub_tiers) >= 2:
+                headers = data_rows[0]
+                data_rows = data_rows[1:]
+                norm = sub_norm
+                present_tiers = sub_tiers
+
         if len(present_tiers) < 2:
             continue
 

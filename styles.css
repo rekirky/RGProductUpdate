@@ -282,10 +282,10 @@ main {
 
 .filter-btn-tag[data-product="monitor"]:hover,
 .filter-btn-tag[data-product="monitor"].active {
-  background: #1A6BB5;
-  border-color: #1A6BB5;
+  background: #2DB84B;
+  border-color: #2DB84B;
   color: #FFFFFF;
-  box-shadow: 0 2px 6px rgba(26,107,181,0.35);
+  box-shadow: 0 2px 6px rgba(45,184,75,0.35);
 }
 
 /* Fallback for any product without a specific colour */
