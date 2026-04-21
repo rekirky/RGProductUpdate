@@ -1,11 +1,17 @@
 {
-  "generated_at": "2026-04-21T00:00:00+00:00",
+  "generated_at": "2026-04-21T05:00:06.550983+00:00",
   "products": [
     {
       "key": "tdm",
       "name": "Test Data Manager",
       "source_url": "https://documentation.red-gate.com/tdm/redgate-test-data-manager-overview/database-engine-support",
-      "engines": ["SQL Server", "PostgreSQL", "Oracle", "MySQL", "MariaDB"],
+      "engines": [
+        "SQL Server",
+        "PostgreSQL",
+        "Oracle",
+        "MySQL",
+        "MariaDB"
+      ],
       "cloud_matrix": [
         {
           "provider": "Amazon",
@@ -20,23 +26,23 @@
         },
         {
           "provider": "Amazon",
-          "service": "RDS",
+          "service": "Aurora",
           "support": {
-            "SQL Server": "supported",
-            "PostgreSQL": "supported",
-            "Oracle": "preview",
-            "MySQL": "preview",
-            "MariaDB": "preview"
+            "SQL Server": null,
+            "PostgreSQL": null,
+            "Oracle": null,
+            "MySQL": null,
+            "MariaDB": null
           }
         },
         {
           "provider": "Amazon",
-          "service": "Aurora",
+          "service": "RDS",
           "support": {
-            "SQL Server": null,
-            "PostgreSQL": "preview",
+            "SQL Server": "supported",
+            "PostgreSQL": "supported",
             "Oracle": null,
-            "MySQL": "preview",
+            "MySQL": null,
             "MariaDB": null
           }
         },
@@ -55,7 +61,7 @@
           "provider": "Microsoft",
           "service": "Managed Instance",
           "support": {
-            "SQL Server": "preview",
+            "SQL Server": null,
             "PostgreSQL": null,
             "Oracle": null,
             "MySQL": null,
@@ -66,7 +72,7 @@
           "provider": "Microsoft",
           "service": "Azure SQL DB",
           "support": {
-            "SQL Server": "preview",
+            "SQL Server": null,
             "PostgreSQL": null,
             "Oracle": null,
             "MySQL": null,
@@ -77,7 +83,7 @@
           "provider": "Microsoft",
           "service": "Azure SQL DB Hyperscale",
           "support": {
-            "SQL Server": "preview",
+            "SQL Server": null,
             "PostgreSQL": null,
             "Oracle": null,
             "MySQL": null,
@@ -88,7 +94,7 @@
           "provider": "Microsoft",
           "service": "Fabric SQL Database",
           "support": {
-            "SQL Server": "preview",
+            "SQL Server": null,
             "PostgreSQL": null,
             "Oracle": null,
             "MySQL": null,
@@ -97,10 +103,10 @@
         },
         {
           "provider": "Microsoft",
-          "service": "Flexible Server PostgreSQL",
+          "service": "Flexible Server for PostgreSQL",
           "support": {
             "SQL Server": null,
-            "PostgreSQL": "preview",
+            "PostgreSQL": null,
             "Oracle": null,
             "MySQL": null,
             "MariaDB": null
@@ -108,12 +114,12 @@
         },
         {
           "provider": "Microsoft",
-          "service": "Azure Database MySQL - Flexible",
+          "service": "Azure Database for MySQL - Flexible Server",
           "support": {
             "SQL Server": null,
             "PostgreSQL": null,
             "Oracle": null,
-            "MySQL": "preview",
+            "MySQL": null,
             "MariaDB": null
           }
         },
@@ -132,10 +138,10 @@
           "provider": "Google",
           "service": "Cloud SQL",
           "support": {
-            "SQL Server": "preview",
-            "PostgreSQL": "preview",
+            "SQL Server": null,
+            "PostgreSQL": null,
             "Oracle": null,
-            "MySQL": "preview",
+            "MySQL": null,
             "MariaDB": null
           }
         },
@@ -155,7 +161,7 @@
           "service": "Neon",
           "support": {
             "SQL Server": null,
-            "PostgreSQL": "preview",
+            "PostgreSQL": null,
             "Oracle": null,
             "MySQL": null,
             "MariaDB": null
@@ -166,36 +172,14 @@
           "service": "CrunchyData",
           "support": {
             "SQL Server": null,
-            "PostgreSQL": "preview",
+            "PostgreSQL": null,
             "Oracle": null,
             "MySQL": null,
             "MariaDB": null
           }
         }
       ],
-      "version_support": [
-        {
-          "feature": "Anonymize",
-          "engines": [
-            {"name": "SQL Server", "versions": ["2019", "2022", "2025"]},
-            {"name": "Azure SQL Database", "versions": []},
-            {"name": "PostgreSQL", "versions": ["13", "14", "15", "16", "17", "18"]},
-            {"name": "MySQL", "versions": ["8", "9"]},
-            {"name": "MariaDB", "versions": ["10", "11", "12"]},
-            {"name": "Oracle", "versions": ["19.3", "23"]}
-          ]
-        },
-        {
-          "feature": "Subset",
-          "engines": [
-            {"name": "SQL Server", "versions": ["2019", "2022", "2025"]},
-            {"name": "PostgreSQL", "versions": ["13", "14", "15", "16", "17", "18"]},
-            {"name": "MySQL", "versions": ["8", "9"]},
-            {"name": "MariaDB", "versions": ["10", "11", "12"]},
-            {"name": "Oracle", "versions": ["19.3", "23"]}
-          ]
-        }
-      ]
+      "version_support": []
     },
     {
       "key": "flyway",
@@ -207,108 +191,533 @@
         {
           "feature": "SQL Server",
           "engines": [
-            {"name": "SQL Server", "versions": ["2008R2", "2012", "2014", "2016", "2017", "2019", "2022", "2025"], "status": "supported"},
-            {"name": "Azure SQL Database", "versions": ["Latest"], "status": "supported"},
-            {"name": "Azure SQL Managed Instance", "versions": ["Latest"], "status": "supported"},
-            {"name": "Amazon RDS for SQL Server", "versions": ["Latest"], "status": "supported"},
-            {"name": "SQL Server – Google Cloud", "versions": ["2017", "2019", "2022"], "status": "supported"}
+            {
+              "name": "SQL Server",
+              "versions": [
+                "2008R2",
+                "2012",
+                "2014",
+                "2016",
+                "2017",
+                "2019",
+                "2022",
+                "2025"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Azure SQL Database",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Azure SQL Managed Instance",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Amazon RDS for SQL Server",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "SQL Server \u2013 Google Cloud",
+              "versions": [
+                "2017",
+                "2019",
+                "2022"
+              ],
+              "status": "supported"
+            }
           ]
         },
         {
           "feature": "Oracle",
           "engines": [
-            {"name": "Oracle Database", "versions": ["18c or below", "19c", "21c", "23ai"], "status": "supported"},
-            {"name": "Oracle Autonomous Database", "versions": ["18c or below", "19c", "21c", "23ai"], "status": "supported"},
-            {"name": "Oracle RAC / Exadata", "versions": ["19c or below", "23ai"], "status": "supported"},
-            {"name": "Amazon RDS for Oracle", "versions": ["19c", "21c"], "status": "supported"}
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "18c or below",
+                "19c",
+                "21c",
+                "23ai"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Oracle Autonomous Database",
+              "versions": [
+                "18c or below",
+                "19c",
+                "21c",
+                "23ai"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Oracle RAC / Exadata",
+              "versions": [
+                "19c or below",
+                "23ai"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Amazon RDS for Oracle",
+              "versions": [
+                "19c",
+                "21c"
+              ],
+              "status": "supported"
+            }
           ]
         },
         {
           "feature": "PostgreSQL",
           "engines": [
-            {"name": "PostgreSQL", "versions": ["9.0", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "10", "11", "12", "13", "14", "15", "16", "17", "18"], "status": "supported"},
-            {"name": "Amazon RDS for PostgreSQL", "versions": ["Latest"], "status": "supported"},
-            {"name": "Amazon Aurora PostgreSQL", "versions": ["Latest"], "status": "supported"},
-            {"name": "Google Cloud PostgreSQL", "versions": ["Latest"], "status": "supported"},
-            {"name": "Azure PostgreSQL – Flexible Server", "versions": ["Latest"], "status": "supported"},
-            {"name": "Azure PostgreSQL – Single Server", "versions": ["Latest"], "status": "supported"},
-            {"name": "EnterpriseDB Advanced Server", "versions": ["16"], "status": "compatible"},
-            {"name": "EnterpriseDB Extended Server", "versions": ["Preview"], "status": "compatible"},
-            {"name": "YugabyteDB", "versions": ["2.4", "2.5", "2.6", "2.7"], "status": "compatible"},
-            {"name": "CockroachDB", "versions": ["21.1"], "status": "compatible"},
-            {"name": "TimescaleDB", "versions": ["2.13", "2.14", "2.15", "2.16"], "status": "compatible"}
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "9.0",
+                "9.1",
+                "9.2",
+                "9.3",
+                "9.4",
+                "9.5",
+                "9.6",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Amazon Aurora PostgreSQL",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Google Cloud PostgreSQL",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Azure PostgreSQL \u2013 Flexible Server",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Azure PostgreSQL \u2013 Single Server",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "16"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "Preview"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "2.4",
+                "2.5",
+                "2.6",
+                "2.7"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "21.1"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "2.13",
+                "2.14",
+                "2.15",
+                "2.16"
+              ],
+              "status": "compatible"
+            }
           ]
         },
         {
           "feature": "MySQL",
           "engines": [
-            {"name": "MySQL", "versions": ["5.6", "5.7", "8.0", "8.1", "8.2", "8.3", "9.4"], "status": "supported"},
-            {"name": "Amazon RDS for MySQL", "versions": ["Latest"], "status": "supported"},
-            {"name": "Amazon Aurora MySQL", "versions": ["Latest"], "status": "supported"},
-            {"name": "Azure MySQL", "versions": ["Latest"], "status": "supported"},
-            {"name": "Google Cloud MySQL", "versions": ["Latest"], "status": "supported"},
-            {"name": "Percona Server for MySQL", "versions": ["8.0"], "status": "compatible"},
-            {"name": "Percona XtraDB Cluster", "versions": ["5.7", "8.0"], "status": "compatible"}
+            {
+              "name": "MySQL",
+              "versions": [
+                "5.6",
+                "5.7",
+                "8.0",
+                "8.1",
+                "8.2",
+                "8.3",
+                "9.4"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Amazon RDS for MySQL",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Amazon Aurora MySQL",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Azure MySQL",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Google Cloud MySQL",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Percona Server for MySQL",
+              "versions": [
+                "8.0"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "Percona XtraDB Cluster",
+              "versions": [
+                "5.7",
+                "8.0"
+              ],
+              "status": "compatible"
+            }
           ]
         },
         {
           "feature": "MariaDB",
           "engines": [
-            {"name": "MariaDB", "versions": ["5.1", "5.2", "5.3", "5.5", "10.0", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6", "10.10", "10.11"], "status": "supported"},
-            {"name": "SkySQL", "versions": ["Latest"], "status": "supported"},
-            {"name": "Amazon RDS for MariaDB", "versions": ["Latest"], "status": "supported"}
+            {
+              "name": "MariaDB",
+              "versions": [
+                "5.1",
+                "5.2",
+                "5.3",
+                "5.5",
+                "10.0",
+                "10.1",
+                "10.2",
+                "10.3",
+                "10.4",
+                "10.5",
+                "10.6",
+                "10.10",
+                "10.11"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "SkySQL",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Amazon RDS for MariaDB",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            }
           ]
         },
         {
           "feature": "Data Warehousing",
           "engines": [
-            {"name": "Azure Synapse (Dedicated Pools)", "versions": ["Latest"], "status": "supported"},
-            {"name": "Amazon Redshift", "versions": ["Latest"], "status": "supported"},
-            {"name": "Google BigQuery", "versions": ["Latest"], "status": "supported"},
-            {"name": "Snowflake", "versions": ["3.50+", "4–4.2", "5–5.1", "6–6.29", "7–7.33"], "status": "supported"},
-            {"name": "Databricks", "versions": ["Latest"], "status": "supported"},
-            {"name": "Microsoft Fabric Database", "versions": ["Latest"], "status": "supported"}
+            {
+              "name": "Azure Synapse (Dedicated Pools)",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Amazon Redshift",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Google BigQuery",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Snowflake",
+              "versions": [
+                "3.50+",
+                "4\u20134.2",
+                "5\u20135.1",
+                "6\u20136.29",
+                "7\u20137.33"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Databricks",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Microsoft Fabric Database",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            }
           ]
         },
         {
           "feature": "NoSQL & Document",
           "engines": [
-            {"name": "MongoDB", "versions": ["Latest"], "status": "supported"},
-            {"name": "MongoDB Atlas Cloud", "versions": ["Latest"], "status": "supported"},
-            {"name": "Amazon DocumentDB", "versions": ["Latest"], "status": "compatible"},
-            {"name": "Couchbase (N1QL)", "versions": ["7.6.6"], "status": "compatible"}
+            {
+              "name": "MongoDB",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "MongoDB Atlas Cloud",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Amazon DocumentDB",
+              "versions": [
+                "Latest"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "Couchbase (N1QL)",
+              "versions": [
+                "7.6.6"
+              ],
+              "status": "compatible"
+            }
           ]
         },
         {
           "feature": "Specialised",
           "engines": [
-            {"name": "Apache Cassandra", "versions": ["Latest"], "status": "compatible"},
-            {"name": "ClickHouse", "versions": ["Latest"], "status": "compatible"},
-            {"name": "OceanBase", "versions": ["Latest"], "status": "compatible"},
-            {"name": "Google Cloud Spanner", "versions": ["Latest"], "status": "compatible"},
-            {"name": "SingleStoreDB", "versions": ["7.87.1"], "status": "compatible"},
-            {"name": "TiDB", "versions": ["5.0"], "status": "compatible"},
-            {"name": "SAP HANA", "versions": ["1.0", "2.0"], "status": "compatible"},
-            {"name": "SAP HANA Cloud", "versions": ["4.0"], "status": "compatible"}
+            {
+              "name": "Apache Cassandra",
+              "versions": [
+                "Latest"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "ClickHouse",
+              "versions": [
+                "Latest"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "OceanBase",
+              "versions": [
+                "Latest"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "Google Cloud Spanner",
+              "versions": [
+                "Latest"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "SingleStoreDB",
+              "versions": [
+                "7.87.1"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "TiDB",
+              "versions": [
+                "5.0"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "SAP HANA",
+              "versions": [
+                "1.0",
+                "2.0"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "SAP HANA Cloud",
+              "versions": [
+                "4.0"
+              ],
+              "status": "compatible"
+            }
           ]
         },
         {
           "feature": "Enterprise",
           "engines": [
-            {"name": "IBM DB2 LUW", "versions": ["9.7", "9.8", "10.1", "10.5", "11.1", "11.5"], "status": "supported"},
-            {"name": "IBM DB2 z/OS", "versions": ["Latest"], "status": "supported"},
-            {"name": "Informix", "versions": ["12.10"], "status": "compatible"},
-            {"name": "Sybase ASE", "versions": ["15.7", "16.0", "16.1", "16.2", "16.3"], "status": "compatible"}
+            {
+              "name": "IBM DB2 LUW",
+              "versions": [
+                "9.7",
+                "9.8",
+                "10.1",
+                "10.5",
+                "11.1",
+                "11.5"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "IBM DB2 z/OS",
+              "versions": [
+                "Latest"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Informix",
+              "versions": [
+                "12.10"
+              ],
+              "status": "compatible"
+            },
+            {
+              "name": "Sybase ASE",
+              "versions": [
+                "15.7",
+                "16.0",
+                "16.1",
+                "16.2",
+                "16.3"
+              ],
+              "status": "compatible"
+            }
           ]
         },
         {
           "feature": "Lightweight & Embedded",
           "engines": [
-            {"name": "SQLite", "versions": ["3.7+"], "status": "supported"},
-            {"name": "H2", "versions": ["1.2", "1.3", "1.4", "2.0"], "status": "supported"},
-            {"name": "HSQLDB", "versions": ["1.8", "2.0", "2.2", "2.3", "2.4"], "status": "supported"},
-            {"name": "Derby", "versions": ["10.11", "10.12", "10.13", "10.14", "10.15"], "status": "supported"},
-            {"name": "Firebird", "versions": ["3.0", "4.0"], "status": "supported"}
+            {
+              "name": "SQLite",
+              "versions": [
+                "3.7+"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "H2",
+              "versions": [
+                "1.2",
+                "1.3",
+                "1.4",
+                "2.0"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "HSQLDB",
+              "versions": [
+                "1.8",
+                "2.0",
+                "2.2",
+                "2.3",
+                "2.4"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Derby",
+              "versions": [
+                "10.11",
+                "10.12",
+                "10.13",
+                "10.14",
+                "10.15"
+              ],
+              "status": "supported"
+            },
+            {
+              "name": "Firebird",
+              "versions": [
+                "3.0",
+                "4.0"
+              ],
+              "status": "supported"
+            }
           ]
         }
       ]
@@ -317,7 +726,12 @@
       "key": "monitor",
       "name": "Redgate Monitor",
       "source_url": "https://documentation.red-gate.com/monitor/supported-platforms-239667385.html",
-      "engines": ["SQL Server", "PostgreSQL", "Oracle", "MySQL"],
+      "engines": [
+        "SQL Server",
+        "PostgreSQL",
+        "Oracle",
+        "MySQL"
+      ],
       "cloud_matrix": [
         {
           "provider": "Amazon",
@@ -404,10 +818,50 @@
         {
           "feature": "Monitoring",
           "engines": [
-            {"name": "SQL Server", "versions": ["2008R2", "2012", "2014", "2016", "2017", "2019", "2022", "2025"]},
-            {"name": "PostgreSQL", "versions": ["10", "11", "12", "13", "14", "15", "16", "17"]},
-            {"name": "Oracle", "versions": ["19c+"]},
-            {"name": "MySQL", "versions": ["8.0.31+", "8.1", "8.2", "8.3", "8.4", "9.0", "9.1"]}
+            {
+              "name": "SQL Server",
+              "versions": [
+                "2008R2",
+                "2012",
+                "2014",
+                "2016",
+                "2017",
+                "2019",
+                "2022",
+                "2025"
+              ]
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17"
+              ]
+            },
+            {
+              "name": "Oracle",
+              "versions": [
+                "19c+"
+              ]
+            },
+            {
+              "name": "MySQL",
+              "versions": [
+                "8.0.31+",
+                "8.1",
+                "8.2",
+                "8.3",
+                "8.4",
+                "9.0",
+                "9.1"
+              ]
+            }
           ]
         }
       ]
