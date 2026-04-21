@@ -192,10 +192,6 @@
               ]
             },
             {
-              "name": "Azure SQL Database",
-              "versions": []
-            },
-            {
               "name": "PostgreSQL",
               "versions": [
                 "13",
@@ -222,7 +218,7 @@
               ]
             },
             {
-              "name": "Oracle",
+              "name": "Oracle (Standard & Enterprise)",
               "versions": [
                 "19.3",
                 "23"
@@ -268,7 +264,7 @@
               ]
             },
             {
-              "name": "Oracle",
+              "name": "Oracle (Standard & Enterprise)",
               "versions": [
                 "19.3",
                 "23"
