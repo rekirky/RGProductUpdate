@@ -152,8 +152,9 @@ function renderMatrix() {
     let prevProvider = null;
     rows.forEach(row => {
       const isNewGroup = row.provider !== prevProvider;
-      html += `<tr${isNewGroup ? ' class="provider-start"' : ''}>`;
-      html += `<td class="cell-provider">${esc(row.provider)}</td>`;
+      const providerGroup = MAIN_PROVIDERS.includes(row.provider) ? row.provider.toLowerCase() : 'other';
+      html += `<tr${isNewGroup ? ' class="provider-start"' : ''} data-provider="${providerGroup}">`;
+      html += `<td class="cell-provider" data-provider="${providerGroup}">${esc(row.provider)}</td>`;
       html += `<td class="cell-service">${esc(row.service)}</td>`;
       engines.forEach(engine => {
         html += `<td class="cell-support">${cloudStatusBadge(row.support[engine])}</td>`;
@@ -256,20 +257,18 @@ function renderVersionTable(feature) {
   if (!feature) return;
 
   const wrapper = document.getElementById('version-table-wrapper');
-  const legend  = document.getElementById('version-legend');
 
   // Hybrid Flyway format: has both 'versions' and tier columns
   const isFlywayFormat = feature.engines.length > 0 && 'community' in feature.engines[0];
 
   if (isFlywayFormat) {
-    renderFlywayTable(feature, wrapper, legend);
+    renderFlywayTable(feature, wrapper);
   } else {
-    renderVersionsTable(feature, wrapper, legend);
+    renderVersionsTable(feature, wrapper);
   }
 }
 
-function renderFlywayTable(feature, wrapper, legend) {
-  if (legend) legend.hidden = true;
+function renderFlywayTable(feature, wrapper) {
 
   let html = `<table aria-label="${esc(feature.feature)} supported versions">
     <thead>
@@ -308,9 +307,8 @@ function renderFlywayTable(feature, wrapper, legend) {
   wrapper.innerHTML = html;
 }
 
-function renderVersionsTable(feature, wrapper, legend) {
+function renderVersionsTable(feature, wrapper) {
   const hasStatus = feature.engines.some(e => e.status != null);
-  if (legend) legend.hidden = !hasStatus;
 
   let html = `<table aria-label="${esc(feature.feature)} supported versions">
     <thead><tr>
