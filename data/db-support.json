@@ -29,9 +29,9 @@
           "service": "Aurora",
           "support": {
             "SQL Server": null,
-            "PostgreSQL": null,
+            "PostgreSQL": "Preview",
             "Oracle": null,
-            "MySQL": null,
+            "MySQL": "Preview",
             "MariaDB": null
           }
         },
