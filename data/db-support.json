@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T12:54:08.645405+00:00",
+  "generated_at": "2026-04-21T13:03:37.651029+00:00",
   "products": [
     {
       "key": "tdm",
@@ -286,59 +286,478 @@
           "engines": [
             {
               "name": "Azure SQL Database",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure SQL Database",
+              "versions": [
+                "SQL Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure SQL Database",
+              "versions": [
+                "SQL Server 2025",
+                "SQL Server 2022",
+                "SQL Server 2019"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure SQL Database",
+              "versions": [
+                "SQL Server 2017",
+                "SQL Server 2016"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure SQL Database",
+              "versions": [
+                "SQL Server 2014",
+                "SQL Server 2012",
+                "SQL Server 2008R2",
+                "SQL Server 2008"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Azure SQL Database",
+              "versions": [
+                "SQL Server - Google Cloud"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure SQL Database",
+              "versions": [
+                "SQL Server Google Cloud 2022",
+                "SQL Server Google Cloud 2019"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure SQL Database",
+              "versions": [
+                "SQL Server Google Cloud 2017"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "Azure SQL Database Managed Instance",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure SQL Database Managed Instance",
+              "versions": [
+                "SQL Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure SQL Database Managed Instance",
+              "versions": [
+                "SQL Server 2025",
+                "SQL Server 2022",
+                "SQL Server 2019"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure SQL Database Managed Instance",
+              "versions": [
+                "SQL Server 2017",
+                "SQL Server 2016"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure SQL Database Managed Instance",
+              "versions": [
+                "SQL Server 2014",
+                "SQL Server 2012",
+                "SQL Server 2008R2",
+                "SQL Server 2008"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Azure SQL Database Managed Instance",
+              "versions": [
+                "SQL Server - Google Cloud"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure SQL Database Managed Instance",
+              "versions": [
+                "SQL Server Google Cloud 2022",
+                "SQL Server Google Cloud 2019"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure SQL Database Managed Instance",
+              "versions": [
+                "SQL Server Google Cloud 2017"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "Amazon RDS for SQL Server",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for SQL Server",
+              "versions": [
+                "SQL Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for SQL Server",
+              "versions": [
+                "SQL Server 2025",
+                "SQL Server 2022",
+                "SQL Server 2019"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for SQL Server",
+              "versions": [
+                "SQL Server 2017",
+                "SQL Server 2016"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for SQL Server",
+              "versions": [
+                "SQL Server 2014",
+                "SQL Server 2012",
+                "SQL Server 2008R2",
+                "SQL Server 2008"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for SQL Server",
+              "versions": [
+                "SQL Server - Google Cloud"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for SQL Server",
+              "versions": [
+                "SQL Server Google Cloud 2022",
+                "SQL Server Google Cloud 2019"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for SQL Server",
+              "versions": [
+                "SQL Server Google Cloud 2017"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "SQL Server",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "SQL Server",
+              "versions": [
+                "SQL Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "SQL Server",
+              "versions": [
+                "SQL Server 2025",
+                "SQL Server 2022",
+                "SQL Server 2019"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "SQL Server",
+              "versions": [
+                "SQL Server 2017",
+                "SQL Server 2016"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "SQL Server",
+              "versions": [
+                "SQL Server 2014",
+                "SQL Server 2012",
+                "SQL Server 2008R2",
+                "SQL Server 2008"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "SQL Server",
+              "versions": [
+                "SQL Server - Google Cloud"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "SQL Server",
+              "versions": [
+                "SQL Server Google Cloud 2022",
+                "SQL Server Google Cloud 2019"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "SQL Server",
+              "versions": [
+                "SQL Server Google Cloud 2017"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "SQL Server - Google Cloud",
               "versions": [
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "SQL Server 2025SQL Server 2022SQL Server 2019",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "SQL Server 2017SQL Server 2016",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "SQL Server 2014SQL Server 2012SQL Server 2008R2SQL Server 2008",
-                "\u25e9",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "SQL Server Google Cloud 2022SQL Server Google Cloud 2019",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "SQL Server Google Cloud 2017",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611"
-              ]
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "SQL Server - Google Cloud",
+              "versions": [
+                "SQL Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "SQL Server - Google Cloud",
+              "versions": [
+                "SQL Server 2025",
+                "SQL Server 2022",
+                "SQL Server 2019"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "SQL Server - Google Cloud",
+              "versions": [
+                "SQL Server 2017",
+                "SQL Server 2016"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "SQL Server - Google Cloud",
+              "versions": [
+                "SQL Server 2014",
+                "SQL Server 2012",
+                "SQL Server 2008R2",
+                "SQL Server 2008"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "SQL Server - Google Cloud",
+              "versions": [
+                "SQL Server - Google Cloud"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "SQL Server - Google Cloud",
+              "versions": [
+                "SQL Server Google Cloud 2022",
+                "SQL Server Google Cloud 2019"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "SQL Server - Google Cloud",
+              "versions": [
+                "SQL Server Google Cloud 2017"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             }
           ]
         },
@@ -347,76 +766,531 @@
           "engines": [
             {
               "name": "Oracle Database",
-              "versions": []
+              "versions": [
+                "Oracle Autonomous Database (PaaS)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "23ai"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "21c"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "19c"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "18c or below"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "compatible",
+              "foundational": "compatible",
+              "advanced": "compatible"
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "Oracle RAC/Exadata"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "23ai"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "19c or below"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "compatible",
+              "foundational": "compatible",
+              "advanced": "compatible"
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "* We test these databases, but not on Exadata"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "Amazon RDS"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "21c"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "19c"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "Oracle Autonomous Database (PaaS)",
-              "versions": []
+              "versions": [
+                "Oracle Autonomous Database (PaaS)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Autonomous Database (PaaS)",
+              "versions": [
+                "23ai"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Autonomous Database (PaaS)",
+              "versions": [
+                "21c"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Autonomous Database (PaaS)",
+              "versions": [
+                "19c"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Autonomous Database (PaaS)",
+              "versions": [
+                "18c or below"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "compatible",
+              "foundational": "compatible",
+              "advanced": "compatible"
+            },
+            {
+              "name": "Oracle Autonomous Database (PaaS)",
+              "versions": [
+                "Oracle RAC/Exadata"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Oracle Autonomous Database (PaaS)",
+              "versions": [
+                "23ai"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Autonomous Database (PaaS)",
+              "versions": [
+                "19c or below"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "compatible",
+              "foundational": "compatible",
+              "advanced": "compatible"
+            },
+            {
+              "name": "Oracle Autonomous Database (PaaS)",
+              "versions": [
+                "* We test these databases, but not on Exadata"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Oracle Autonomous Database (PaaS)",
+              "versions": [
+                "Amazon RDS"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Oracle Autonomous Database (PaaS)",
+              "versions": [
+                "21c"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Autonomous Database (PaaS)",
+              "versions": [
+                "19c"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "Oracle RAC/Exadata",
-              "versions": []
+              "versions": [
+                "Oracle Autonomous Database (PaaS)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle RAC/Exadata",
+              "versions": [
+                "23ai"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle RAC/Exadata",
+              "versions": [
+                "21c"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle RAC/Exadata",
+              "versions": [
+                "19c"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle RAC/Exadata",
+              "versions": [
+                "18c or below"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "compatible",
+              "foundational": "compatible",
+              "advanced": "compatible"
+            },
+            {
+              "name": "Oracle RAC/Exadata",
+              "versions": [
+                "Oracle RAC/Exadata"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Oracle RAC/Exadata",
+              "versions": [
+                "23ai"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle RAC/Exadata",
+              "versions": [
+                "19c or below"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "compatible",
+              "foundational": "compatible",
+              "advanced": "compatible"
+            },
+            {
+              "name": "Oracle RAC/Exadata",
+              "versions": [
+                "* We test these databases, but not on Exadata"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Oracle RAC/Exadata",
+              "versions": [
+                "Amazon RDS"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Oracle RAC/Exadata",
+              "versions": [
+                "21c"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle RAC/Exadata",
+              "versions": [
+                "19c"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "Amazon RDS for Oracle",
               "versions": [
-                "Oracle Autonomous Database (PaaS)",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "23ai",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "21c",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "19c",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "18c or below",
-                "\u25e9",
-                "\u25e9",
-                "\u25e9",
-                "\u25e9",
-                "\u25e9",
-                "Oracle RAC/Exadata",
-                "23ai",
-                "\u2611*",
-                "\u2611",
-                "\u2611*",
-                "\u2611",
-                "\u2611*",
-                "19c or below",
-                "\u25e9*",
-                "\u25e9*",
-                "\u25e9*",
-                "\u25e9",
-                "\u25e9*",
-                "* We test these databases, but not on Exadata",
-                "21c",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "19c",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611"
-              ]
+                "Oracle Autonomous Database (PaaS)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for Oracle",
+              "versions": [
+                "23ai"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for Oracle",
+              "versions": [
+                "21c"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for Oracle",
+              "versions": [
+                "19c"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for Oracle",
+              "versions": [
+                "18c or below"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "compatible",
+              "foundational": "compatible",
+              "advanced": "compatible"
+            },
+            {
+              "name": "Amazon RDS for Oracle",
+              "versions": [
+                "Oracle RAC/Exadata"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for Oracle",
+              "versions": [
+                "23ai"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for Oracle",
+              "versions": [
+                "19c or below"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "compatible",
+              "foundational": "compatible",
+              "advanced": "compatible"
+            },
+            {
+              "name": "Amazon RDS for Oracle",
+              "versions": [
+                "* We test these databases, but not on Exadata"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for Oracle",
+              "versions": [
+                "Amazon RDS"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for Oracle",
+              "versions": [
+                "21c"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for Oracle",
+              "versions": [
+                "19c"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             }
           ]
         },
@@ -425,118 +1299,2027 @@
           "engines": [
             {
               "name": "Amazon RDS for PostgreSQL",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "PostgreSQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "12, 13, 14, 15,16, 17, 18"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "11",
+                "10",
+                "9.6",
+                "9.5",
+                "9.4",
+                "9.3"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "9.2",
+                "9.1",
+                "9"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "EnterpriseDB Advanced Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "16 (with PostgreSQL driver)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "EnterpriseDB Extended Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "YugabyteDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "2.7"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "2.6"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "2.5",
+                "2.4"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "CockroachDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "21.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "TimescaleDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for PostgreSQL",
+              "versions": [
+                "2.13 - 2.16"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "Google Cloud for PostgreSQL",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "PostgreSQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "12, 13, 14, 15,16, 17, 18"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "11",
+                "10",
+                "9.6",
+                "9.5",
+                "9.4",
+                "9.3"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "9.2",
+                "9.1",
+                "9"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "EnterpriseDB Advanced Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "16 (with PostgreSQL driver)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "EnterpriseDB Extended Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "YugabyteDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "2.7"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "2.6"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "2.5",
+                "2.4"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "CockroachDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "21.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "TimescaleDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "2.13 - 2.16"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "Azure PostgreSQL - Flexible Server",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "PostgreSQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "12, 13, 14, 15,16, 17, 18"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "11",
+                "10",
+                "9.6",
+                "9.5",
+                "9.4",
+                "9.3"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "9.2",
+                "9.1",
+                "9"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "EnterpriseDB Advanced Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "16 (with PostgreSQL driver)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "EnterpriseDB Extended Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "YugabyteDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "2.7"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "2.6"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "2.5",
+                "2.4"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "CockroachDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "21.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "TimescaleDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "2.13 - 2.16"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "Azure PostgreSQL - Single Server",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "PostgreSQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "12, 13, 14, 15,16, 17, 18"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "11",
+                "10",
+                "9.6",
+                "9.5",
+                "9.4",
+                "9.3"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "9.2",
+                "9.1",
+                "9"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "EnterpriseDB Advanced Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "16 (with PostgreSQL driver)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "EnterpriseDB Extended Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "YugabyteDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "2.7"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "2.6"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "2.5",
+                "2.4"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "CockroachDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "21.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "TimescaleDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "2.13 - 2.16"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "Aurora PostgreSQL",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "PostgreSQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "12, 13, 14, 15,16, 17, 18"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "11",
+                "10",
+                "9.6",
+                "9.5",
+                "9.4",
+                "9.3"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "9.2",
+                "9.1",
+                "9"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "EnterpriseDB Advanced Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "16 (with PostgreSQL driver)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "EnterpriseDB Extended Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "YugabyteDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "2.7"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "2.6"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "2.5",
+                "2.4"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "CockroachDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "21.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "TimescaleDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "2.13 - 2.16"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "PostgreSQL",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "PostgreSQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "12, 13, 14, 15,16, 17, 18"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "11",
+                "10",
+                "9.6",
+                "9.5",
+                "9.4",
+                "9.3"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "9.2",
+                "9.1",
+                "9"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "EnterpriseDB Advanced Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "16 (with PostgreSQL driver)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "EnterpriseDB Extended Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "YugabyteDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "2.7"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "2.6"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "2.5",
+                "2.4"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "CockroachDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "21.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "TimescaleDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "PostgreSQL",
+              "versions": [
+                "2.13 - 2.16"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "EnterpriseDB Advanced Server",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "PostgreSQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "12, 13, 14, 15,16, 17, 18"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "11",
+                "10",
+                "9.6",
+                "9.5",
+                "9.4",
+                "9.3"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "9.2",
+                "9.1",
+                "9"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "EnterpriseDB Advanced Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "16 (with PostgreSQL driver)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "EnterpriseDB Extended Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "YugabyteDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "2.7"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "2.6"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "2.5",
+                "2.4"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "CockroachDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "21.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "TimescaleDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Advanced Server",
+              "versions": [
+                "2.13 - 2.16"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "EnterpriseDB Extended Server",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "PostgreSQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "12, 13, 14, 15,16, 17, 18"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "11",
+                "10",
+                "9.6",
+                "9.5",
+                "9.4",
+                "9.3"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "9.2",
+                "9.1",
+                "9"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "EnterpriseDB Advanced Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "16 (with PostgreSQL driver)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "EnterpriseDB Extended Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "YugabyteDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "2.7"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "2.6"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "2.5",
+                "2.4"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "CockroachDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "21.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "TimescaleDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "EnterpriseDB Extended Server",
+              "versions": [
+                "2.13 - 2.16"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "YugabyteDB",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "PostgreSQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "12, 13, 14, 15,16, 17, 18"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "11",
+                "10",
+                "9.6",
+                "9.5",
+                "9.4",
+                "9.3"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "9.2",
+                "9.1",
+                "9"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "EnterpriseDB Advanced Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "16 (with PostgreSQL driver)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "EnterpriseDB Extended Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "YugabyteDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "2.7"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "2.6"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "2.5",
+                "2.4"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "CockroachDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "21.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "TimescaleDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "YugabyteDB",
+              "versions": [
+                "2.13 - 2.16"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "CockroachDB",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "PostgreSQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "12, 13, 14, 15,16, 17, 18"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "11",
+                "10",
+                "9.6",
+                "9.5",
+                "9.4",
+                "9.3"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "9.2",
+                "9.1",
+                "9"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "EnterpriseDB Advanced Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "16 (with PostgreSQL driver)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "EnterpriseDB Extended Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "YugabyteDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "2.7"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "2.6"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "2.5",
+                "2.4"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "CockroachDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "21.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "TimescaleDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "CockroachDB",
+              "versions": [
+                "2.13 - 2.16"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             },
             {
               "name": "TimescaleDB",
               "versions": [
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "PostgreSQL",
-                "12, 13, 14, 15,16, 17, 18",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "11109.69.59.49.3",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "9.29.19",
-                "\u25e9",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "EnterpriseDB Advanced Server",
-                "16 (with PostgreSQL driver)",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "EnterpriseDB Extended Server",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "preview",
-                "YugabyteDB",
-                "2.7",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "2.6",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "2.52.4",
-                "\u25e9",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "CockroachDB",
-                "21.1",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "2.13 - 2.16",
-                "\u25e9",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "Latest(Dedicated Pools only)",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611"
-              ]
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "PostgreSQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "12, 13, 14, 15,16, 17, 18"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "11",
+                "10",
+                "9.6",
+                "9.5",
+                "9.4",
+                "9.3"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "9.2",
+                "9.1",
+                "9"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "EnterpriseDB Advanced Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "16 (with PostgreSQL driver)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "EnterpriseDB Extended Server"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "YugabyteDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "2.7"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "2.6"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "2.5",
+                "2.4"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "CockroachDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "21.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "TimescaleDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "TimescaleDB",
+              "versions": [
+                "2.13 - 2.16"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
             }
           ]
         },
@@ -545,325 +3328,1250 @@
           "engines": [
             {
               "name": "Amazon RDS for MySQL",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for MySQL",
+              "versions": [
+                "MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for MySQL",
+              "versions": [
+                "9.4"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for MySQL",
+              "versions": [
+                "8.3",
+                "8.2",
+                "8.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for MySQL",
+              "versions": [
+                "8.0",
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for MySQL",
+              "versions": [
+                "5.6"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for MySQL",
+              "versions": [
+                "Percona Server for\u00a0MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for MySQL",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for MySQL",
+              "versions": [
+                "Percona XtraDB Cluster"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for MySQL",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for MySQL",
+              "versions": [
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             },
             {
               "name": "Azure MySQL",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure MySQL",
+              "versions": [
+                "MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure MySQL",
+              "versions": [
+                "9.4"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Azure MySQL",
+              "versions": [
+                "8.3",
+                "8.2",
+                "8.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure MySQL",
+              "versions": [
+                "8.0",
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure MySQL",
+              "versions": [
+                "5.6"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure MySQL",
+              "versions": [
+                "Percona Server for\u00a0MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure MySQL",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure MySQL",
+              "versions": [
+                "Percona XtraDB Cluster"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Azure MySQL",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure MySQL",
+              "versions": [
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             },
             {
               "name": "Google Cloud",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Google Cloud",
+              "versions": [
+                "MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud",
+              "versions": [
+                "9.4"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud",
+              "versions": [
+                "8.3",
+                "8.2",
+                "8.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Google Cloud",
+              "versions": [
+                "8.0",
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Google Cloud",
+              "versions": [
+                "5.6"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Google Cloud",
+              "versions": [
+                "Percona Server for\u00a0MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Google Cloud",
+              "versions": [
+                "Percona XtraDB Cluster"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Google Cloud",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Google Cloud",
+              "versions": [
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             },
             {
               "name": "MySQL",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "MySQL",
+              "versions": [
+                "MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "MySQL",
+              "versions": [
+                "9.4"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "MySQL",
+              "versions": [
+                "8.3",
+                "8.2",
+                "8.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "MySQL",
+              "versions": [
+                "8.0",
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "MySQL",
+              "versions": [
+                "5.6"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "MySQL",
+              "versions": [
+                "Percona Server for\u00a0MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "MySQL",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "MySQL",
+              "versions": [
+                "Percona XtraDB Cluster"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "MySQL",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "MySQL",
+              "versions": [
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             },
             {
               "name": "Percona Server for MySQL",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Percona Server for MySQL",
+              "versions": [
+                "MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Percona Server for MySQL",
+              "versions": [
+                "9.4"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Percona Server for MySQL",
+              "versions": [
+                "8.3",
+                "8.2",
+                "8.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Percona Server for MySQL",
+              "versions": [
+                "8.0",
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Percona Server for MySQL",
+              "versions": [
+                "5.6"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Percona Server for MySQL",
+              "versions": [
+                "Percona Server for\u00a0MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Percona Server for MySQL",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Percona Server for MySQL",
+              "versions": [
+                "Percona XtraDB Cluster"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Percona Server for MySQL",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Percona Server for MySQL",
+              "versions": [
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             },
             {
               "name": "Percona XtraDB Cluster",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Percona XtraDB Cluster",
+              "versions": [
+                "MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Percona XtraDB Cluster",
+              "versions": [
+                "9.4"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Percona XtraDB Cluster",
+              "versions": [
+                "8.3",
+                "8.2",
+                "8.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Percona XtraDB Cluster",
+              "versions": [
+                "8.0",
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Percona XtraDB Cluster",
+              "versions": [
+                "5.6"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Percona XtraDB Cluster",
+              "versions": [
+                "Percona Server for\u00a0MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Percona XtraDB Cluster",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Percona XtraDB Cluster",
+              "versions": [
+                "Percona XtraDB Cluster"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Percona XtraDB Cluster",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Percona XtraDB Cluster",
+              "versions": [
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             },
             {
               "name": "Aurora MySQL",
               "versions": [
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "MySQL",
-                "9.4",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "8.38.28.1",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "8.05.7",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "5.6",
-                "\u25e9",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "Percona Server for\u00a0MySQL",
-                "8",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "Percona XtraDB Cluster",
-                "8",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "5.7",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611"
-              ]
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Aurora MySQL",
+              "versions": [
+                "MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Aurora MySQL",
+              "versions": [
+                "9.4"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Aurora MySQL",
+              "versions": [
+                "8.3",
+                "8.2",
+                "8.1"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Aurora MySQL",
+              "versions": [
+                "8.0",
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Aurora MySQL",
+              "versions": [
+                "5.6"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Aurora MySQL",
+              "versions": [
+                "Percona Server for\u00a0MySQL"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Aurora MySQL",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Aurora MySQL",
+              "versions": [
+                "Percona XtraDB Cluster"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Aurora MySQL",
+              "versions": [
+                "8"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Aurora MySQL",
+              "versions": [
+                "5.7"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             },
             {
               "name": "SkySQL",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "SkySQL",
+              "versions": [
+                "MariaDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "SkySQL",
+              "versions": [
+                "10.11"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "SkySQL",
+              "versions": [
+                "10.10",
+                "10.6",
+                "10.5"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "SkySQL",
+              "versions": [
+                "10.4",
+                "10.3",
+                "10.2",
+                "10.1",
+                "10"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "SkySQL",
+              "versions": [
+                "5.5",
+                "5.3",
+                "5.2",
+                "5.1"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             },
             {
               "name": "Amazon RDS for MariaDB",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for MariaDB",
+              "versions": [
+                "MariaDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for MariaDB",
+              "versions": [
+                "10.11"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS for MariaDB",
+              "versions": [
+                "10.10",
+                "10.6",
+                "10.5"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for MariaDB",
+              "versions": [
+                "10.4",
+                "10.3",
+                "10.2",
+                "10.1",
+                "10"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "Amazon RDS for MariaDB",
+              "versions": [
+                "5.5",
+                "5.3",
+                "5.2",
+                "5.1"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             },
             {
               "name": "MariaDB",
               "versions": [
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "MariaDB",
-                "10.11",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "10.1010.610.5",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "10.410.310.210.110",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "5.55.35.25.1",
-                "\u25e9",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "Latest (using MongoDB driver)",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "V7.6.6-N1QL",
-                "preview",
-                "preview",
-                "preview",
-                "preview",
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "10.15",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "10.1410.1310.1210.11",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "Fabric Database",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "4.0",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "3.0",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "2.01.4",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "1.31.2",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "2.4",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "2.32.22.01.8",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "n/a",
-                "\u25e9",
-                "\u25e9",
-                "\u25e9",
-                "\u25e9",
-                "12.10",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611"
-              ]
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "MariaDB",
+              "versions": [
+                "MariaDB"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "MariaDB",
+              "versions": [
+                "10.11"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "MariaDB",
+              "versions": [
+                "10.10",
+                "10.6",
+                "10.5"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "MariaDB",
+              "versions": [
+                "10.4",
+                "10.3",
+                "10.2",
+                "10.1",
+                "10"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "MariaDB",
+              "versions": [
+                "5.5",
+                "5.3",
+                "5.2",
+                "5.1"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             },
             {
               "name": "MongoDB",
-              "versions": []
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "MongoDB",
+              "versions": [
+                "AtlasCloud"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "MongoDB",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             },
             {
               "name": "AtlasCloud",
               "versions": [
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611"
-              ]
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "AtlasCloud",
+              "versions": [
+                "AtlasCloud"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "AtlasCloud",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             },
             {
               "name": "SAP HANA",
-              "versions": []
+              "versions": [
+                "2.0"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "SAP HANA",
+              "versions": [
+                "1.0"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "SAP HANA",
+              "versions": [
+                "SAP HANA Cloud"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "SAP HANA",
+              "versions": [
+                "4.0"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             },
             {
               "name": "SAP HANA Cloud",
               "versions": [
-                "2.0",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "1.0",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "4.0",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "7.87.1",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "7 - 7.336 - 6.29",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "5 - 5.14 - 4.23.50, later 3.x",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "3.7 and later 3.x",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "16.3",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "16.216.116.015.7",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "5.0",
-                "\u25e9",
-                "\u25e9",
-                "\u25e9",
-                "\u2611",
-                "11.5",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "11.1",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "10.510.19.89.7",
-                "\u25e9",
-                "\u25e9",
-                "\u2611",
-                "\u2611",
-                "IBM DB2 z/OS",
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "\u2611",
-                "Latest",
-                "\u2611",
-                "\u2611",
-                "\u2611"
-              ]
+                "2.0"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "SAP HANA Cloud",
+              "versions": [
+                "1.0"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "SAP HANA Cloud",
+              "versions": [
+                "SAP HANA Cloud"
+              ],
+              "community": null,
+              "teams": null,
+              "enterprise": null,
+              "foundational": null,
+              "advanced": null
+            },
+            {
+              "name": "SAP HANA Cloud",
+              "versions": [
+                "4.0"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
             }
           ]
         }
