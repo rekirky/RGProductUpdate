@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:documentation.red-gate.com)"
+      "WebFetch(domain:documentation.red-gate.com)",
+      "Bash(python backend/scrape_db_support.py)",
+      "Bash(python -c ':*)"
     ]
   }
 }

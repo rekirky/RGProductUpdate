@@ -270,28 +270,30 @@ def find_version_tables(tables):
 _FLYWAY_TIER_NAMES = ('community', 'teams', 'enterprise', 'foundational', 'advanced')
 
 
-def _parse_flyway_table(table, engine_name):
-    """Parse one Flyway tier table for a single engine variant (h4 section).
+def _parse_flyway_complex_table(table):
+    """Parse one Flyway tier table, handling its multi-type row structure.
 
-    Each data row becomes one entry:
-      {
-        'name':        engine_name (h4 text, e.g. "SQL Server"),
-        'versions':    list of version strings from the first column
-                       (e.g. ["SQL Server 2025", "SQL Server 2022", "SQL Server 2019"]),
-        'community':   'supported' | 'compatible' | 'not_supported' | None,
-        'teams':       ...,
-        'enterprise':  ...,
-        'foundational':...,
-        'advanced':    ...,
-      }
+    The table contains three kinds of rows after the two-row group header:
+
+    1. Name-only rows  — engine name in col 0, all tier cells empty.
+       Multiple consecutive name-only rows (e.g. "Azure SQL Database",
+       "Azure SQL Database Managed Instance", "Amazon RDS") share the
+       NEXT data row's version and tier values.
+
+    2. Sub-header divider rows  — engine name in col 0, tier column labels
+       ("Community", "Teams", …) repeated in the other cells.
+       Marks the start of a new single-engine group whose subsequent data
+       rows all belong to that engine.
+
+    3. Data rows  — version text in col 0, emoji status in tier cells.
+       Emitted as one engine entry; engine name comes from whichever
+       context is active (pending_names or current_engine).
     """
     rows = table.find_all('tr')
     if not rows:
         return []
 
-    # Locate the header row that contains tier column names.
-    # The Flyway docs use a two-row header; skip group-label rows and find
-    # the row whose cells include 'community', 'teams', etc.
+    # Find the tier-name header row (contains 'community', 'teams', etc.)
     tier_indices = {}
     data_start = 0
     for i, row in enumerate(rows):
@@ -306,28 +308,68 @@ def _parse_flyway_table(table, engine_name):
     if not tier_indices:
         return []
 
+    def tier_statuses(cells):
+        return {
+            col: parse_status(cells[idx].get_text(strip=True))
+                 if idx is not None and idx < len(cells) else None
+            for col, idx in tier_indices.items()
+        }
+
+    def has_tier_data(cells):
+        """Any tier cell contains a recognisable emoji/status."""
+        return any(s is not None for s in tier_statuses(cells).values())
+
+    def is_sub_header(cells):
+        """Other cells re-state tier column names → divider for a new engine group."""
+        texts = [c.get_text(strip=True).lower() for c in cells]
+        return sum(1 for col in _FLYWAY_TIER_NAMES if col in texts[1:]) >= 2
+
+    def extract_versions(cell):
+        v = [p.get_text(strip=True) for p in cell.find_all('p') if p.get_text(strip=True)]
+        if not v:
+            raw = cell.get_text(separator='\n', strip=True)
+            v = [s.strip() for s in raw.splitlines() if s.strip()]
+        return v
+
+    def clean(text):
+        return re.sub(r'\s+', ' ', text.replace('\xa0', ' ')).strip()
+
     result = []
+    pending_names = []   # Names waiting for their shared data row
+    current_engine = None  # Active engine for single-engine groups
+
     for row in rows[data_start:]:
         cells = row.find_all(['th', 'td'])
         if not cells:
             continue
-
-        # First cell holds version names — extract each paragraph/line separately
-        version_cell = cells[0]
-        versions = [p.get_text(strip=True) for p in version_cell.find_all('p') if p.get_text(strip=True)]
-        if not versions:
-            raw = version_cell.get_text(separator='\n', strip=True)
-            versions = [v.strip() for v in raw.splitlines() if v.strip()]
-        if not versions:
+        first_text = clean(cells[0].get_text(strip=True))
+        if not first_text:
             continue
 
-        entry = {'name': engine_name, 'versions': versions}
-        for col in _FLYWAY_TIER_NAMES:
-            idx = tier_indices.get(col)
-            cell_text = cells[idx].get_text(strip=True) if idx is not None and idx < len(cells) else ''
-            entry[col] = parse_status(cell_text)
+        if is_sub_header(cells):
+            # e.g. "SQL Server | Community | Teams | Enterprise | …"
+            pending_names = []
+            current_engine = first_text
+            continue
 
-        result.append(entry)
+        if not has_tier_data(cells):
+            # Name-only row — add to the shared-data group
+            pending_names.append(first_text)
+            current_engine = None
+            continue
+
+        # Data row — emit one entry per active engine name
+        versions = extract_versions(cells[0])
+        if not versions:
+            continue
+        tiers = tier_statuses(cells)
+
+        if pending_names:
+            for name in pending_names:
+                result.append({'name': name, 'versions': versions, **tiers})
+            pending_names = []
+        elif current_engine:
+            result.append({'name': current_engine, 'versions': versions, **tiers})
 
     return result
 
@@ -335,12 +377,12 @@ def _parse_flyway_table(table, engine_name):
 def find_flyway_sections(soup):
     """Group Flyway tier data under their parent database-category section.
 
-    Navigation strategy:
-      1. Find <h3 id="*variant*"> → feature tab name (strip "variants").
-      2. Within each h3, find <h4 id="*supporteddatabasesandversions*"> elements
-         — the h4 text is the engine/variant name (e.g. "SQL Server").
-      3. Parse the tier table that follows each h4; each table row becomes one
-         engine entry with versions + tier status columns.
+    Navigation:
+      1. <h3 id="*variant*"> → feature tab name (strip "variants").
+      2. Within each h3, <h4 id="*supporteddatabasesandversions*"> gates
+         the table that follows it.
+      3. Each table is parsed by _parse_flyway_complex_table, which derives
+         engine names from the table rows themselves.
     """
     results = []
 
@@ -356,6 +398,7 @@ def find_flyway_sections(soup):
         feature_name = re.sub(r'\s+', ' ', feature_name).strip()
 
         engines_data = []
+        seen_tables = set()  # guard against multiple h4s pointing to the same table
 
         for elem in h3.find_all_next():
             if elem.name == 'h3' and 'variant' in (elem.get('id') or '').lower():
@@ -363,10 +406,10 @@ def find_flyway_sections(soup):
 
             if (elem.name == 'h4'
                     and 'supporteddatabasesandversions' in (elem.get('id') or '').lower()):
-                engine_name = elem.get_text(strip=True)
                 table = elem.find_next('table')
-                if table:
-                    engines_data.extend(_parse_flyway_table(table, engine_name))
+                if table and id(table) not in seen_tables:
+                    seen_tables.add(id(table))
+                    engines_data.extend(_parse_flyway_complex_table(table))
 
         if engines_data:
             results.append({'feature': feature_name, 'engines': engines_data})
