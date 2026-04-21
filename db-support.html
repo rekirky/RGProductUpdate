@@ -46,41 +46,48 @@
         </div>
       </div>
 
-      <!-- Cloud provider filter -->
-      <div class="controls">
-        <div id="cloud-filters" class="filter-group" role="group" aria-label="Filter by cloud provider">
-          <button class="filter-btn active" data-cloud="all">All providers</button>
-          <button class="filter-btn" data-cloud="Amazon">Amazon</button>
-          <button class="filter-btn" data-cloud="Microsoft">Microsoft</button>
-          <button class="filter-btn" data-cloud="Google">Google</button>
-          <button class="filter-btn" data-cloud="other">Other</button>
+      <!-- Cloud section: filter + matrix (hidden for products without cloud data) -->
+      <div id="cloud-section">
+        <div class="controls">
+          <div id="cloud-filters" class="filter-group" role="group" aria-label="Filter by cloud provider">
+            <button class="filter-btn active" data-cloud="all">All providers</button>
+            <button class="filter-btn" data-cloud="Amazon">Amazon</button>
+            <button class="filter-btn" data-cloud="Microsoft">Microsoft</button>
+            <button class="filter-btn" data-cloud="Google">Google</button>
+            <button class="filter-btn" data-cloud="other">Other</button>
+          </div>
         </div>
-      </div>
 
-      <!-- Compatibility matrix -->
-      <div class="section-block">
-        <div class="section-heading">
-          <h2 class="section-title">Cloud Compatibility</h2>
-          <a id="source-link" href="#" target="_blank" rel="noopener" class="source-link">View source docs &#8599;</a>
-        </div>
-        <div class="table-wrapper">
-          <table id="matrix-table" aria-label="Cloud compatibility matrix">
-            <tbody>
-              <tr class="state-row"><td colspan="7">Loading&hellip;</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="matrix-legend">
-          <span class="legend-item"><span class="support-badge supported">&#10003; Ready</span> Production Ready</span>
-          <span class="legend-item"><span class="support-badge preview">&#x1F9EA; Preview</span> Evaluation only &mdash; limited support, may change</span>
-          <span class="legend-item"><span class="support-badge not-supported">&#10005;</span> Not Supported</span>
-          <span class="legend-item"><span class="support-badge na">&mdash;</span> Not Applicable</span>
+        <div class="section-block">
+          <div class="section-heading">
+            <h2 class="section-title">Cloud Compatibility</h2>
+            <a id="source-link" href="#" target="_blank" rel="noopener" class="source-link">View source docs &#8599;</a>
+          </div>
+          <div class="table-wrapper">
+            <table id="matrix-table" aria-label="Cloud compatibility matrix">
+              <tbody>
+                <tr class="state-row"><td colspan="7">Loading&hellip;</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="matrix-legend">
+            <span class="legend-item"><span class="support-badge supported">&#10003; Ready</span> Production Ready</span>
+            <span class="legend-item"><span class="support-badge preview">&#x1F9EA; Preview</span> Evaluation only &mdash; limited support, may change</span>
+            <span class="legend-item"><span class="support-badge not-supported">&#10005;</span> Not Supported</span>
+            <span class="legend-item"><span class="support-badge na">&mdash;</span> Not Applicable</span>
+          </div>
         </div>
       </div>
 
       <!-- Version support -->
       <div class="section-block">
-        <h2 class="section-title">Supported Versions</h2>
+        <div class="section-heading">
+          <h2 class="section-title">Supported Versions</h2>
+          <div id="version-legend" class="matrix-legend" hidden>
+            <span class="legend-item"><span class="support-badge supported">&#10003; Full Support</span> Certified, full Redgate support</span>
+            <span class="legend-item"><span class="support-badge compatible">&#9675; Community</span> Limited testing, community forum support</span>
+          </div>
+        </div>
         <div class="controls" style="margin-bottom: 0.75rem;">
           <div id="feature-tabs" class="filter-group" role="group" aria-label="Select feature">
           </div>

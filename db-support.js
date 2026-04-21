@@ -18,13 +18,17 @@ async function init() {
     renderLastUpdated(allData.generated_at);
     renderProductTabs();
     wireCloudFilters();
-    renderMatrix();
-    renderVersionSection();
+    renderAll();
   } catch (err) {
     document.getElementById('matrix-table').innerHTML =
       `<tbody><tr class="error-row"><td colspan="7">Failed to load data: ${esc(err.message)}</td></tr></tbody>`;
     document.getElementById('last-updated').textContent = '';
   }
+}
+
+function renderAll() {
+  renderMatrix();
+  renderVersionSection();
 }
 
 // ── Helpers ────────────────────────────────────────────────────────────────
@@ -39,6 +43,10 @@ function esc(str) {
 
 function getProduct() {
   return allData?.products?.find(p => p.key === selectedProduct) ?? null;
+}
+
+function hasCloudMatrix(product) {
+  return product?.cloud_matrix?.length > 0;
 }
 
 // ── Last updated ──────────────────────────────────────────────────────────
@@ -70,10 +78,14 @@ function renderProductTabs() {
       if (btn.dataset.product === selectedProduct) return;
       selectedProduct = btn.dataset.product;
       selectedFeatureIdx = 0;
+      selectedCloud = 'all';
+      // Reset cloud filter active state
+      document.getElementById('cloud-filters')
+        .querySelectorAll('[data-cloud]')
+        .forEach((b, i) => b.classList.toggle('active', i === 0));
       container.querySelectorAll('[data-product]').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      renderMatrix();
-      renderVersionSection();
+      renderAll();
     });
   });
 }
@@ -97,12 +109,14 @@ function wireCloudFilters() {
 
 function renderMatrix() {
   const product = getProduct();
-  const table = document.getElementById('matrix-table');
+  const cloudSection = document.getElementById('cloud-section');
 
-  if (!product) {
-    table.innerHTML = '<tbody><tr class="state-row"><td colspan="7">Select a product above.</td></tr></tbody>';
+  if (!hasCloudMatrix(product)) {
+    cloudSection.hidden = true;
     return;
   }
+
+  cloudSection.hidden = false;
 
   const link = document.getElementById('source-link');
   if (link) link.href = product.source_url;
@@ -115,6 +129,7 @@ function renderMatrix() {
   });
 
   const colCount = engines.length + 2;
+  const table = document.getElementById('matrix-table');
 
   let html = '<thead><tr>';
   html += '<th class="col-provider">Provider</th>';
@@ -132,7 +147,7 @@ function renderMatrix() {
       html += `<td class="cell-provider">${esc(row.provider)}</td>`;
       html += `<td class="cell-service">${esc(row.service)}</td>`;
       engines.forEach(engine => {
-        html += `<td class="cell-support">${statusBadge(row.support[engine])}</td>`;
+        html += `<td class="cell-support">${cloudStatusBadge(row.support[engine])}</td>`;
       });
       html += '</tr>';
       prevProvider = row.provider;
@@ -143,7 +158,7 @@ function renderMatrix() {
   table.innerHTML = html;
 }
 
-function statusBadge(status) {
+function cloudStatusBadge(status) {
   switch (status) {
     case 'supported':     return '<span class="support-badge supported">&#10003; Ready</span>';
     case 'preview':       return '<span class="support-badge preview">&#x1F9EA; Preview</span>';
@@ -184,10 +199,15 @@ function renderVersionSection() {
 
 function renderVersionTable(feature) {
   const wrapper = document.getElementById('version-table-wrapper');
+  const legend  = document.getElementById('version-legend');
+
+  const hasStatus = feature.engines.some(e => e.status != null);
+  if (legend) legend.hidden = !hasStatus;
 
   let html = `<table aria-label="${esc(feature.feature)} supported versions">
     <thead><tr>
       <th class="col-engine-name">Database Engine</th>
+      ${hasStatus ? '<th class="col-support-level">Support Level</th>' : ''}
       <th class="col-versions">Supported Versions</th>
     </tr></thead>
     <tbody>`;
@@ -196,8 +216,16 @@ function renderVersionTable(feature) {
     const versionTags = e.versions.length > 0
       ? e.versions.map(v => `<span class="version-tag">${esc(v)}</span>`).join(' ')
       : '<span class="version-tag empty">&mdash;</span>';
+
+    const levelBadge = e.status === 'supported'
+      ? '<span class="support-badge supported">&#10003; Full Support</span>'
+      : e.status === 'compatible'
+        ? '<span class="support-badge compatible">&#9675; Community</span>'
+        : '';
+
     html += `<tr>
       <td class="cell-engine-name">${esc(e.name)}</td>
+      ${hasStatus ? `<td class="cell-support-level">${levelBadge}</td>` : ''}
       <td class="cell-versions">${versionTags}</td>
     </tr>`;
   });

@@ -573,12 +573,19 @@ tbody td {
   border-color: transparent;
 }
 
+.support-badge.compatible {
+  background: #EEF2FF;
+  color: #3730A3;
+  border-color: #C7D2FE;
+}
+
 /* Matrix table columns */
 .col-provider   { width: 110px; white-space: nowrap; }
 .col-service    { min-width: 180px; }
 .col-engine     { width: 110px; text-align: center; }
-.col-engine-name { min-width: 180px; }
-.col-versions   { min-width: 260px; }
+.col-engine-name   { min-width: 200px; }
+.col-support-level { width: 140px; white-space: nowrap; }
+.col-versions      { min-width: 260px; }
 
 /* Matrix table cells */
 .cell-provider {
@@ -600,6 +607,10 @@ tbody td {
 .cell-engine-name {
   font-weight: 500;
   font-size: 0.875rem;
+}
+
+.cell-support-level {
+  white-space: nowrap;
 }
 
 .cell-versions {

@@ -30,6 +30,23 @@ SOURCES = [
             'redgate-test-data-manager-overview/database-engine-support'
         ),
     },
+    {
+        'key': 'flyway',
+        'name': 'Flyway',
+        'source_url': (
+            'https://documentation.red-gate.com/flyway/'
+            'getting-started-with-flyway/system-requirements/'
+            'supported-databases-and-versions'
+        ),
+    },
+    {
+        'key': 'monitor',
+        'name': 'Redgate Monitor',
+        'source_url': (
+            'https://documentation.red-gate.com/monitor/'
+            'supported-platforms-239667385.html'
+        ),
+    },
 ]
 
 STATUS_MAP = {
