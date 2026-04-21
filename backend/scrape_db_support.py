@@ -50,14 +50,18 @@ SOURCES = [
 ]
 
 STATUS_MAP = {
-    '✅': 'supported',   # ✅
-    '✔': 'supported',   # ✔
-    '🧪': 'preview',    # 🧪
+    '✅': 'supported',      # ✅ green — fully supported
+    '✔': 'compatible',     # ✔ orange — community-compatible tier
+    '🧪': 'preview',       # 🧪 test tube — preview/beta
     '❌': 'not_supported',  # ❌
     '✖': 'not_supported',  # ✖
     '✗': 'not_supported',  # ✗
     '✕': 'not_supported',  # ✕
 }
+
+# Flyway column names for product tiers and capability tiers.
+# These must match (case-insensitively) the header text on the docs page.
+FLYWAY_TIER_COLS = ('community', 'teams', 'enterprise', 'foundational', 'advanced')
 
 
 def parse_status(text):
@@ -66,12 +70,14 @@ def parse_status(text):
         if char in t:
             return status
     lower = t.lower()
-    if 'production' in lower or 'supported' in lower:
-        return 'supported'
-    if 'preview' in lower:
-        return 'preview'
     if 'not supported' in lower:
         return 'not_supported'
+    if 'production' in lower or 'supported' in lower:
+        return 'supported'
+    if 'compatible' in lower:
+        return 'compatible'
+    if 'preview' in lower:
+        return 'preview'
     return None
 
 
@@ -254,6 +260,70 @@ def find_version_tables(tables):
     return results
 
 
+def find_flyway_tier_tables(tables):
+    """Parse Flyway's per-tier support tables.
+
+    These tables have database version names as rows and
+    Community / Teams / Enterprise / Foundational / Advanced as columns.
+    A table is recognised when at least two of those column names appear in
+    its header row.
+
+    Output schema per engine entry:
+      {
+        "name": "SQL Server 2022",
+        "community":    "supported" | "compatible" | "not_supported" | null,
+        "teams":        ...,
+        "enterprise":   ...,
+        "foundational": ...,
+        "advanced":     ...
+      }
+    """
+    results = []
+    for table in tables:
+        headers, data_rows = expand_rowspans(table)
+        if not headers:
+            continue
+        norm = [h.strip().lower() for h in headers]
+
+        present_tiers = [col for col in FLYWAY_TIER_COLS if col in norm]
+        if len(present_tiers) < 2:
+            continue
+
+        tier_indices = {col: norm.index(col) for col in present_tiers}
+
+        # Section name from the nearest preceding heading
+        section = 'General'
+        prev = table.find_previous(['h2', 'h3', 'h4'])
+        if prev:
+            section = prev.get_text(strip=True)
+
+        engines_data = []
+        for row in data_rows:
+            name = row[0].strip() if row else ''
+            if not name:
+                continue
+
+            entry = {'name': name}
+            for col in FLYWAY_TIER_COLS:
+                if col in tier_indices:
+                    idx = tier_indices[col]
+                    cell = row[idx] if idx < len(row) else ''
+                    entry[col] = parse_status(cell)
+                else:
+                    entry[col] = None
+
+            engines_data.append(entry)
+
+        if engines_data:
+            existing = next((r for r in results if r['feature'] == section), None)
+            if existing:
+                existing['engines'].extend(engines_data)
+            else:
+                results.append({'feature': section, 'engines': engines_data})
+
+    return results
+
+
 def scrape_product(source):
     """Scrape one product page. Returns product dict or None on failure."""
     if not BS4_AVAILABLE:
@@ -273,7 +343,10 @@ def scrape_product(source):
     logger.info(f'Found {len(tables)} table(s) on page')
 
     engines, cloud_matrix = find_cloud_matrix(tables)
-    version_support = find_version_tables(tables)
+    if source['key'] == 'flyway':
+        version_support = find_flyway_tier_tables(tables)
+    else:
+        version_support = find_version_tables(tables)
 
     if not cloud_matrix and not version_support:
         logger.warning(f'No usable data extracted from {url}')

@@ -64,13 +64,22 @@ function renderLastUpdated(isoDate) {
 
 // ── Product tabs ──────────────────────────────────────────────────────────
 
+const PRODUCT_ICONS = {
+  tdm:     'images/tdm.png',
+  flyway:  'images/flyway.png',
+  monitor: 'images/monitor.png',
+};
+
 function renderProductTabs() {
   const container = document.getElementById('product-tabs');
   container.innerHTML = allData.products
-    .map(p =>
-      `<button class="filter-btn-tag${p.key === selectedProduct ? ' active' : ''}"
-               data-product="${esc(p.key)}">${esc(p.name)}</button>`
-    )
+    .map(p => {
+      const icon = PRODUCT_ICONS[p.key]
+        ? `<img src="${esc(PRODUCT_ICONS[p.key])}" class="product-tab-icon" alt="" aria-hidden="true">`
+        : '';
+      return `<button class="filter-btn-tag${p.key === selectedProduct ? ' active' : ''}"
+               data-product="${esc(p.key)}">${icon}${esc(p.name)}</button>`;
+    })
     .join('');
 
   container.querySelectorAll('[data-product]').forEach(btn => {
@@ -167,6 +176,32 @@ function cloudStatusBadge(status) {
   }
 }
 
+// ── Feature tab colours ───────────────────────────────────────────────────
+
+// Matched case-insensitively against the feature name (first match wins).
+const FEATURE_COLOURS = [
+  { match: 'sql server',          colour: '#003087' },  // Dark Blue   – SQL Server
+  { match: 'oracle',              colour: '#C74634' },  // Red         – Oracle
+  { match: 'postgresql',          colour: '#0284C7' },  // Light Blue  – PostgreSQL
+  { match: 'mariadb',             colour: '#C0765A' },  // Orange      – MariaDB
+  { match: 'mysql',               colour: '#00618A' },  // Teal-Blue   – MySQL
+  { match: 'mongodb',             colour: '#47A248' },  // Green       – MongoDB
+  { match: 'anonymize',           colour: '#7C3AED' },  // Violet      – TDM Anonymize
+  { match: 'subset',              colour: '#0D9488' },  // Teal        – TDM Subset
+  { match: 'monitoring',          colour: '#1A6BB5' },  // Blue        – Monitor
+  { match: 'data warehouse',      colour: '#9333EA' },  // Purple      – Data Warehousing
+  { match: 'nosql',               colour: '#16A34A' },  // Green       – NoSQL & Document
+  { match: 'specialised',         colour: '#B45309' },  // Amber       – Specialised
+  { match: 'enterprise',          colour: '#475569' },  // Slate       – Enterprise
+  { match: 'lightweight',         colour: '#0891B2' },  // Cyan        – Lightweight & Embedded
+];
+
+function featureColour(featureName) {
+  const lower = featureName.toLowerCase();
+  const entry = FEATURE_COLOURS.find(f => lower.includes(f.match));
+  return entry ? entry.colour : null;
+}
+
 // ── Version support ───────────────────────────────────────────────────────
 
 function renderVersionSection() {
@@ -184,10 +219,12 @@ function renderVersionSection() {
   }
 
   tabContainer.innerHTML = features
-    .map((f, i) =>
-      `<button class="filter-btn${i === selectedFeatureIdx ? ' active' : ''}"
-               data-fi="${i}">${esc(f.feature)}</button>`
-    )
+    .map((f, i) => {
+      const colour = featureColour(f.feature);
+      const style = colour ? ` style="--btn-accent:${colour}"` : '';
+      return `<button class="filter-btn${i === selectedFeatureIdx ? ' active' : ''}"
+               data-fi="${i}"${style}>${esc(f.feature)}</button>`;
+    })
     .join('');
 
   tabContainer.querySelectorAll('[data-fi]').forEach(btn => {
