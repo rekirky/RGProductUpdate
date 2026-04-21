@@ -20,8 +20,8 @@ async function init() {
     wireCloudFilters();
     renderAll();
   } catch (err) {
-    document.getElementById('matrix-table').innerHTML =
-      `<tbody><tr class="error-row"><td colspan="7">Failed to load data: ${esc(err.message)}</td></tr></tbody>`;
+    const el = document.getElementById('load-error');
+    if (el) { el.textContent = `Failed to load data: ${err.message}`; el.hidden = false; }
     document.getElementById('last-updated').textContent = '';
   }
 }
@@ -173,8 +173,15 @@ function renderVersionSection() {
   const product = getProduct();
   if (!product) return;
 
-  const features = product.version_support;
+  const features = product.version_support ?? [];
   const tabContainer = document.getElementById('feature-tabs');
+  const wrapper = document.getElementById('version-table-wrapper');
+
+  if (features.length === 0) {
+    tabContainer.innerHTML = '';
+    wrapper.innerHTML = '<table><tbody><tr class="state-row"><td colspan="2">No version data available.</td></tr></tbody></table>';
+    return;
+  }
 
   tabContainer.innerHTML = features
     .map((f, i) =>
@@ -198,6 +205,8 @@ function renderVersionSection() {
 }
 
 function renderVersionTable(feature) {
+  if (!feature) return;
+
   const wrapper = document.getElementById('version-table-wrapper');
   const legend  = document.getElementById('version-legend');
 

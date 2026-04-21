@@ -279,6 +279,23 @@ def scrape_product(source):
         logger.warning(f'No usable data extracted from {url}')
         return None
 
+    # Sanity-check quality: a cloud matrix where every support value is None
+    # almost certainly means emoji/status parsing failed — discard it.
+    def has_real_support(matrix):
+        return any(
+            status is not None
+            for row in matrix
+            for status in row.get('support', {}).values()
+        )
+
+    if cloud_matrix and not has_real_support(cloud_matrix):
+        logger.warning(
+            f'Cloud matrix for {source["name"]} has no non-null support values '
+            f'(emoji parsing likely failed) — discarding matrix'
+        )
+        cloud_matrix = []
+        engines = []
+
     logger.info(
         f'Extracted {len(cloud_matrix)} cloud matrix rows, '
         f'{len(version_support)} version table(s)'
@@ -308,14 +325,29 @@ def main():
 
     products = []
     for source in SOURCES:
+        existing = existing_by_key.get(source['key'])
         result = scrape_product(source)
-        if result:
-            products.append(result)
-        elif source['key'] in existing_by_key:
-            logger.info(f"Keeping existing data for {source['name']}")
-            products.append(existing_by_key[source['key']])
-        else:
-            logger.warning(f"No data available for {source['name']}, skipping")
+
+        if result is None:
+            # Complete scrape failure — keep existing
+            if existing:
+                logger.info(f"Keeping existing data for {source['name']} (scrape failed)")
+                products.append(existing)
+            else:
+                logger.warning(f"No data available for {source['name']}, skipping")
+            continue
+
+        # Partial scrape: fill gaps from existing data so we never regress
+        if existing:
+            if not result.get('cloud_matrix') and existing.get('cloud_matrix'):
+                logger.info(f"Keeping existing cloud_matrix for {source['name']} (scrape got none)")
+                result['cloud_matrix'] = existing['cloud_matrix']
+                result['engines'] = existing.get('engines', result['engines'])
+            if not result.get('version_support') and existing.get('version_support'):
+                logger.info(f"Keeping existing version_support for {source['name']} (scrape got none)")
+                result['version_support'] = existing['version_support']
+
+        products.append(result)
 
     output = {
         'generated_at': datetime.now(timezone.utc).isoformat(),
