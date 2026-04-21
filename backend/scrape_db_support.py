@@ -271,80 +271,86 @@ def find_version_tables(tables):
     return results
 
 
-def find_flyway_tier_tables(tables):
-    """Parse Flyway's per-tier support tables.
+def _parse_tier_table(table):
+    """Parse a single tier table. Returns list of engine dicts, or []."""
+    headers, data_rows = expand_rowspans(table)
+    if not headers or not data_rows:
+        return []
+    norm = [h.strip().lower() for h in headers]
+    present_tiers = [col for col in FLYWAY_TIER_COLS if col in norm]
 
-    These tables have database version names as rows and
-    Community / Teams / Enterprise / Foundational / Advanced as columns.
-    A table is recognised when at least two of those column names appear in
-    its header row.
+    # Two-row header: row 1 = group labels, row 2 = actual column names.
+    if len(present_tiers) < 2:
+        sub_norm = [h.strip().lower() for h in data_rows[0]]
+        sub_tiers = [col for col in FLYWAY_TIER_COLS if col in sub_norm]
+        if len(sub_tiers) >= 2:
+            norm = sub_norm
+            data_rows = data_rows[1:]
+            present_tiers = sub_tiers
 
-    Output schema per engine entry:
-      {
-        "name": "SQL Server 2022",
-        "community":    "supported" | "compatible" | "not_supported" | null,
-        "teams":        ...,
-        "enterprise":   ...,
-        "foundational": ...,
-        "advanced":     ...
-      }
+    if len(present_tiers) < 2:
+        return []
+
+    tier_indices = {col: norm.index(col) for col in present_tiers}
+    engines = []
+    for row in data_rows:
+        name = row[0].strip() if row else ''
+        if not name:
+            continue
+        entry = {'name': name}
+        for col in FLYWAY_TIER_COLS:
+            idx = tier_indices.get(col)
+            cell = row[idx] if idx is not None and idx < len(row) else ''
+            entry[col] = parse_status(cell)
+        engines.append(entry)
+    return engines
+
+
+def find_flyway_sections(soup):
+    """Group Flyway tier tables under their parent database-category section.
+
+    Navigation strategy:
+      1. Find <h3 id="*variant*"> elements — each is a database category
+         (e.g. "SQL Server variants" → feature name "SQL Server").
+      2. Within each h3 section, find <h4 id="*supporteddatabasesandversions*">
+         sub-headings; the table immediately following each h4 holds the
+         tier data for that database sub-type.
+      3. All engines from every sub-table are collected into one feature entry,
+         giving a short, clean tab list instead of one tab per sub-variant.
     """
     results = []
-    for table in tables:
-        headers, data_rows = expand_rowspans(table)
-        if not headers or not data_rows:
-            continue
-        norm = [h.strip().lower() for h in headers]
 
-        present_tiers = [col for col in FLYWAY_TIER_COLS if col in norm]
+    variant_h3s = [
+        tag for tag in soup.find_all('h3')
+        if 'variant' in (tag.get('id') or '').lower()
+    ]
+    logger.info(f'Flyway: found {len(variant_h3s)} variant h3 section(s)')
 
-        # The Flyway docs use a two-row header: row 1 contains group labels
-        # ('Flyway Edition', 'Capabilities'), row 2 has the actual column names
-        # (Community, Teams, Enterprise, Foundational, Advanced).
-        # If the first promoted header row doesn't match, check data_rows[0].
-        if len(present_tiers) < 2:
-            sub_norm = [h.strip().lower() for h in data_rows[0]]
-            sub_tiers = [col for col in FLYWAY_TIER_COLS if col in sub_norm]
-            if len(sub_tiers) >= 2:
-                headers = data_rows[0]
-                data_rows = data_rows[1:]
-                norm = sub_norm
-                present_tiers = sub_tiers
-
-        if len(present_tiers) < 2:
-            continue
-
-        tier_indices = {col: norm.index(col) for col in present_tiers}
-
-        # Section name from the nearest preceding heading
-        section = 'General'
-        prev = table.find_previous(['h2', 'h3', 'h4'])
-        if prev:
-            section = prev.get_text(strip=True)
+    for h3 in variant_h3s:
+        raw = h3.get_text(strip=True)
+        # Strip "variants" / "variant" to get the clean database name
+        feature_name = re.sub(r'\s*variants?\s*', ' ', raw, flags=re.IGNORECASE).strip()
+        feature_name = re.sub(r'\s+', ' ', feature_name).strip()
 
         engines_data = []
-        for row in data_rows:
-            name = row[0].strip() if row else ''
-            if not name:
-                continue
 
-            entry = {'name': name}
-            for col in FLYWAY_TIER_COLS:
-                if col in tier_indices:
-                    idx = tier_indices[col]
-                    cell = row[idx] if idx < len(row) else ''
-                    entry[col] = parse_status(cell)
-                else:
-                    entry[col] = None
+        for elem in h3.find_all_next():
+            # Stop when we reach the next variant section
+            if (elem.name == 'h3'
+                    and 'variant' in (elem.get('id') or '').lower()):
+                break
 
-            engines_data.append(entry)
+            # Each h4 with 'supporteddatabasesandversions' in its id marks
+            # a sub-type table (e.g. "SQL Server", "SQL Server – Google Cloud")
+            if (elem.name == 'h4'
+                    and 'supporteddatabasesandversions' in (elem.get('id') or '').lower()):
+                table = elem.find_next('table')
+                if table:
+                    engines_data.extend(_parse_tier_table(table))
 
         if engines_data:
-            existing = next((r for r in results if r['feature'] == section), None)
-            if existing:
-                existing['engines'].extend(engines_data)
-            else:
-                results.append({'feature': section, 'engines': engines_data})
+            results.append({'feature': feature_name, 'engines': engines_data})
+            logger.info(f'  Flyway section "{feature_name}": {len(engines_data)} engine row(s)')
 
     return results
 
@@ -369,9 +375,9 @@ def scrape_product(source):
 
     engines, cloud_matrix = find_cloud_matrix(tables)
     if source['key'] == 'flyway':
-        version_support = find_flyway_tier_tables(tables)
+        version_support = find_flyway_sections(soup)
         if not version_support:
-            logger.info('Flyway: no tier tables found — falling back to find_version_tables')
+            logger.info('Flyway: h3/h4 strategy found nothing — falling back to tier-table scan')
             version_support = find_version_tables(tables)
     else:
         version_support = find_version_tables(tables)
