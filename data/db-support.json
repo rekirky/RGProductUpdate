@@ -41,9 +41,9 @@
           "support": {
             "SQL Server": "supported",
             "PostgreSQL": "supported",
-            "Oracle": null,
-            "MySQL": null,
-            "MariaDB": null
+            "Oracle": "preview",
+            "MySQL": "preview",
+            "MariaDB": "preview"
           }
         },
         {
@@ -61,7 +61,7 @@
           "provider": "Microsoft",
           "service": "Managed Instance",
           "support": {
-            "SQL Server": null,
+            "SQL Server": "preview",
             "PostgreSQL": null,
             "Oracle": null,
             "MySQL": null,
@@ -72,7 +72,7 @@
           "provider": "Microsoft",
           "service": "Azure SQL DB",
           "support": {
-            "SQL Server": null,
+            "SQL Server": "preview",
             "PostgreSQL": null,
             "Oracle": null,
             "MySQL": null,
@@ -83,7 +83,7 @@
           "provider": "Microsoft",
           "service": "Azure SQL DB Hyperscale",
           "support": {
-            "SQL Server": null,
+            "SQL Server": "preview",
             "PostgreSQL": null,
             "Oracle": null,
             "MySQL": null,
@@ -94,7 +94,7 @@
           "provider": "Microsoft",
           "service": "Fabric SQL Database",
           "support": {
-            "SQL Server": null,
+            "SQL Server": "preview",
             "PostgreSQL": null,
             "Oracle": null,
             "MySQL": null,
@@ -106,7 +106,7 @@
           "service": "Flexible Server for PostgreSQL",
           "support": {
             "SQL Server": null,
-            "PostgreSQL": null,
+            "PostgreSQL": "preview",
             "Oracle": null,
             "MySQL": null,
             "MariaDB": null
@@ -119,7 +119,7 @@
             "SQL Server": null,
             "PostgreSQL": null,
             "Oracle": null,
-            "MySQL": null,
+            "MySQL": "preview",
             "MariaDB": null
           }
         },
@@ -138,10 +138,10 @@
           "provider": "Google",
           "service": "Cloud SQL",
           "support": {
-            "SQL Server": null,
-            "PostgreSQL": null,
+            "SQL Server": "preview",
+            "PostgreSQL": "preview",
             "Oracle": null,
-            "MySQL": null,
+            "MySQL": "preview",
             "MariaDB": null
           }
         },
@@ -161,7 +161,7 @@
           "service": "Neon",
           "support": {
             "SQL Server": null,
-            "PostgreSQL": null,
+            "PostgreSQL": "preview",
             "Oracle": null,
             "MySQL": null,
             "MariaDB": null
@@ -172,7 +172,7 @@
           "service": "CrunchyData",
           "support": {
             "SQL Server": null,
-            "PostgreSQL": null,
+            "PostgreSQL": "preview",
             "Oracle": null,
             "MySQL": null,
             "MariaDB": null
