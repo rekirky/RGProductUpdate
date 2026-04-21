@@ -52,7 +52,7 @@ SOURCES = [
 STATUS_MAP = {
     '✅': 'supported',   # ✅
     '✔': 'supported',   # ✔
-    'ᾞa': 'preview',    # 🧪
+    '🧪': 'preview',    # 🧪
     '❌': 'not_supported',  # ❌
     '✖': 'not_supported',  # ✖
     '✗': 'not_supported',  # ✗
