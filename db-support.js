@@ -243,31 +243,41 @@ function renderVersionSection() {
 
 const FLYWAY_TIERS = ['community', 'teams', 'enterprise', 'foundational', 'advanced'];
 
+function tierStatusBadge(status) {
+  switch (status) {
+    case 'supported':     return '<span class="support-badge supported">&#10003;</span>';
+    case 'compatible':    return '<span class="support-badge compatible">&#9675;</span>';
+    case 'not_supported': return '<span class="support-badge not-supported">&#10005;</span>';
+    default:              return '<span class="support-badge na">&mdash;</span>';
+  }
+}
+
 function renderVersionTable(feature) {
   if (!feature) return;
 
   const wrapper = document.getElementById('version-table-wrapper');
   const legend  = document.getElementById('version-legend');
 
-  // Detect format: tier-based (Flyway) vs versions-based (TDM, Monitor)
-  const isTierFormat = feature.engines.length > 0 && 'community' in feature.engines[0];
+  // Hybrid Flyway format: has both 'versions' and tier columns
+  const isFlywayFormat = feature.engines.length > 0 && 'community' in feature.engines[0];
 
-  if (isTierFormat) {
-    renderTierTable(feature, wrapper, legend);
+  if (isFlywayFormat) {
+    renderFlywayTable(feature, wrapper, legend);
   } else {
     renderVersionsTable(feature, wrapper, legend);
   }
 }
 
-function renderTierTable(feature, wrapper, legend) {
+function renderFlywayTable(feature, wrapper, legend) {
   if (legend) legend.hidden = true;
 
-  let html = `<table aria-label="${esc(feature.feature)} tier support">
+  let html = `<table aria-label="${esc(feature.feature)} supported versions">
     <thead>
       <tr>
         <th class="col-engine-name" rowspan="2">Database Engine</th>
-        <th class="col-tier-group" colspan="3">Flyway Edition</th>
-        <th class="col-tier-group" colspan="2">Capabilities</th>
+        <th class="col-versions"    rowspan="2">Supported Versions</th>
+        <th class="col-tier-group"  colspan="3">Flyway Edition</th>
+        <th class="col-tier-group"  colspan="2">Capabilities</th>
       </tr>
       <tr>
         <th class="col-tier">Community</th>
@@ -280,7 +290,14 @@ function renderTierTable(feature, wrapper, legend) {
     <tbody>`;
 
   feature.engines.forEach(e => {
-    html += `<tr><td class="cell-engine-name">${esc(e.name)}</td>`;
+    const versions = (e.versions ?? []);
+    const versionTags = versions.length > 0
+      ? versions.map(v => `<span class="version-tag">${esc(v)}</span>`).join(' ')
+      : '<span class="version-tag empty">&mdash;</span>';
+
+    html += `<tr>
+      <td class="cell-engine-name">${esc(e.name)}</td>
+      <td class="cell-versions">${versionTags}</td>`;
     FLYWAY_TIERS.forEach(tier => {
       html += `<td class="cell-support">${tierStatusBadge(e[tier])}</td>`;
     });
@@ -289,15 +306,6 @@ function renderTierTable(feature, wrapper, legend) {
 
   html += '</tbody></table>';
   wrapper.innerHTML = html;
-}
-
-function tierStatusBadge(status) {
-  switch (status) {
-    case 'supported':     return '<span class="support-badge supported">&#10003;</span>';
-    case 'compatible':    return '<span class="support-badge compatible">&#9675;</span>';
-    case 'not_supported': return '<span class="support-badge not-supported">&#10005;</span>';
-    default:              return '<span class="support-badge na">&mdash;</span>';
-  }
 }
 
 function renderVersionsTable(feature, wrapper, legend) {

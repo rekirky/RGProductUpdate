@@ -267,15 +267,80 @@ def find_version_tables(tables):
     return results
 
 
+_FLYWAY_TIER_NAMES = ('community', 'teams', 'enterprise', 'foundational', 'advanced')
+
+
+def _parse_flyway_table(table, engine_name):
+    """Parse one Flyway tier table for a single engine variant (h4 section).
+
+    Each data row becomes one entry:
+      {
+        'name':        engine_name (h4 text, e.g. "SQL Server"),
+        'versions':    list of version strings from the first column
+                       (e.g. ["SQL Server 2025", "SQL Server 2022", "SQL Server 2019"]),
+        'community':   'supported' | 'compatible' | 'not_supported' | None,
+        'teams':       ...,
+        'enterprise':  ...,
+        'foundational':...,
+        'advanced':    ...,
+      }
+    """
+    rows = table.find_all('tr')
+    if not rows:
+        return []
+
+    # Locate the header row that contains tier column names.
+    # The Flyway docs use a two-row header; skip group-label rows and find
+    # the row whose cells include 'community', 'teams', etc.
+    tier_indices = {}
+    data_start = 0
+    for i, row in enumerate(rows):
+        cells = row.find_all(['th', 'td'])
+        texts = [c.get_text(strip=True).lower() for c in cells]
+        present = [col for col in _FLYWAY_TIER_NAMES if col in texts]
+        if len(present) >= 2:
+            tier_indices = {col: texts.index(col) for col in present}
+            data_start = i + 1
+            break
+
+    if not tier_indices:
+        return []
+
+    result = []
+    for row in rows[data_start:]:
+        cells = row.find_all(['th', 'td'])
+        if not cells:
+            continue
+
+        # First cell holds version names — extract each paragraph/line separately
+        version_cell = cells[0]
+        versions = [p.get_text(strip=True) for p in version_cell.find_all('p') if p.get_text(strip=True)]
+        if not versions:
+            raw = version_cell.get_text(separator='\n', strip=True)
+            versions = [v.strip() for v in raw.splitlines() if v.strip()]
+        if not versions:
+            continue
+
+        entry = {'name': engine_name, 'versions': versions}
+        for col in _FLYWAY_TIER_NAMES:
+            idx = tier_indices.get(col)
+            cell_text = cells[idx].get_text(strip=True) if idx is not None and idx < len(cells) else ''
+            entry[col] = parse_status(cell_text)
+
+        result.append(entry)
+
+    return result
+
+
 def find_flyway_sections(soup):
-    """Group Flyway version data under their parent database-category section.
+    """Group Flyway tier data under their parent database-category section.
 
     Navigation strategy:
       1. Find <h3 id="*variant*"> → feature tab name (strip "variants").
       2. Within each h3, find <h4 id="*supporteddatabasesandversions*"> elements
-         — the h4 text becomes the Database Engine name.
-      3. Collect every <td class="confluenceTD"> after each h4 (until the next
-         matching h4 or bounding h3) as version tags — same schema as TDM.
+         — the h4 text is the engine/variant name (e.g. "SQL Server").
+      3. Parse the tier table that follows each h4; each table row becomes one
+         engine entry with versions + tier status columns.
     """
     results = []
 
@@ -291,42 +356,21 @@ def find_flyway_sections(soup):
         feature_name = re.sub(r'\s+', ' ', feature_name).strip()
 
         engines_data = []
-        current_engine = None
-        current_versions = []
 
         for elem in h3.find_all_next():
-            # Stop at the next variant h3
             if elem.name == 'h3' and 'variant' in (elem.get('id') or '').lower():
                 break
 
-            # Each matching h4 starts a new engine section
             if (elem.name == 'h4'
                     and 'supporteddatabasesandversions' in (elem.get('id') or '').lower()):
-                if current_engine is not None:
-                    engines_data.append({
-                        'name': current_engine,
-                        'versions': current_versions,
-                    })
-                current_engine = elem.get_text(strip=True)
-                current_versions = []
-
-            # Confluence data cells → version tags
-            elif (elem.name == 'td'
-                    and current_engine is not None
-                    and 'confluencetd' in ' '.join(elem.get('class', [])).lower()):
-                text = elem.get_text(strip=True)
-                if text:
-                    current_versions.append(text)
-
-        # Flush the last engine
-        if current_engine is not None:
-            engines_data.append({'name': current_engine, 'versions': current_versions})
+                engine_name = elem.get_text(strip=True)
+                table = elem.find_next('table')
+                if table:
+                    engines_data.extend(_parse_flyway_table(table, engine_name))
 
         if engines_data:
             results.append({'feature': feature_name, 'engines': engines_data})
-            logger.info(
-                f'  Flyway section "{feature_name}": {len(engines_data)} engine(s)'
-            )
+            logger.info(f'  Flyway section "{feature_name}": {len(engines_data)} row(s)')
 
     return results
 
