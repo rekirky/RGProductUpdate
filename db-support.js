@@ -188,7 +188,7 @@ const FEATURE_COLOURS = [
   { match: 'mongodb',             colour: '#47A248' },  // Green       – MongoDB
   { match: 'anonymize',           colour: '#7C3AED' },  // Violet      – TDM Anonymize
   { match: 'subset',              colour: '#0D9488' },  // Teal        – TDM Subset
-  { match: 'monitoring',          colour: '#1A6BB5' },  // Blue        – Monitor
+  { match: 'monitoring',          colour: '#2DB84B' },  // Green       – Monitor (matches Healthy status)
   { match: 'data warehouse',      colour: '#9333EA' },  // Purple      – Data Warehousing
   { match: 'nosql',               colour: '#16A34A' },  // Green       – NoSQL & Document
   { match: 'specialised',         colour: '#B45309' },  // Amber       – Specialised
