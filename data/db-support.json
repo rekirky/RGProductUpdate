@@ -1,0 +1,201 @@
+{
+  "generated_at": "2026-04-21T00:00:00+00:00",
+  "products": [
+    {
+      "key": "tdm",
+      "name": "Test Data Manager",
+      "source_url": "https://documentation.red-gate.com/tdm/redgate-test-data-manager-overview/database-engine-support",
+      "engines": ["SQL Server", "PostgreSQL", "Oracle", "MySQL", "MariaDB"],
+      "cloud_matrix": [
+        {
+          "provider": "Amazon",
+          "service": "IaaS",
+          "support": {
+            "SQL Server": "supported",
+            "PostgreSQL": "supported",
+            "Oracle": "supported",
+            "MySQL": "supported",
+            "MariaDB": "supported"
+          }
+        },
+        {
+          "provider": "Amazon",
+          "service": "RDS",
+          "support": {
+            "SQL Server": "supported",
+            "PostgreSQL": "supported",
+            "Oracle": "preview",
+            "MySQL": "preview",
+            "MariaDB": "preview"
+          }
+        },
+        {
+          "provider": "Amazon",
+          "service": "Aurora",
+          "support": {
+            "SQL Server": null,
+            "PostgreSQL": "preview",
+            "Oracle": null,
+            "MySQL": "preview",
+            "MariaDB": null
+          }
+        },
+        {
+          "provider": "Microsoft",
+          "service": "IaaS",
+          "support": {
+            "SQL Server": "supported",
+            "PostgreSQL": "supported",
+            "Oracle": "supported",
+            "MySQL": "supported",
+            "MariaDB": "supported"
+          }
+        },
+        {
+          "provider": "Microsoft",
+          "service": "Managed Instance",
+          "support": {
+            "SQL Server": "preview",
+            "PostgreSQL": null,
+            "Oracle": null,
+            "MySQL": null,
+            "MariaDB": null
+          }
+        },
+        {
+          "provider": "Microsoft",
+          "service": "Azure SQL DB",
+          "support": {
+            "SQL Server": "preview",
+            "PostgreSQL": null,
+            "Oracle": null,
+            "MySQL": null,
+            "MariaDB": null
+          }
+        },
+        {
+          "provider": "Microsoft",
+          "service": "Azure SQL DB Hyperscale",
+          "support": {
+            "SQL Server": "preview",
+            "PostgreSQL": null,
+            "Oracle": null,
+            "MySQL": null,
+            "MariaDB": null
+          }
+        },
+        {
+          "provider": "Microsoft",
+          "service": "Fabric SQL Database",
+          "support": {
+            "SQL Server": "preview",
+            "PostgreSQL": null,
+            "Oracle": null,
+            "MySQL": null,
+            "MariaDB": null
+          }
+        },
+        {
+          "provider": "Microsoft",
+          "service": "Flexible Server PostgreSQL",
+          "support": {
+            "SQL Server": null,
+            "PostgreSQL": "preview",
+            "Oracle": null,
+            "MySQL": null,
+            "MariaDB": null
+          }
+        },
+        {
+          "provider": "Microsoft",
+          "service": "Azure Database MySQL - Flexible",
+          "support": {
+            "SQL Server": null,
+            "PostgreSQL": null,
+            "Oracle": null,
+            "MySQL": "preview",
+            "MariaDB": null
+          }
+        },
+        {
+          "provider": "Google",
+          "service": "IaaS",
+          "support": {
+            "SQL Server": "supported",
+            "PostgreSQL": "supported",
+            "Oracle": "supported",
+            "MySQL": "supported",
+            "MariaDB": "supported"
+          }
+        },
+        {
+          "provider": "Google",
+          "service": "Cloud SQL",
+          "support": {
+            "SQL Server": "preview",
+            "PostgreSQL": "preview",
+            "Oracle": null,
+            "MySQL": "preview",
+            "MariaDB": null
+          }
+        },
+        {
+          "provider": "Google",
+          "service": "AlloyDB",
+          "support": {
+            "SQL Server": null,
+            "PostgreSQL": "not_supported",
+            "Oracle": null,
+            "MySQL": null,
+            "MariaDB": null
+          }
+        },
+        {
+          "provider": "Databricks",
+          "service": "Neon",
+          "support": {
+            "SQL Server": null,
+            "PostgreSQL": "preview",
+            "Oracle": null,
+            "MySQL": null,
+            "MariaDB": null
+          }
+        },
+        {
+          "provider": "Snowflake",
+          "service": "CrunchyData",
+          "support": {
+            "SQL Server": null,
+            "PostgreSQL": "preview",
+            "Oracle": null,
+            "MySQL": null,
+            "MariaDB": null
+          }
+        }
+      ],
+      "version_support": [
+        {
+          "feature": "Anonymize",
+          "engines": [
+            {"name": "SQL Server", "versions": ["2019", "2022", "2025"]},
+            {"name": "Azure SQL Database", "versions": []},
+            {"name": "PostgreSQL", "versions": ["13", "14", "15", "16", "17", "18"]},
+            {"name": "MySQL", "versions": ["8", "9"]},
+            {"name": "MariaDB", "versions": ["10", "11", "12"]},
+            {"name": "Oracle", "versions": ["19.3", "23"]}
+          ]
+        },
+        {
+          "feature": "Subset",
+          "engines": [
+            {"name": "SQL Server", "versions": ["2019", "2022", "2025"]},
+            {"name": "PostgreSQL", "versions": ["13", "14", "15", "16", "17", "18"]},
+            {"name": "MySQL", "versions": ["8", "9"]},
+            {"name": "MariaDB", "versions": ["10", "11", "12"]},
+            {"name": "Oracle", "versions": ["19.3", "23"]}
+          ]
+        }
+      ]
+    }
+  ]
+}

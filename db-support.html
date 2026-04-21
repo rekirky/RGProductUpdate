@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database Engine Support &ndash; Redgate</title>
+  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-brand">
+        <svg class="header-logo" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="16" fill="white"/>
+          <text x="16" y="22" text-anchor="middle" fill="#CC2027"
+                font-family="Georgia, 'Times New Roman', serif"
+                font-size="20" font-weight="bold">R</text>
+        </svg>
+        <span class="header-title">Product Update Tracker</span>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html">Product Updates</a>
+        <a href="db-support.html" aria-current="page">Database Support</a>
+        <a href="https://documentation.red-gate.com" target="_blank" rel="noopener">Documentation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Database Engine Support</h1>
+          <p class="page-subtitle">Supported databases and cloud deployments for Redgate products.</p>
+        </div>
+        <div id="last-updated" class="last-updated" aria-live="polite">Loading&hellip;</div>
+      </div>
+
+      <!-- Product selector -->
+      <div class="controls">
+        <div id="product-tabs" class="filter-group" role="group" aria-label="Select product">
+          <button class="filter-btn-tag active" disabled>Loading&hellip;</button>
+        </div>
+      </div>
+
+      <!-- Cloud provider filter -->
+      <div class="controls">
+        <div id="cloud-filters" class="filter-group" role="group" aria-label="Filter by cloud provider">
+          <button class="filter-btn active" data-cloud="all">All providers</button>
+          <button class="filter-btn" data-cloud="Amazon">Amazon</button>
+          <button class="filter-btn" data-cloud="Microsoft">Microsoft</button>
+          <button class="filter-btn" data-cloud="Google">Google</button>
+          <button class="filter-btn" data-cloud="other">Other</button>
+        </div>
+      </div>
+
+      <!-- Compatibility matrix -->
+      <div class="section-block">
+        <div class="section-heading">
+          <h2 class="section-title">Cloud Compatibility</h2>
+          <a id="source-link" href="#" target="_blank" rel="noopener" class="source-link">View source docs &#8599;</a>
+        </div>
+        <div class="table-wrapper">
+          <table id="matrix-table" aria-label="Cloud compatibility matrix">
+            <tbody>
+              <tr class="state-row"><td colspan="7">Loading&hellip;</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="matrix-legend">
+          <span class="legend-item"><span class="support-badge supported">&#10003; Ready</span> Production Ready</span>
+          <span class="legend-item"><span class="support-badge preview">&#x1F9EA; Preview</span> Evaluation only &mdash; limited support, may change</span>
+          <span class="legend-item"><span class="support-badge not-supported">&#10005;</span> Not Supported</span>
+          <span class="legend-item"><span class="support-badge na">&mdash;</span> Not Applicable</span>
+        </div>
+      </div>
+
+      <!-- Version support -->
+      <div class="section-block">
+        <h2 class="section-title">Supported Versions</h2>
+        <div class="controls" style="margin-bottom: 0.75rem;">
+          <div id="feature-tabs" class="filter-group" role="group" aria-label="Select feature">
+          </div>
+        </div>
+        <div id="version-table-wrapper" class="table-wrapper">
+          <table><tbody>
+            <tr class="state-row"><td colspan="2">Loading&hellip;</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        Unofficial tracker &mdash; not affiliated with Redgate Software.
+        Data sourced from <a href="https://documentation.red-gate.com" target="_blank" rel="noopener">Redgate documentation</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="db-support.js?v=1"></script>
+</body>
+</html>

@@ -25,16 +25,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run scraper
+      - name: Run scrapers
         run: |
           mkdir -p data
           python backend/scraper.py
+          python backend/scrape_db_support.py
 
       - name: Commit and push if changed
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add data/products.json
+          git add data/products.json data/db-support.json
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "Update product data"
           git push
