@@ -627,6 +627,12 @@ tbody td {
 .col-support-level { width: 140px; white-space: nowrap; }
 .col-versions      { min-width: 260px; }
 
+/* Flyway tier table columns */
+.col-tier-group { text-align: center; font-size: 0.7rem; font-weight: 700;
+                  text-transform: uppercase; letter-spacing: 0.05em;
+                  color: var(--rg-text-muted); border-bottom: 1px solid var(--rg-border); }
+.col-tier       { width: 100px; text-align: center; white-space: nowrap; }
+
 /* Matrix table cells */
 .cell-provider {
   font-weight: 600;

@@ -241,12 +241,66 @@ function renderVersionSection() {
   renderVersionTable(features[selectedFeatureIdx]);
 }
 
+const FLYWAY_TIERS = ['community', 'teams', 'enterprise', 'foundational', 'advanced'];
+
 function renderVersionTable(feature) {
   if (!feature) return;
 
   const wrapper = document.getElementById('version-table-wrapper');
   const legend  = document.getElementById('version-legend');
 
+  // Detect format: tier-based (Flyway) vs versions-based (TDM, Monitor)
+  const isTierFormat = feature.engines.length > 0 && 'community' in feature.engines[0];
+
+  if (isTierFormat) {
+    renderTierTable(feature, wrapper, legend);
+  } else {
+    renderVersionsTable(feature, wrapper, legend);
+  }
+}
+
+function renderTierTable(feature, wrapper, legend) {
+  if (legend) legend.hidden = true;
+
+  let html = `<table aria-label="${esc(feature.feature)} tier support">
+    <thead>
+      <tr>
+        <th class="col-engine-name" rowspan="2">Database Engine</th>
+        <th class="col-tier-group" colspan="3">Flyway Edition</th>
+        <th class="col-tier-group" colspan="2">Capabilities</th>
+      </tr>
+      <tr>
+        <th class="col-tier">Community</th>
+        <th class="col-tier">Teams</th>
+        <th class="col-tier">Enterprise</th>
+        <th class="col-tier">Foundational</th>
+        <th class="col-tier">Advanced</th>
+      </tr>
+    </thead>
+    <tbody>`;
+
+  feature.engines.forEach(e => {
+    html += `<tr><td class="cell-engine-name">${esc(e.name)}</td>`;
+    FLYWAY_TIERS.forEach(tier => {
+      html += `<td class="cell-support">${tierStatusBadge(e[tier])}</td>`;
+    });
+    html += '</tr>';
+  });
+
+  html += '</tbody></table>';
+  wrapper.innerHTML = html;
+}
+
+function tierStatusBadge(status) {
+  switch (status) {
+    case 'supported':     return '<span class="support-badge supported">&#10003;</span>';
+    case 'compatible':    return '<span class="support-badge compatible">&#9675;</span>';
+    case 'not_supported': return '<span class="support-badge not-supported">&#10005;</span>';
+    default:              return '<span class="support-badge na">&mdash;</span>';
+  }
+}
+
+function renderVersionsTable(feature, wrapper, legend) {
   const hasStatus = feature.engines.some(e => e.status != null);
   if (legend) legend.hidden = !hasStatus;
 
@@ -259,8 +313,9 @@ function renderVersionTable(feature) {
     <tbody>`;
 
   feature.engines.forEach(e => {
-    const versionTags = e.versions.length > 0
-      ? e.versions.map(v => `<span class="version-tag">${esc(v)}</span>`).join(' ')
+    const versions = e.versions ?? [];
+    const versionTags = versions.length > 0
+      ? versions.map(v => `<span class="version-tag">${esc(v)}</span>`).join(' ')
       : '<span class="version-tag empty">&mdash;</span>';
 
     const levelBadge = e.status === 'supported'
