@@ -293,9 +293,26 @@ def _parse_flyway_complex_table(table):
     if not rows:
         return []
 
-    # Find the tier-name header row (contains 'community', 'teams', etc.)
+    def clean(text):
+        return re.sub(r'\s+', ' ', text.replace('\xa0', ' ')).strip()
+
+    def cell_names(cell):
+        """Extract possibly-multiple engine names from a cell (via <p> tags or newlines)."""
+        names = [p.get_text(strip=True) for p in cell.find_all('p') if p.get_text(strip=True)]
+        if not names:
+            raw = cell.get_text(separator='\n', strip=True)
+            names = [s.strip() for s in raw.splitlines() if s.strip()]
+        return [clean(n) for n in names if clean(n)]
+
+    # Find the tier-name header row (contains 'community', 'teams', etc.).
+    # This row doubles as the FIRST sub-header: its cells[0] holds the first engine
+    # group name(s).  We read tier column indices from it AND seed pending_names /
+    # current_engine so the immediately-following data rows are attributed correctly.
     tier_indices = {}
     data_start = 0
+    pending_names = []
+    current_engine = None
+
     for i, row in enumerate(rows):
         cells = row.find_all(['th', 'td'])
         texts = [c.get_text(strip=True).lower() for c in cells]
@@ -303,6 +320,13 @@ def _parse_flyway_complex_table(table):
         if len(present) >= 2:
             tier_indices = {col: texts.index(col) for col in present}
             data_start = i + 1
+            # Treat cells[0] of this row as the first engine group
+            if cells:
+                first_group = cell_names(cells[0])
+                if len(first_group) == 1:
+                    current_engine = first_group[0]
+                elif len(first_group) > 1:
+                    pending_names = first_group
             break
 
     if not tier_indices:
@@ -331,12 +355,7 @@ def _parse_flyway_complex_table(table):
             v = [s.strip() for s in raw.splitlines() if s.strip()]
         return v
 
-    def clean(text):
-        return re.sub(r'\s+', ' ', text.replace('\xa0', ' ')).strip()
-
     result = []
-    pending_names = []   # Names waiting for their shared data row
-    current_engine = None  # Active engine for single-engine groups
 
     for row in rows[data_start:]:
         cells = row.find_all(['th', 'td'])

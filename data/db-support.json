@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T23:16:48.124733+00:00",
+  "generated_at": "2026-04-21T23:33:23.037484+00:00",
   "products": [
     {
       "key": "tdm",
@@ -285,6 +285,39 @@
           "feature": "SQL Server",
           "engines": [
             {
+              "name": "Azure SQL Database",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure SQL Database Managed Instance",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
               "name": "SQL Server",
               "versions": [
                 "SQL Server 2025",
@@ -352,6 +385,61 @@
           "feature": "Oracle",
           "engines": [
             {
+              "name": "Oracle Database",
+              "versions": [
+                "Oracle Autonomous Database (PaaS)"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "23ai"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "21c"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "19c"
+              ],
+              "community": "compatible",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Oracle Database",
+              "versions": [
+                "18c or below"
+              ],
+              "community": "compatible",
+              "teams": "compatible",
+              "enterprise": "compatible",
+              "foundational": "compatible",
+              "advanced": "compatible"
+            },
+            {
               "name": "Oracle RAC/Exadata",
               "versions": [
                 "23ai"
@@ -400,6 +488,61 @@
         {
           "feature": "PostgreSQL",
           "engines": [
+            {
+              "name": "Amazon RDS",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Google Cloud for PostgreSQL",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure PostgreSQL - Flexible Server",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure PostgreSQL - Single Server",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Aurora PostgreSQL",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
             {
               "name": "PostgreSQL",
               "versions": [
@@ -513,6 +656,50 @@
           "feature": "MySQL",
           "engines": [
             {
+              "name": "Amazon RDS",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Azure MySQL",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Google Cloud",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Aurora MySQL",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
               "name": "MySQL",
               "versions": [
                 "9.4"
@@ -593,6 +780,28 @@
               "advanced": null
             },
             {
+              "name": "SkySQL",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
+              "name": "Amazon RDS",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": "supported"
+            },
+            {
               "name": "MariaDB",
               "versions": [
                 "10.11"
@@ -646,11 +855,44 @@
               "advanced": null
             },
             {
+              "name": "MongoDB",
+              "versions": [
+                "Latest"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
               "name": "AtlasCloud",
               "versions": [
                 "Latest"
               ],
               "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "SAP HANA",
+              "versions": [
+                "2.0"
+              ],
+              "community": "supported",
+              "teams": "supported",
+              "enterprise": "supported",
+              "foundational": "supported",
+              "advanced": null
+            },
+            {
+              "name": "SAP HANA",
+              "versions": [
+                "1.0"
+              ],
+              "community": "compatible",
               "teams": "supported",
               "enterprise": "supported",
               "foundational": "supported",
