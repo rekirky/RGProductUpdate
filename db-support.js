@@ -114,23 +114,6 @@ function wireCloudFilters() {
   });
 }
 
-// ── Provider brand colours ────────────────────────────────────────────────
-
-// background-image gradient: reliable 4px left stripe, immune to border-collapse
-const PROVIDER_SHADOW = {
-  amazon:    'linear-gradient(90deg, #05A0D1 4px, transparent 4px)',
-  microsoft: 'linear-gradient(90deg, #F25022 1px, #7FBA00 1px 2px, #00A4EF 2px 3px, #FFB900 3px 4px, transparent 4px)',
-  google:    'linear-gradient(90deg, #4285F4 1px, #EA4335 1px 2px, #FBBC05 2px 3px, #34A853 3px 4px, transparent 4px)',
-  other:     'linear-gradient(90deg, #F97316 4px, transparent 4px)',
-};
-
-const PROVIDER_HOVER_BG = {
-  amazon:    'rgba(5,160,209,0.10)',
-  microsoft: 'rgba(0,164,239,0.10)',
-  google:    'rgba(66,133,244,0.10)',
-  other:     'rgba(249,115,22,0.10)',
-};
-
 // ── Compatibility matrix ──────────────────────────────────────────────────
 
 function renderMatrix() {
@@ -169,10 +152,8 @@ function renderMatrix() {
     let prevProvider = null;
     rows.forEach(row => {
       const isNewGroup = row.provider !== prevProvider;
-      const providerGroup = MAIN_PROVIDERS.includes(row.provider) ? row.provider.toLowerCase() : 'other';
-      const stripe = PROVIDER_SHADOW[providerGroup] || '';
-      html += `<tr${isNewGroup ? ' class="provider-start"' : ''} data-provider="${providerGroup}">`;
-      html += `<td class="cell-provider" style="background-image:${stripe}">${esc(row.provider)}</td>`;
+      html += `<tr${isNewGroup ? ' class="provider-start"' : ''}>`;
+      html += `<td class="cell-provider">${esc(row.provider)}</td>`;
       html += `<td class="cell-service">${esc(row.service)}</td>`;
       engines.forEach(engine => {
         html += `<td class="cell-support">${cloudStatusBadge(row.support[engine])}</td>`;
@@ -184,14 +165,6 @@ function renderMatrix() {
 
   html += '</tbody>';
   table.innerHTML = html;
-
-  // Wire hover colours via JS — bypasses CSS cascade issues entirely
-  table.querySelectorAll('tbody tr[data-provider]').forEach(tr => {
-    const bg = PROVIDER_HOVER_BG[tr.dataset.provider];
-    if (!bg) return;
-    tr.addEventListener('mouseenter', () => { tr.style.backgroundColor = bg; });
-    tr.addEventListener('mouseleave', () => { tr.style.backgroundColor = ''; });
-  });
 }
 
 function cloudStatusBadge(status) {
