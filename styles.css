@@ -634,6 +634,12 @@ tbody td {
                   color: var(--rg-text-muted); border-bottom: 1px solid var(--rg-border); }
 .col-tier       { width: 100px; text-align: center; white-space: nowrap; }
 
+/* Divider between Flyway Edition and Capabilities columns */
+.tier-group-divider,
+.tier-divider {
+  border-left: 2px solid var(--rg-border) !important;
+}
+
 /* Matrix table cells */
 .cell-provider {
   font-weight: 600;

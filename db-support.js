@@ -212,6 +212,13 @@ function renderVersionSection() {
   const tabContainer = document.getElementById('feature-tabs');
   const wrapper = document.getElementById('version-table-wrapper');
 
+  // Source link — show for any product that has a source URL on the version section
+  const versionSourceLink = document.getElementById('version-source-link');
+  if (versionSourceLink) {
+    versionSourceLink.href = product.source_url || '#';
+    versionSourceLink.hidden = !product.source_url;
+  }
+
   if (features.length === 0) {
     tabContainer.innerHTML = '';
     wrapper.innerHTML = '<table><tbody><tr class="state-row"><td colspan="2">No version data available.</td></tr></tbody></table>';
@@ -268,6 +275,8 @@ function renderVersionTable(feature) {
 }
 
 function renderFlywayTable(feature, wrapper) {
+  const legend = document.getElementById('flyway-legend');
+  if (legend) legend.hidden = false;
 
   let html = `<table aria-label="${esc(feature.feature)} supported versions">
     <thead>
@@ -275,13 +284,13 @@ function renderFlywayTable(feature, wrapper) {
         <th class="col-engine-name" rowspan="2">Database Engine</th>
         <th class="col-versions"    rowspan="2">Supported Versions</th>
         <th class="col-tier-group"  colspan="3">Flyway Edition</th>
-        <th class="col-tier-group"  colspan="2">Capabilities</th>
+        <th class="col-tier-group tier-group-divider" colspan="2">Capabilities</th>
       </tr>
       <tr>
         <th class="col-tier">Community</th>
         <th class="col-tier">Teams</th>
         <th class="col-tier">Enterprise</th>
-        <th class="col-tier">Foundational</th>
+        <th class="col-tier tier-divider">Foundational</th>
         <th class="col-tier">Advanced</th>
       </tr>
     </thead>
@@ -297,7 +306,8 @@ function renderFlywayTable(feature, wrapper) {
       <td class="cell-engine-name">${esc(e.name)}</td>
       <td class="cell-versions">${versionTags}</td>`;
     FLYWAY_TIERS.forEach(tier => {
-      html += `<td class="cell-support">${tierStatusBadge(e[tier])}</td>`;
+      const divider = tier === 'foundational' ? ' tier-divider' : '';
+      html += `<td class="cell-support${divider}">${tierStatusBadge(e[tier])}</td>`;
     });
     html += '</tr>';
   });
@@ -306,7 +316,13 @@ function renderFlywayTable(feature, wrapper) {
   wrapper.innerHTML = html;
 }
 
+function hideFlywaySectionExtras() {
+  const legend = document.getElementById('flyway-legend');
+  if (legend) legend.hidden = true;
+}
+
 function renderVersionsTable(feature, wrapper) {
+  hideFlywaySectionExtras();
   const hasStatus = feature.engines.some(e => e.status != null);
 
   let html = `<table aria-label="${esc(feature.feature)} supported versions">
