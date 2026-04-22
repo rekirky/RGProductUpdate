@@ -642,37 +642,33 @@ tbody td {
   border-left: 4px solid transparent;
 }
 
-/* Provider brand colour accents */
+/* Provider brand colour accents — inset box-shadow avoids border-collapse conflicts */
 .cell-provider[data-provider="amazon"] {
-  border-left: 4px solid #05A0D1;
+  box-shadow: inset 4px 0 0 #05A0D1;
 }
 .cell-provider[data-provider="microsoft"] {
-  border-width: 0 0 0 4px;
-  border-style: solid;
-  border-image: linear-gradient(180deg,
-    #F25022 0% 25%, #7FBA00 25% 50%,
-    #00A4EF 50% 75%, #FFB900 75% 100%) 1;
+  box-shadow:
+    inset 1px 0 0 #F25022,
+    inset 2px 0 0 #7FBA00,
+    inset 3px 0 0 #00A4EF,
+    inset 4px 0 0 #FFB900;
 }
 .cell-provider[data-provider="google"] {
-  border-width: 0 0 0 4px;
-  border-style: solid;
-  border-image: linear-gradient(180deg,
-    #4285F4 0% 16.67%, #EA4335 16.67% 33.33%,
-    #FBBC05 33.33% 50%,  #4285F4 50%   66.67%,
-    #34A853 66.67% 83.33%, #EA4335 83.33% 100%) 1;
+  box-shadow:
+    inset 1px 0 0 #4285F4,
+    inset 2px 0 0 #EA4335,
+    inset 3px 0 0 #FBBC05,
+    inset 4px 0 0 #34A853;
 }
 .cell-provider[data-provider="other"] {
-  border-left: 4px solid #F97316;
+  box-shadow: inset 4px 0 0 #F97316;
 }
 
-/* Provider row hover — tint whole row, accent the provider cell */
-tr[data-provider="amazon"]    { --p-row: rgba(5,160,209,0.07);   --p-cell: rgba(5,160,209,0.18); }
-tr[data-provider="microsoft"] { --p-row: rgba(0,164,239,0.07);   --p-cell: rgba(0,164,239,0.18); }
-tr[data-provider="google"]    { --p-row: rgba(66,133,244,0.07);  --p-cell: rgba(66,133,244,0.18); }
-tr[data-provider="other"]     { --p-row: rgba(249,115,22,0.07);  --p-cell: rgba(249,115,22,0.18); }
-
-tr[data-provider]:hover td           { background-color: var(--p-row);  transition: background-color 0.15s; }
-tr[data-provider]:hover .cell-provider { background-color: var(--p-cell); }
+/* Provider row hover — higher specificity than tbody tr:hover to override #FAFAFA */
+tbody tr[data-provider="amazon"]:hover    { background: rgba(5,160,209,0.10); }
+tbody tr[data-provider="microsoft"]:hover { background: rgba(0,164,239,0.10); }
+tbody tr[data-provider="google"]:hover    { background: rgba(66,133,244,0.10); }
+tbody tr[data-provider="other"]:hover     { background: rgba(249,115,22,0.10); }
 
 .cell-service {
   font-size: 0.875rem;

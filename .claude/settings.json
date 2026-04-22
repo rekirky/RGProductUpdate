@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python -c ':*)"
+      "Bash(python -c ':*)",
+      "WebFetch(domain:rekirky.github.io)",
+      "Bash(curl -s https://rekirky.github.io/RGProductUpdate/db-support.html)"
     ]
   }
 }
