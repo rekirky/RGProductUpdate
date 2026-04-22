@@ -116,11 +116,12 @@ function wireCloudFilters() {
 
 // ── Provider brand colours ────────────────────────────────────────────────
 
+// background-image gradient: reliable 4px left stripe, immune to border-collapse
 const PROVIDER_SHADOW = {
-  amazon:    'inset 4px 0 0 #05A0D1',
-  microsoft: 'inset 1px 0 0 #F25022, inset 2px 0 0 #7FBA00, inset 3px 0 0 #00A4EF, inset 4px 0 0 #FFB900',
-  google:    'inset 1px 0 0 #4285F4, inset 2px 0 0 #EA4335, inset 3px 0 0 #FBBC05, inset 4px 0 0 #34A853',
-  other:     'inset 4px 0 0 #F97316',
+  amazon:    'linear-gradient(90deg, #05A0D1 4px, transparent 4px)',
+  microsoft: 'linear-gradient(90deg, #F25022 1px, #7FBA00 1px 2px, #00A4EF 2px 3px, #FFB900 3px 4px, transparent 4px)',
+  google:    'linear-gradient(90deg, #4285F4 1px, #EA4335 1px 2px, #FBBC05 2px 3px, #34A853 3px 4px, transparent 4px)',
+  other:     'linear-gradient(90deg, #F97316 4px, transparent 4px)',
 };
 
 const PROVIDER_HOVER_BG = {
@@ -169,9 +170,9 @@ function renderMatrix() {
     rows.forEach(row => {
       const isNewGroup = row.provider !== prevProvider;
       const providerGroup = MAIN_PROVIDERS.includes(row.provider) ? row.provider.toLowerCase() : 'other';
-      const shadow = PROVIDER_SHADOW[providerGroup] || '';
+      const stripe = PROVIDER_SHADOW[providerGroup] || '';
       html += `<tr${isNewGroup ? ' class="provider-start"' : ''} data-provider="${providerGroup}">`;
-      html += `<td class="cell-provider" style="box-shadow:${shadow}">${esc(row.provider)}</td>`;
+      html += `<td class="cell-provider" style="background-image:${stripe}">${esc(row.provider)}</td>`;
       html += `<td class="cell-service">${esc(row.service)}</td>`;
       engines.forEach(engine => {
         html += `<td class="cell-support">${cloudStatusBadge(row.support[engine])}</td>`;
@@ -188,8 +189,8 @@ function renderMatrix() {
   table.querySelectorAll('tbody tr[data-provider]').forEach(tr => {
     const bg = PROVIDER_HOVER_BG[tr.dataset.provider];
     if (!bg) return;
-    tr.addEventListener('mouseenter', () => { tr.style.background = bg; });
-    tr.addEventListener('mouseleave', () => { tr.style.background = ''; });
+    tr.addEventListener('mouseenter', () => { tr.style.backgroundColor = bg; });
+    tr.addEventListener('mouseleave', () => { tr.style.backgroundColor = ''; });
   });
 }
 
