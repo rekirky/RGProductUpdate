@@ -651,7 +651,7 @@ tbody td {
 /* Microsoft & Google gradient on hover and active */
 [data-cloud="Microsoft"]:hover,
 [data-cloud="Microsoft"].active {
-  background: linear-gradient(90deg, #F25022, #7FBA00, #00A4EF, #FFB900);
+  background: linear-gradient(45deg, #F25022, #7FBA00, #00A4EF, #FFB900);
   border-color: transparent;
   color: #fff;
 }
