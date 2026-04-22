@@ -552,6 +552,12 @@ tbody td {
   margin-top: 2rem;
 }
 
+/* When cloud section is hidden (e.g. Flyway), reduce gap so feature tabs
+   sit close to the product tabs above rather than floating in empty space */
+#cloud-section[hidden] + .section-block {
+  margin-top: 0.75rem;
+}
+
 .section-heading {
   display: flex;
   align-items: baseline;
