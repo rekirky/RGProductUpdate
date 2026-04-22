@@ -114,6 +114,22 @@ function wireCloudFilters() {
   });
 }
 
+// ── Provider brand colours ────────────────────────────────────────────────
+
+const PROVIDER_SHADOW = {
+  amazon:    'inset 4px 0 0 #05A0D1',
+  microsoft: 'inset 1px 0 0 #F25022, inset 2px 0 0 #7FBA00, inset 3px 0 0 #00A4EF, inset 4px 0 0 #FFB900',
+  google:    'inset 1px 0 0 #4285F4, inset 2px 0 0 #EA4335, inset 3px 0 0 #FBBC05, inset 4px 0 0 #34A853',
+  other:     'inset 4px 0 0 #F97316',
+};
+
+const PROVIDER_HOVER_BG = {
+  amazon:    'rgba(5,160,209,0.10)',
+  microsoft: 'rgba(0,164,239,0.10)',
+  google:    'rgba(66,133,244,0.10)',
+  other:     'rgba(249,115,22,0.10)',
+};
+
 // ── Compatibility matrix ──────────────────────────────────────────────────
 
 function renderMatrix() {
@@ -153,8 +169,9 @@ function renderMatrix() {
     rows.forEach(row => {
       const isNewGroup = row.provider !== prevProvider;
       const providerGroup = MAIN_PROVIDERS.includes(row.provider) ? row.provider.toLowerCase() : 'other';
+      const shadow = PROVIDER_SHADOW[providerGroup] || '';
       html += `<tr${isNewGroup ? ' class="provider-start"' : ''} data-provider="${providerGroup}">`;
-      html += `<td class="cell-provider" data-provider="${providerGroup}">${esc(row.provider)}</td>`;
+      html += `<td class="cell-provider" style="box-shadow:${shadow}">${esc(row.provider)}</td>`;
       html += `<td class="cell-service">${esc(row.service)}</td>`;
       engines.forEach(engine => {
         html += `<td class="cell-support">${cloudStatusBadge(row.support[engine])}</td>`;
@@ -166,6 +183,14 @@ function renderMatrix() {
 
   html += '</tbody>';
   table.innerHTML = html;
+
+  // Wire hover colours via JS — bypasses CSS cascade issues entirely
+  table.querySelectorAll('tbody tr[data-provider]').forEach(tr => {
+    const bg = PROVIDER_HOVER_BG[tr.dataset.provider];
+    if (!bg) return;
+    tr.addEventListener('mouseenter', () => { tr.style.background = bg; });
+    tr.addEventListener('mouseleave', () => { tr.style.background = ''; });
+  });
 }
 
 function cloudStatusBadge(status) {

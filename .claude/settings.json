@@ -3,7 +3,11 @@
     "allow": [
       "Bash(python -c ':*)",
       "WebFetch(domain:rekirky.github.io)",
-      "Bash(curl -s https://rekirky.github.io/RGProductUpdate/db-support.html)"
+      "Bash(curl -s https://rekirky.github.io/RGProductUpdate/db-support.html)",
+      "Bash(curl -s \"https://rekirky.github.io/RGProductUpdate/styles.css\")",
+      "Bash(curl -s \"https://rekirky.github.io/RGProductUpdate/db-support.js\")",
+      "Bash(curl -s \"https://rekirky.github.io/RGProductUpdate/data/db-support.json\")",
+      "Bash(curl -s \"https://rekirky.github.io/RGProductUpdate/db-support.html\")"
     ]
   }
 }
