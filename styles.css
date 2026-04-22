@@ -226,8 +226,9 @@ main {
 }
 
 .filter-btn:hover {
+  background: var(--btn-accent, var(--rg-red));
   border-color: var(--btn-accent, var(--rg-red));
-  color: var(--btn-accent, var(--rg-red));
+  color: var(--rg-white);
 }
 
 .filter-btn.active {
@@ -646,6 +647,20 @@ tbody td {
 [data-cloud="Microsoft"] { --btn-accent: #00A4EF; }
 [data-cloud="Google"]    { --btn-accent: #4285F4; }
 [data-cloud="other"]     { --btn-accent: #F97316; }
+
+/* Microsoft & Google gradient on hover and active */
+[data-cloud="Microsoft"]:hover,
+[data-cloud="Microsoft"].active {
+  background: linear-gradient(90deg, #F25022, #7FBA00, #00A4EF, #FFB900);
+  border-color: transparent;
+  color: #fff;
+}
+[data-cloud="Google"]:hover,
+[data-cloud="Google"].active {
+  background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853);
+  border-color: transparent;
+  color: #fff;
+}
 
 .cell-service {
   font-size: 0.875rem;
