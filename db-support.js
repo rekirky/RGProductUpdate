@@ -208,15 +208,19 @@ function renderVersionSection() {
   const product = getProduct();
   if (!product) return;
 
+  // Always reset Flyway-specific extras before rendering any product
+  hideFlywaySectionExtras();
+
   const features = product.version_support ?? [];
   const tabContainer = document.getElementById('feature-tabs');
   const wrapper = document.getElementById('version-table-wrapper');
 
-  // Source link — show for any product that has a source URL on the version section
+  // Source link — only show for Flyway (version section link)
   const versionSourceLink = document.getElementById('version-source-link');
   if (versionSourceLink) {
-    versionSourceLink.href = product.source_url || '#';
-    versionSourceLink.hidden = !product.source_url;
+    const showLink = product.key === 'flyway' && product.source_url;
+    versionSourceLink.href = showLink ? product.source_url : '#';
+    versionSourceLink.hidden = !showLink;
   }
 
   if (features.length === 0) {
