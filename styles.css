@@ -717,6 +717,8 @@ tr.provider-start td {
   align-items: center;
 }
 
+.matrix-legend[hidden] { display: none; }
+
 .legend-item {
   display: flex;
   align-items: center;
