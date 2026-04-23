@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T19:00:59.263789+00:00",
+  "generated_at": "2026-04-23T18:57:14.534823+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -344,9 +344,9 @@
     {
       "key": "RedgateMonitorWebService",
       "name": "Redgate Monitor",
-      "version": "14.15.0",
-      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorWebService/RedgateMonitorWebService_14.15.0.20815.exe",
-      "updated": "2026-04-16",
+      "version": "14.16.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorWebService/RedgateMonitorWebService_14.16.0.22019.exe",
+      "updated": "2026-04-23",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/monitor",
       "release_notes_url": "https://documentation.red-gate.com/monitor/release-notes"
@@ -404,9 +404,9 @@
     {
       "key": "RedgateMonitorSBOM",
       "name": "RedgateMonitorSBOM",
-      "version": "14.15.0",
-      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorSBOM/RedgateMonitorSBOM_14.15.0.20815.zip",
-      "updated": "2026-04-16",
+      "version": "14.16.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/RedgateMonitorSBOM/RedgateMonitorSBOM_14.16.0.22019.zip",
+      "updated": "2026-04-23",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
@@ -534,9 +534,9 @@
     {
       "key": "SQLChangeAutomation",
       "name": "SQL Change Automation",
-      "version": "5.1.26058",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLChangeAutomation/SQLChangeAutomation_5.1.26058.7953.exe",
-      "updated": "2026-03-02",
+      "version": "5.1.26112",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLChangeAutomation/SQLChangeAutomation_5.1.26112.8243.exe",
+      "updated": "2026-04-23",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sca",
       "release_notes_url": "https://documentation.red-gate.com/sca/release-notes-and-other-versions/sql-server-management-studio-add-in-release-notes"
@@ -634,9 +634,9 @@
     {
       "key": "SQLMultiScript",
       "name": "SQL Multi Script",
-      "version": "1.7.3",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLMultiScript/SQLMultiScript_1.7.3.4456.exe",
-      "updated": "2026-03-24",
+      "version": "1.7.4",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLMultiScript/SQLMultiScript_1.7.4.4497.exe",
+      "updated": "2026-04-23",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sms",
       "release_notes_url": "https://documentation.red-gate.com/sms/release-notes-and-other-versions"
@@ -664,9 +664,9 @@
     {
       "key": "SQLSearch",
       "name": "SQL Search",
-      "version": "3.9.7",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLSearch/SQLSearch_3.9.7.6574.exe",
-      "updated": "2026-03-31",
+      "version": "3.9.8",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLSearch/SQLSearch_3.9.8.6610.exe",
+      "updated": "2026-04-23",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/ss",
       "release_notes_url": "https://documentation.red-gate.com/ss/release-notes-and-other-versions"
@@ -696,7 +696,7 @@
       "name": "SQL Toolbelt",
       "version": "",
       "download_url": "http://download.red-gate.com/SQLToolbelt.exe",
-      "updated": "2026-04-21",
+      "updated": "2026-04-23",
       "status": "current",
       "doc_url": "",
       "release_notes_url": ""
@@ -706,7 +706,7 @@
       "name": "SQL Toolbelt Essentials",
       "version": "",
       "download_url": "http://download.red-gate.com/SQLToolbeltEssentials.exe",
-      "updated": "2026-04-21",
+      "updated": "2026-04-23",
       "status": "current",
       "doc_url": "",
       "release_notes_url": ""
