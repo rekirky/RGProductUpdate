@@ -264,6 +264,49 @@ main {
   border-radius: 2px;
 }
 
+/* ── Index page: status filter colours ───────────────────────────────────── */
+.filter-btn[data-filter="all"]      { --btn-accent: #2563EB; }
+.filter-btn[data-filter="week"]     { --btn-accent: #16A34A; }
+.filter-btn[data-filter="current"]  { --btn-accent: #CA8A04; }
+.filter-btn[data-filter="previous"] { --btn-accent: #EA580C; }
+
+/* ── Index page: product tag colours ─────────────────────────────────────── */
+.filter-btn-tag[data-name-filter="all"]:hover,
+.filter-btn-tag[data-name-filter="all"].active {
+  background: #2563EB; border-color: #2563EB; color: #fff;
+  box-shadow: 0 2px 6px rgba(37,99,235,0.35);
+}
+.filter-btn-tag[data-name-filter="sqltoolbelt"]:hover,
+.filter-btn-tag[data-name-filter="sqltoolbelt"].active {
+  background: #EA580C; border-color: #EA580C; color: #fff;
+  box-shadow: 0 2px 6px rgba(234,88,12,0.35);
+}
+.filter-btn-tag[data-name-filter="flyway"]:hover,
+.filter-btn-tag[data-name-filter="flyway"].active {
+  background: #CC3000; border-color: #CC3000; color: #fff;
+  box-shadow: 0 2px 6px rgba(204,48,0,0.35);
+}
+.filter-btn-tag[data-name-filter="monitor"]:hover,
+.filter-btn-tag[data-name-filter="monitor"].active {
+  background: #2DB84B; border-color: #2DB84B; color: #fff;
+  box-shadow: 0 2px 6px rgba(45,184,75,0.35);
+}
+.filter-btn-tag[data-name-filter="tdm"]:hover,
+.filter-btn-tag[data-name-filter="tdm"].active {
+  background: #0078A8; border-color: #0078A8; color: #fff;
+  box-shadow: 0 2px 6px rgba(0,120,168,0.35);
+}
+.filter-btn-tag[data-name-filter="dotnet"]:hover,
+.filter-btn-tag[data-name-filter="dotnet"].active {
+  background: #7C3AED; border-color: #7C3AED; color: #fff;
+  box-shadow: 0 2px 6px rgba(124,58,237,0.35);
+}
+.filter-btn-tag[data-name-filter="bundles"]:hover,
+.filter-btn-tag[data-name-filter="bundles"].active {
+  background: #1E3A8A; border-color: #1E3A8A; color: #fff;
+  box-shadow: 0 2px 6px rgba(30,58,138,0.35);
+}
+
 /* Per-product hover / active accent colours */
 .filter-btn-tag[data-product="tdm"]:hover,
 .filter-btn-tag[data-product="tdm"].active {
