@@ -725,34 +725,25 @@ tr.provider-start td {
   gap: 0.4rem;
 }
 
-/* ---- Capabilities info button ---- */
-.section-heading-start {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.capabilities-info-btn {
+/* ---- Capabilities ⓘ icon in table header ---- */
+.cap-th-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.25rem 0.7rem;
-  border: 1px solid var(--rg-border-dark);
-  border-radius: 20px;
-  background: var(--rg-white);
-  font-size: 0.775rem;
-  font-family: var(--font);
-  font-weight: 500;
-  color: var(--rg-text-muted);
+  justify-content: center;
+  margin-left: 0.3rem;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 0.85rem;
+  color: var(--rg-border-dark);
   cursor: pointer;
-  transition: border-color 0.15s, color 0.15s, background 0.15s;
   line-height: 1;
+  vertical-align: middle;
+  transition: color 0.15s;
 }
 
-.capabilities-info-btn:hover {
-  border-color: #CC3000;
-  color: #CC3000;
-  background: #FFF7F5;
+.cap-th-btn:hover {
+  color: var(--rg-text);
 }
 
 /* ---- Capabilities modal ---- */

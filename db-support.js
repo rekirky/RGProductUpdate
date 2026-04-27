@@ -209,10 +209,6 @@ function renderVersionSection() {
   const product = getProduct();
   if (!product) return;
 
-  // Show/hide the capabilities info button
-  const capsBtn = document.getElementById('capabilities-btn');
-  if (capsBtn) capsBtn.hidden = !product.capabilities?.length;
-
   // Always reset Flyway-specific extras before rendering any product
   hideFlywaySectionExtras();
 
@@ -293,7 +289,7 @@ function renderFlywayTable(feature, wrapper) {
         <th class="col-engine-name" rowspan="2">Database Engine</th>
         <th class="col-versions"    rowspan="2">Supported Versions</th>
         <th class="col-tier-group"  colspan="3">Flyway Edition</th>
-        <th class="col-tier-group tier-group-divider" colspan="2">Capabilities</th>
+        <th class="col-tier-group tier-group-divider" colspan="2">Capabilities <button class="cap-th-btn" aria-haspopup="dialog" aria-label="About capabilities">&#9432;</button></th>
       </tr>
       <tr>
         <th class="col-tier">Community</th>
@@ -368,13 +364,14 @@ function renderVersionsTable(feature, wrapper) {
 // ── Capabilities modal ────────────────────────────────────────────────────
 
 function wireCapabilitiesModal() {
-  const btn    = document.getElementById('capabilities-btn');
   const dialog = document.getElementById('capabilities-modal');
-  if (!btn || !dialog) return;
+  if (!dialog) return;
 
-  btn.addEventListener('click', () => {
-    renderCapabilityCards(getProduct()?.capabilities ?? []);
-    dialog.showModal();
+  document.addEventListener('click', e => {
+    if (e.target.closest('.cap-th-btn')) {
+      renderCapabilityCards(getProduct()?.capabilities ?? []);
+      dialog.showModal();
+    }
   });
 
   dialog.querySelector('.cap-modal-close').addEventListener('click', () => dialog.close());
