@@ -669,7 +669,7 @@ tbody td {
 }
 [data-cloud="Google"]:hover,
 [data-cloud="Google"].active {
-  background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853);
+  background: linear-gradient(90deg, #008744, #0057e7, #d62d20, #ffa700);
   border-color: transparent;
   color: #fff;
 }
