@@ -169,8 +169,8 @@ function renderMatrix() {
 
 function cloudStatusBadge(status) {
   switch (status) {
-    case 'supported':     return '<span class="support-badge supported">&#10003; Ready</span>';
-    case 'preview':       return '<span class="support-badge preview">&#x1F9EA; Preview</span>';
+    case 'supported':     return '<span class="support-badge supported">&#10003;</span>';
+    case 'preview':       return '<span class="support-badge preview">&#x1F9EA;</span>';
     case 'not_supported': return '<span class="support-badge not-supported">&#10005;</span>';
     default:              return '<span class="support-badge na">&mdash;</span>';
   }
