@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Database Engine Support &ndash; Redgate</title>
-  <link rel="stylesheet" href="styles.css?v=15">
+  <link rel="stylesheet" href="styles.css?v=16">
   <link rel="icon" href="favicon.ico">
 </head>
 <body>
@@ -83,7 +83,10 @@
           </div>
         </div>
         <div class="section-heading">
-          <h2 class="section-title">Supported Versions</h2>
+          <div class="section-heading-start">
+            <h2 class="section-title">Supported Versions</h2>
+            <button id="capabilities-btn" class="capabilities-info-btn" hidden aria-haspopup="dialog">&#9432; About capabilities</button>
+          </div>
           <a id="version-source-link" href="#" target="_blank" rel="noopener" class="source-link" hidden>View source docs &#8599;</a>
         </div>
         <div id="flyway-legend" class="matrix-legend" hidden>
@@ -110,6 +113,16 @@
     </div>
   </footer>
 
-  <script src="db-support.js?v=8"></script>
+  <dialog id="capabilities-modal" aria-labelledby="cap-modal-title">
+    <div class="cap-modal-inner">
+      <div class="cap-modal-header">
+        <h3 id="cap-modal-title" class="cap-modal-title">Flyway Capability Tiers</h3>
+        <button class="cap-modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div id="cap-modal-cards" class="cap-modal-cards"></div>
+    </div>
+  </dialog>
+
+  <script src="db-support.js?v=9"></script>
 </body>
 </html>

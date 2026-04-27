@@ -18,6 +18,7 @@ async function init() {
     renderLastUpdated(allData.generated_at);
     renderProductTabs();
     wireCloudFilters();
+    wireCapabilitiesModal();
     renderAll();
   } catch (err) {
     const el = document.getElementById('load-error');
@@ -208,6 +209,10 @@ function renderVersionSection() {
   const product = getProduct();
   if (!product) return;
 
+  // Show/hide the capabilities info button
+  const capsBtn = document.getElementById('capabilities-btn');
+  if (capsBtn) capsBtn.hidden = !product.capabilities?.length;
+
   // Always reset Flyway-specific extras before rendering any product
   hideFlywaySectionExtras();
 
@@ -358,6 +363,33 @@ function renderVersionsTable(feature, wrapper) {
 
   html += '</tbody></table>';
   wrapper.innerHTML = html;
+}
+
+// ── Capabilities modal ────────────────────────────────────────────────────
+
+function wireCapabilitiesModal() {
+  const btn    = document.getElementById('capabilities-btn');
+  const dialog = document.getElementById('capabilities-modal');
+  if (!btn || !dialog) return;
+
+  btn.addEventListener('click', () => {
+    renderCapabilityCards(getProduct()?.capabilities ?? []);
+    dialog.showModal();
+  });
+
+  dialog.querySelector('.cap-modal-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+}
+
+function renderCapabilityCards(capabilities) {
+  const container = document.getElementById('cap-modal-cards');
+  container.innerHTML = capabilities.map(cap => {
+    const slug = cap.name.toLowerCase();
+    return `<div class="capability-card capability-card--${esc(slug)}">
+      <p class="capability-card__tier">${esc(cap.name)}</p>
+      <p class="capability-card__desc">${esc(cap.description)}</p>
+    </div>`;
+  }).join('');
 }
 
 // ── Start ─────────────────────────────────────────────────────────────────

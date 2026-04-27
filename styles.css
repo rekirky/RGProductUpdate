@@ -725,6 +725,132 @@ tr.provider-start td {
   gap: 0.4rem;
 }
 
+/* ---- Capabilities info button ---- */
+.section-heading-start {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.capabilities-info-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--rg-border-dark);
+  border-radius: 20px;
+  background: var(--rg-white);
+  font-size: 0.775rem;
+  font-family: var(--font);
+  font-weight: 500;
+  color: var(--rg-text-muted);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  line-height: 1;
+}
+
+.capabilities-info-btn:hover {
+  border-color: #CC3000;
+  color: #CC3000;
+  background: #FFF7F5;
+}
+
+/* ---- Capabilities modal ---- */
+#capabilities-modal {
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+  max-width: 580px;
+  width: calc(100% - 2rem);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+#capabilities-modal::backdrop {
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(2px);
+}
+
+.cap-modal-inner {
+  padding: 1.5rem;
+}
+
+.cap-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.cap-modal-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--rg-black);
+}
+
+.cap-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: var(--rg-bg);
+  font-size: 1rem;
+  color: var(--rg-text-muted);
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cap-modal-close:hover {
+  background: var(--rg-border);
+  color: var(--rg-black);
+}
+
+.cap-modal-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.875rem;
+}
+
+.capability-card {
+  border-radius: 8px;
+  padding: 1rem 1.125rem;
+  border-left: 4px solid transparent;
+}
+
+.capability-card--foundational {
+  background: #EFF6FF;
+  border-left-color: #3B82F6;
+}
+
+.capability-card--advanced {
+  background: #FFFBEB;
+  border-left-color: #F59E0B;
+}
+
+.capability-card__tier {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.capability-card--foundational .capability-card__tier { color: #1D4ED8; }
+.capability-card--advanced     .capability-card__tier { color: #92400E; }
+
+.capability-card__desc {
+  font-size: 0.825rem;
+  line-height: 1.55;
+  color: var(--rg-text);
+}
+
+@media (max-width: 480px) {
+  .cap-modal-cards { grid-template-columns: 1fr; }
+}
+
 /* ============================================================
    Responsive
    ============================================================ */
