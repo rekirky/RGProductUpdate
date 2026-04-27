@@ -333,13 +333,13 @@ main {
 }
 
 /* Fallback for any product without a specific colour */
-.filter-btn-tag:not([data-product]):hover,
+.filter-btn-tag:not([data-product]):not([data-name-filter]):hover,
 .filter-btn-tag[data-product=""]:hover {
   border-color: var(--rg-black);
   color: var(--rg-black);
 }
 
-.filter-btn-tag.active:not([data-product]),
+.filter-btn-tag.active:not([data-product]):not([data-name-filter]),
 .filter-btn-tag.active[data-product=""] {
   background: var(--rg-black);
   border-color: var(--rg-black);
