@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T18:39:08.134729+00:00",
+  "generated_at": "2026-04-27T19:05:32.287066+00:00",
   "products": [
     {
       "key": "tdm",
@@ -280,16 +280,6 @@
       "source_url": "https://documentation.red-gate.com/flyway/getting-started-with-flyway/system-requirements/supported-databases-and-versions",
       "engines": [],
       "cloud_matrix": [],
-      "capabilities": [
-        {
-          "name": "Foundational",
-          "description": "Core migrations commands — info, migrate, repair, validate, baseline, and undo (Teams+). Supported across 50+ DBMS."
-        },
-        {
-          "name": "Advanced",
-          "description": "State-based and migration approaches built on Redgate's database comparison engine, in continual development since 2000. Available for SQL Server, PostgreSQL, Oracle and MySQL."
-        }
-      ],
       "version_support": [
         {
           "feature": "SQL Server",

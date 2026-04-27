@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T18:39:05.382951+00:00",
+  "generated_at": "2026-04-27T19:05:29.869539+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -234,9 +234,9 @@
     {
       "key": "FlywayCLI",
       "name": "Flyway CLI",
-      "version": "12.4.0",
-      "download_url": "https://download.red-gate.com/maven/release/com/redgate/flyway/flyway-commandline/12.4.0",
-      "updated": "2026-04-14",
+      "version": "12.5.0",
+      "download_url": "https://download.red-gate.com/maven/release/com/redgate/flyway/flyway-commandline/12.5.0",
+      "updated": "2026-04-27",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/fd",
       "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
@@ -1036,7 +1036,7 @@
       "name": "Test Data Manager Anonymize",
       "version": "",
       "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
-      "updated": "2026-04-24",
+      "updated": "2026-04-27",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/anonymization-treatments",
       "release_notes_url": "https://documentation.red-gate.com/testdatamanager/command-line-interface-cli/anonymization/anonymize-release-notes"
@@ -1046,7 +1046,7 @@
       "name": "Test Data Manager GUI",
       "version": "",
       "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
-      "updated": "2026-04-24",
+      "updated": "2026-04-27",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/tdm",
       "release_notes_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/gui-release-notes"
@@ -1056,7 +1056,7 @@
       "name": "Test Data Manager Subsetter",
       "version": "",
       "download_url": "https://documentation.red-gate.com/testdatamanager/getting-started/installation/download-links",
-      "updated": "2026-04-24",
+      "updated": "2026-04-27",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/testdatamanager/graphical-user-interface-gui/subsetting-treatments",
       "release_notes_url": "https://documentation.red-gate.com/testdatamanager/command-line-interface-cli/subsetting/subsetter-release-notes"
