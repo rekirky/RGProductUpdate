@@ -303,35 +303,19 @@ document.getElementById('download-selected').addEventListener('click', () => {
   console.log(`Starting bulk download of ${productsToDownload.length} products:`, productsToDownload.map(p => p.name));
 
   productsToDownload.forEach((product, index) => {
-    setTimeout(async () => {
-      try {
-        console.log(`[${index + 1}/${productsToDownload.length}] Downloading: ${product.name}`);
+    setTimeout(() => {
+      console.log(`[${index + 1}/${productsToDownload.length}] Triggering download: ${product.name}`);
 
-        const response = await fetch(product.download_url);
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
+      // Use window.location for direct download (handles redirects like clicking a link)
+      window.location = product.download_url;
 
-        const blob = await response.blob();
-        const url = window.URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = product.download_url.split('/').pop() || 'download';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(url);
-
-        console.log(`✓ Successfully downloaded: ${product.name}`);
-      } catch (err) {
-        console.error(`✗ Failed to download ${product.name}:`, err.message);
-      }
+      console.log(`✓ Download initiated: ${product.name}`);
     }, index * 1500); // 1.5 second delay between downloads
   });
 
   // Re-enable button after all downloads are initiated
   setTimeout(() => {
-    console.log('All download links triggered');
+    console.log('All downloads initiated');
     downloadBtn.textContent = originalText;
     downloadBtn.disabled = selectedProducts.size === 0;
   }, productsToDownload.length * 1500 + 2000);
