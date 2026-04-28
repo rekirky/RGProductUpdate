@@ -287,6 +287,11 @@ document.getElementById('download-selected').addEventListener('click', () => {
 
   if (productsToDownload.length === 0) return;
 
+  const downloadBtn = document.getElementById('download-selected');
+  const originalText = downloadBtn.textContent;
+  downloadBtn.disabled = true;
+  downloadBtn.textContent = `Downloading ${productsToDownload.length} file(s)...`;
+
   productsToDownload.forEach((product, index) => {
     setTimeout(() => {
       const link = document.createElement('a');
@@ -295,8 +300,14 @@ document.getElementById('download-selected').addEventListener('click', () => {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    }, index * 300); // 300ms delay between downloads
+    }, index * 800); // Increased from 300ms to 800ms between downloads
   });
+
+  // Re-enable button after all downloads initiated
+  setTimeout(() => {
+    downloadBtn.textContent = originalText;
+    downloadBtn.disabled = selectedProducts.size === 0;
+  }, productsToDownload.length * 800 + 1000);
 });
 
 // ── Start ────────────────────────────────────────────────────────────────────
