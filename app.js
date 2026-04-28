@@ -129,16 +129,21 @@ function buildRow(p) {
     ? `<span class="version-tag">${esc(p.version)}</span>`
     : `<span class="version-tag empty">&mdash;</span>`;
 
-  const links = [];
+  const row1 = [];
+  const row2 = [];
+
   if (p.download_url)
-    links.push(`<a href="${esc(p.download_url)}" class="row-link" target="_blank" rel="noopener">Download</a>`);
-  if (p.doc_url)
-    links.push(`<a href="${esc(p.doc_url)}" class="row-link" target="_blank" rel="noopener">Docs</a>`);
+    row1.push(`<a href="${esc(p.download_url)}" class="row-link" target="_blank" rel="noopener">Download</a>`);
   if (p.release_notes_url)
-    links.push(`<a href="${esc(p.release_notes_url)}" class="row-link" target="_blank" rel="noopener">Release Notes</a>`);
+    row1.push(`<a href="${esc(p.release_notes_url)}" class="row-link" target="_blank" rel="noopener">Release Notes</a>`);
+  if (p.doc_url)
+    row2.push(`<a href="${esc(p.doc_url)}" class="row-link" target="_blank" rel="noopener">Docs</a>`);
   if (p.key)
-    links.push(`<a href="https://download.red-gate.com/checkforupdates/${esc(p.key)}/" class="row-link" target="_blank" rel="noopener">Older Versions</a>`);
-  const linksCell = links.join('<span class="link-sep">|</span>');
+    row2.push(`<a href="https://download.red-gate.com/checkforupdates/${esc(p.key)}/" class="row-link" target="_blank" rel="noopener">Older Versions</a>`);
+
+  const row1Cell = row1.join('<span class="link-sep">|</span>');
+  const row2Cell = row2.join('<span class="link-sep">|</span>');
+  const linksCell = row1Cell + (row2Cell ? '<br>' + row2Cell : '');
 
   const statusLabel = STATUS_LABEL[p.status] || p.status;
 
