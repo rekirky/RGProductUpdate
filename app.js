@@ -129,21 +129,31 @@ function buildRow(p) {
     ? `<span class="version-tag">${esc(p.version)}</span>`
     : `<span class="version-tag empty">&mdash;</span>`;
 
-  const row1 = [];
-  const row2 = [];
+  // Build links in desired order: Download, Release Notes, Docs, Older Versions
+  const linkHTMLs = [];
 
   if (p.download_url)
-    row1.push(`<a href="${esc(p.download_url)}" class="row-link" target="_blank" rel="noopener">Download</a>`);
+    linkHTMLs.push(`<a href="${esc(p.download_url)}" class="row-link" target="_blank" rel="noopener">Download</a>`);
   if (p.release_notes_url)
-    row1.push(`<a href="${esc(p.release_notes_url)}" class="row-link" target="_blank" rel="noopener">Release Notes</a>`);
+    linkHTMLs.push(`<a href="${esc(p.release_notes_url)}" class="row-link" target="_blank" rel="noopener">Release Notes</a>`);
   if (p.doc_url)
-    row2.push(`<a href="${esc(p.doc_url)}" class="row-link" target="_blank" rel="noopener">Docs</a>`);
-  if (p.key)
-    row2.push(`<a href="https://download.red-gate.com/checkforupdates/${esc(p.key)}/" class="row-link" target="_blank" rel="noopener">Older Versions</a>`);
+    linkHTMLs.push(`<a href="${esc(p.doc_url)}" class="row-link" target="_blank" rel="noopener">Docs</a>`);
 
-  const row1Cell = row1.join('<span class="link-sep">|</span>');
-  const row2Cell = row2.join('<span class="link-sep">|</span>');
-  const linksCell = row1Cell + (row2Cell ? '<br>' + row2Cell : '');
+  // Special handling for Flyway products
+  let olderVersionsUrl = '';
+  if (p.key) {
+    if (p.key.toLowerCase().includes('flyway')) {
+      olderVersionsUrl = 'https://download.red-gate.com/maven/release/com/redgate/flyway/flyway-commandline';
+    } else {
+      olderVersionsUrl = `https://download.red-gate.com/checkforupdates/${esc(p.key)}/`;
+    }
+    linkHTMLs.push(`<a href="${olderVersionsUrl}" class="row-link" target="_blank" rel="noopener">Older Versions</a>`);
+  }
+
+  // Format as two rows: [0,1] on row 1, [2,3] on row 2
+  const row1 = linkHTMLs.slice(0, 2).join('<span class="link-sep">|</span>');
+  const row2 = linkHTMLs.slice(2, 4).join('<span class="link-sep">|</span>');
+  const linksCell = [row1, row2].filter(Boolean).join('<br>');
 
   const statusLabel = STATUS_LABEL[p.status] || p.status;
 
