@@ -302,29 +302,39 @@ document.getElementById('download-selected').addEventListener('click', () => {
 
   console.log(`Starting bulk download of ${productsToDownload.length} products:`, productsToDownload.map(p => p.name));
 
-  // Create a container to hold all download links
-  const linkContainer = document.createElement('div');
-  linkContainer.style.display = 'none';
-  document.body.appendChild(linkContainer);
-
   productsToDownload.forEach((product, index) => {
-    setTimeout(() => {
-      console.log(`[${index + 1}/${productsToDownload.length}] Downloading: ${product.name}`);
-      const link = document.createElement('a');
-      link.href = product.download_url;
-      link.download = '';
-      linkContainer.appendChild(link);
-      link.click();
-    }, index * 1000); // 1 second delay between downloads for better browser compatibility
+    setTimeout(async () => {
+      try {
+        console.log(`[${index + 1}/${productsToDownload.length}] Downloading: ${product.name}`);
+
+        const response = await fetch(product.download_url);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = product.download_url.split('/').pop() || 'download';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+
+        console.log(`✓ Successfully downloaded: ${product.name}`);
+      } catch (err) {
+        console.error(`✗ Failed to download ${product.name}:`, err.message);
+      }
+    }, index * 1500); // 1.5 second delay between downloads
   });
 
-  // Clean up links after all downloads are likely complete
+  // Re-enable button after all downloads are initiated
   setTimeout(() => {
     console.log('All download links triggered');
-    document.body.removeChild(linkContainer);
     downloadBtn.textContent = originalText;
     downloadBtn.disabled = selectedProducts.size === 0;
-  }, productsToDownload.length * 1000 + 2000);
+  }, productsToDownload.length * 1500 + 2000);
 });
 
 // ── Start ────────────────────────────────────────────────────────────────────
