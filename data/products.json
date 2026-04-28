@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T07:23:31.403619+00:00",
+  "generated_at": "2026-04-28T19:21:36.961865+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -84,9 +84,9 @@
     {
       "key": "DataCompareforOracle",
       "name": "Data Compare for Oracle",
-      "version": "6.3.62",
-      "download_url": "https://download.red-gate.com/checkforupdates/DataCompareforOracle/DataCompareforOracle_6.3.62.7230.exe",
-      "updated": "2026-04-21",
+      "version": "6.3.63",
+      "download_url": "https://download.red-gate.com/checkforupdates/DataCompareforOracle/DataCompareforOracle_6.3.63.7346.exe",
+      "updated": "2026-04-28",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/dco",
       "release_notes_url": "https://documentation.red-gate.com/dco"
@@ -244,9 +244,9 @@
     {
       "key": "FlywayDesktop",
       "name": "Flyway Desktop",
-      "version": "9.3.4",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktop/FlywayDesktop_9.3.4.0.exe",
-      "updated": "2026-04-17",
+      "version": "9.4.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktop/FlywayDesktop_9.4.0.0.exe",
+      "updated": "2026-04-28",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/fd",
       "release_notes_url": "https://documentation.red-gate.com/fd/release-notes"
@@ -284,9 +284,9 @@
     {
       "key": "FlywayDesktopLinuxX64",
       "name": "FlywayDesktopLinuxX64",
-      "version": "9.3.4",
-      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64/FlywayDesktopLinuxX64_9.3.4.0.tar.gz",
-      "updated": "2026-04-17",
+      "version": "9.4.0",
+      "download_url": "https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64/FlywayDesktopLinuxX64_9.4.0.0.tar.gz",
+      "updated": "2026-04-28",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com",
       "release_notes_url": ""
@@ -434,9 +434,9 @@
     {
       "key": "SchemaCompareforOracle",
       "name": "Schema Compare for Oracle",
-      "version": "6.3.62",
-      "download_url": "https://download.red-gate.com/checkforupdates/SchemaCompareforOracle/SchemaCompareforOracle_6.3.62.7230.exe",
-      "updated": "2026-04-21",
+      "version": "6.3.63",
+      "download_url": "https://download.red-gate.com/checkforupdates/SchemaCompareforOracle/SchemaCompareforOracle_6.3.63.7346.exe",
+      "updated": "2026-04-28",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sco",
       "release_notes_url": "https://documentation.red-gate.com/sco"
@@ -644,9 +644,9 @@
     {
       "key": "SQLPrompt",
       "name": "SQL Prompt",
-      "version": "11.3.11",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLPrompt/SQLPrompt_11.3.11.23448.exe",
-      "updated": "2026-04-21",
+      "version": "11.3.12",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLPrompt/SQLPrompt_11.3.12.23605.exe",
+      "updated": "2026-04-28",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sp",
       "release_notes_url": "https://documentation.red-gate.com/sp/release-notes-and-other-versions"
@@ -674,9 +674,9 @@
     {
       "key": "SQLSourceControl",
       "name": "SQL Source Control",
-      "version": "8.1.12",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLSourceControl/SQLSourceControl_8.1.12.23635.exe",
-      "updated": "2026-04-09",
+      "version": "8.1.13",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLSourceControl/SQLSourceControl_8.1.13.23746.exe",
+      "updated": "2026-04-28",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/soc",
       "release_notes_url": "https://documentation.red-gate.com/soc/release-notes-and-other-versions"
@@ -705,8 +705,8 @@
       "key": "SQLToolbeltEssentials",
       "name": "SQL Toolbelt Essentials",
       "version": "",
-      "download_url": "https://download.red-gate.com/installers/SQLToolbeltEssentials/2026-04-23/SQLToolbeltEssentials.exe",
-      "updated": "2026-04-23",
+      "download_url": "https://download.red-gate.com/installers/SQLToolbeltEssentials/2026-04-28/SQLToolbeltEssentials.exe",
+      "updated": "2026-04-28",
       "status": "current",
       "doc_url": "",
       "release_notes_url": ""
