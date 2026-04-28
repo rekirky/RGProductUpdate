@@ -300,19 +300,24 @@ document.getElementById('download-selected').addEventListener('click', () => {
   downloadBtn.disabled = true;
   downloadBtn.textContent = `Downloading ${productsToDownload.length} file(s)...`;
 
+  console.log(`Starting bulk download of ${productsToDownload.length} products:`, productsToDownload.map(p => p.name));
+
   productsToDownload.forEach((product, index) => {
     setTimeout(() => {
+      console.log(`[${index + 1}/${productsToDownload.length}] Downloading: ${product.name}`);
       const link = document.createElement('a');
       link.href = product.download_url;
       link.download = '';
+      link.style.display = 'none';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    }, index * 800); // Increased from 300ms to 800ms between downloads
+    }, index * 800); // 800ms delay between downloads
   });
 
   // Re-enable button after all downloads initiated
   setTimeout(() => {
+    console.log('All download links triggered');
     downloadBtn.textContent = originalText;
     downloadBtn.disabled = selectedProducts.size === 0;
   }, productsToDownload.length * 800 + 1000);
