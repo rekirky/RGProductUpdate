@@ -189,6 +189,8 @@ function esc(str) {
 
 document.getElementById('search-name').addEventListener('input', e => {
   searchQuery = e.target.value.toLowerCase().trim();
+  selectedProducts.clear();
+  updateSelectedCount();
   renderTable();
 });
 
@@ -197,6 +199,8 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     activeFilter = btn.dataset.filter;
+    selectedProducts.clear();
+    updateSelectedCount();
     renderTable();
   });
 });
@@ -206,6 +210,8 @@ document.querySelectorAll('.filter-btn-tag').forEach(btn => {
     document.querySelectorAll('.filter-btn-tag').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     activeNameFilter = btn.dataset.nameFilter;
+    selectedProducts.clear();
+    updateSelectedCount();
     renderTable();
   });
 });
@@ -215,6 +221,8 @@ hideOldCheckbox.checked = hideOld;
 hideOldCheckbox.addEventListener('change', () => {
   hideOld = hideOldCheckbox.checked;
   localStorage.setItem('hideOld', hideOld);
+  selectedProducts.clear();
+  updateSelectedCount();
   renderTable();
 });
 
