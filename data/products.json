@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T06:36:39.458225+00:00",
+  "generated_at": "2026-04-28T07:21:25.976258+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -695,9 +695,9 @@
       "key": "SQLToolbelt",
       "name": "SQL Toolbelt",
       "version": "",
-      "download_url": "https://download.red-gate.com/installers/SQLToolbelt/2024-01-25/SQLToolbelt.exe",
-      "updated": "2024-01-25",
-      "status": "old",
+      "download_url": "https://download.red-gate.com/installers/SQLToolbelt/2026-04-28/SQLToolbelt.exe",
+      "updated": "2026-04-28",
+      "status": "current",
       "doc_url": "",
       "release_notes_url": ""
     },

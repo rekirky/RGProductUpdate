@@ -216,18 +216,35 @@ def get_sql_toolbelts():
     ]
     products = []
     for key, name in entries:
-        url = f'https://redgate-download.s3.eu-west-1.amazonaws.com/?delimiter=/&prefix=installers/{key}/'
         try:
-            data = fetch_xml(url)
-            prefixes = data['ListBucketResult'].get('CommonPrefixes')
-            if not prefixes:
+            # Fetch all date folders with pagination support
+            all_prefixes = []
+            marker = None
+            while True:
+                url = f'https://redgate-download.s3.eu-west-1.amazonaws.com/?delimiter=/&prefix=installers/{key}/'
+                if marker:
+                    url += f'&marker={marker}'
+                data = fetch_xml(url)
+                prefixes = data['ListBucketResult'].get('CommonPrefixes', [])
+                all_prefixes.extend(prefixes)
+
+                # Check if there are more results
+                is_truncated = data['ListBucketResult'].get('IsTruncated', 'false')
+                if is_truncated != 'true':
+                    break
+                # Set marker to the last prefix for next page
+                if prefixes:
+                    marker = prefixes[-1]['Prefix']
+
+            if not all_prefixes:
                 logger.warning(f'No versions found for {key}')
                 continue
 
             # Get the latest date folder
             latest_date = ''
             latest_date_obj = None
-            for p in prefixes:
+            logger.info(f'Found {len(all_prefixes)} date folders for {key}')
+            for p in all_prefixes:
                 date_str = p['Prefix'].split('/')[-2]  # Extract date from path
                 try:
                     # Parse as datetime to ensure correct comparison
@@ -237,7 +254,9 @@ def get_sql_toolbelts():
                         latest_date_obj = date_obj
                 except ValueError:
                     # Skip if date format is unexpected
+                    logger.warning(f'Could not parse date: {date_str}')
                     continue
+            logger.info(f'Selected latest date for {key}: {latest_date}')
 
             # Fetch the actual exe file from the latest date folder
             files_url = f'https://redgate-download.s3.eu-west-1.amazonaws.com/?prefix=installers/{key}/{latest_date}/'
