@@ -302,23 +302,37 @@ document.getElementById('download-selected').addEventListener('click', () => {
 
   console.log(`Starting bulk download of ${productsToDownload.length} products:`, productsToDownload.map(p => p.name));
 
+  // Create a container for all download links
+  const container = document.createElement('div');
+  container.style.display = 'none';
+  document.body.appendChild(container);
+
   productsToDownload.forEach((product, index) => {
     setTimeout(() => {
-      console.log(`[${index + 1}/${productsToDownload.length}] Triggering download: ${product.name}`);
+      try {
+        console.log(`[${index + 1}/${productsToDownload.length}] Triggering download: ${product.name}`);
 
-      // Use window.location for direct download (handles redirects like clicking a link)
-      window.location = product.download_url;
+        const link = document.createElement('a');
+        link.href = product.download_url;
+        link.download = '';
+        link.setAttribute('target', '_blank'); // Open in new tab (will download instead of navigate)
+        container.appendChild(link);
+        link.click();
 
-      console.log(`✓ Download initiated: ${product.name}`);
-    }, index * 1500); // 1.5 second delay between downloads
+        console.log(`✓ Download initiated: ${product.name}`);
+      } catch (err) {
+        console.error(`✗ Error initiating download for ${product.name}:`, err.message);
+      }
+    }, index * 2000); // Increased to 2 seconds to avoid interference
   });
 
-  // Re-enable button after all downloads are initiated
+  // Clean up after all downloads are initiated
   setTimeout(() => {
     console.log('All downloads initiated');
+    document.body.removeChild(container);
     downloadBtn.textContent = originalText;
     downloadBtn.disabled = selectedProducts.size === 0;
-  }, productsToDownload.length * 1500 + 2000);
+  }, productsToDownload.length * 2000 + 3000);
 });
 
 // ── Start ────────────────────────────────────────────────────────────────────
