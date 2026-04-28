@@ -226,10 +226,18 @@ def get_sql_toolbelts():
 
             # Get the latest date folder
             latest_date = ''
+            latest_date_obj = None
             for p in prefixes:
                 date_str = p['Prefix'].split('/')[-2]  # Extract date from path
-                if date_str > latest_date:
-                    latest_date = date_str
+                try:
+                    # Parse as datetime to ensure correct comparison
+                    date_obj = datetime.strptime(date_str, '%Y-%m-%d').date()
+                    if latest_date_obj is None or date_obj > latest_date_obj:
+                        latest_date = date_str
+                        latest_date_obj = date_obj
+                except ValueError:
+                    # Skip if date format is unexpected
+                    continue
 
             # Fetch the actual exe file from the latest date folder
             files_url = f'https://redgate-download.s3.eu-west-1.amazonaws.com/?prefix=installers/{key}/{latest_date}/'
