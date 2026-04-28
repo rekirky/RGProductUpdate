@@ -350,7 +350,9 @@ main {
 .controls-secondary {
   display: flex;
   align-items: center;
+  gap: 1rem;
   margin-bottom: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .toggle-label {
@@ -368,6 +370,36 @@ main {
   width: 14px;
   height: 14px;
   cursor: pointer;
+}
+
+.download-btn {
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--rg-red);
+  border-radius: var(--radius);
+  background: var(--rg-red);
+  color: var(--rg-white);
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.download-btn:hover:not(:disabled) {
+  background: var(--rg-red-dark);
+  border-color: var(--rg-red-dark);
+}
+
+.download-btn:disabled {
+  background: var(--rg-border-dark);
+  border-color: var(--rg-border-dark);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.selected-count {
+  font-size: 0.825rem;
+  color: var(--rg-text-muted);
 }
 
 /* ---- Summary bar ---- */
@@ -446,6 +478,7 @@ tbody td {
 
 /* Column widths */
 .col-product { min-width: 200px; }
+.col-checkbox { width: 40px; text-align: center; }
 .col-version { width: 110px; }
 .col-updated { width: 130px; }
 .col-status  { width: 130px; }
@@ -462,6 +495,20 @@ tbody td {
 .product-name:hover {
   color: var(--rg-red);
   text-decoration: none;
+}
+
+.product-checkbox {
+  accent-color: var(--rg-red);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.product-checkbox-disabled {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: transparent;
 }
 
 /* ---- Version tag ---- */

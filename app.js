@@ -7,6 +7,7 @@ let activeFilter = 'all';
 let activeNameFilter = 'all';
 let searchQuery = '';
 let hideOld = localStorage.getItem('hideOld') !== 'false'; // default true
+let selectedProducts = new Set(); // Track selected product keys
 
 // ── Bootstrap ──────────────────────────────────────────────────────────────
 
@@ -70,6 +71,8 @@ function renderTable() {
 
   noResults.hidden = true;
   tbody.innerHTML = filtered.map(buildRow).join('');
+  attachCheckboxListeners();
+  updateSelectAllCheckbox();
 }
 
 // ── Filter definitions ────────────────────────────────────────────────────────
@@ -120,6 +123,11 @@ function filteredProducts() {
 const STATUS_LABEL = { current: 'This year', previous: 'Last year', old: 'Older' };
 
 function buildRow(p) {
+  const isSelected = selectedProducts.has(p.key);
+  const checkboxCell = p.download_url
+    ? `<input type="checkbox" class="product-checkbox" data-key="${esc(p.key)}" ${isSelected ? 'checked' : ''}>`
+    : `<span class="product-checkbox-disabled"></span>`;
+
   const nameCell = p.download_url
     ? `<a href="${esc(p.download_url)}" class="product-name" target="_blank" rel="noopener"
           title="Download ${esc(p.name)}">${esc(p.name)}</a>`
@@ -158,6 +166,7 @@ function buildRow(p) {
   const statusLabel = STATUS_LABEL[p.status] || p.status;
 
   return `<tr>
+    <td>${checkboxCell}</td>
     <td>${nameCell}</td>
     <td>${versionCell}</td>
     <td>${esc(p.updated || '—')}</td>
@@ -207,6 +216,87 @@ hideOldCheckbox.addEventListener('change', () => {
   hideOld = hideOldCheckbox.checked;
   localStorage.setItem('hideOld', hideOld);
   renderTable();
+});
+
+// ── Bulk download functionality ────────────────────────────────────────────
+
+function updateSelectedCount() {
+  const countEl = document.getElementById('selected-count');
+  const downloadBtn = document.getElementById('download-selected');
+  const count = selectedProducts.size;
+
+  if (count > 0) {
+    countEl.textContent = `${count} selected`;
+    downloadBtn.disabled = false;
+  } else {
+    countEl.textContent = '';
+    downloadBtn.disabled = true;
+  }
+}
+
+function attachCheckboxListeners() {
+  document.querySelectorAll('.product-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('change', (e) => {
+      const key = e.target.dataset.key;
+      if (e.target.checked) {
+        selectedProducts.add(key);
+      } else {
+        selectedProducts.delete(key);
+      }
+      updateSelectAllCheckbox();
+      updateSelectedCount();
+    });
+  });
+}
+
+function updateSelectAllCheckbox() {
+  const selectAllCheckbox = document.getElementById('select-all');
+  const visibleCheckboxes = document.querySelectorAll('.product-checkbox');
+  const checkedCheckboxes = document.querySelectorAll('.product-checkbox:checked');
+
+  if (visibleCheckboxes.length === 0) {
+    selectAllCheckbox.checked = false;
+    selectAllCheckbox.indeterminate = false;
+  } else if (checkedCheckboxes.length === visibleCheckboxes.length) {
+    selectAllCheckbox.checked = true;
+    selectAllCheckbox.indeterminate = false;
+  } else if (checkedCheckboxes.length > 0) {
+    selectAllCheckbox.checked = false;
+    selectAllCheckbox.indeterminate = true;
+  } else {
+    selectAllCheckbox.checked = false;
+    selectAllCheckbox.indeterminate = false;
+  }
+}
+
+document.getElementById('select-all').addEventListener('change', (e) => {
+  document.querySelectorAll('.product-checkbox').forEach(checkbox => {
+    checkbox.checked = e.target.checked;
+    const key = checkbox.dataset.key;
+    if (e.target.checked) {
+      selectedProducts.add(key);
+    } else {
+      selectedProducts.delete(key);
+    }
+  });
+  updateSelectedCount();
+});
+
+document.getElementById('download-selected').addEventListener('click', () => {
+  const productsToDownload = allProducts.filter(p => selectedProducts.has(p.key) && p.download_url);
+
+  if (productsToDownload.length === 0) return;
+
+  productsToDownload.forEach((product, index) => {
+    setTimeout(() => {
+      const link = document.createElement('a');
+      link.href = product.download_url;
+      link.download = '';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }, index * 300); // 300ms delay between downloads
+  });
 });
 
 // ── Start ────────────────────────────────────────────────────────────────────

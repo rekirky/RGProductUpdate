@@ -65,6 +65,8 @@
           <input type="checkbox" id="hide-old" checked>
           Hide older products
         </label>
+        <button id="download-selected" class="download-btn" disabled>Download Installers</button>
+        <span id="selected-count" class="selected-count"></span>
       </div>
 
       <div id="summary-bar" class="summary-bar" aria-live="polite"></div>
@@ -73,6 +75,7 @@
         <table id="products-table" aria-label="Redgate product versions">
           <thead>
             <tr>
+              <th scope="col" class="col-checkbox"><input type="checkbox" id="select-all" title="Select all visible products"></th>
               <th scope="col" class="col-product">Product</th>
               <th scope="col" class="col-version">Version</th>
               <th scope="col" class="col-updated">Last Updated</th>
