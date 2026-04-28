@@ -209,35 +209,60 @@ def get_tdm():
 
 
 def get_sql_toolbelts():
-    """Fetch SQL Toolbelt and SQL Toolbelt Essentials from S3 root."""
+    """Fetch SQL Toolbelt and SQL Toolbelt Essentials from S3 installers prefix."""
     entries = [
-        ('SQLToolbelt',           'SQL Toolbelt',            'http://download.red-gate.com/SQLToolbelt.exe'),
-        ('SQLToolbeltEssentials', 'SQL Toolbelt Essentials', 'http://download.red-gate.com/SQLToolbeltEssentials.exe'),
+        ('SQLToolbelt',           'SQL Toolbelt'),
+        ('SQLToolbeltEssentials', 'SQL Toolbelt Essentials'),
     ]
     products = []
-    for key, name, download_url in entries:
-        url = f'https://redgate-download.s3.eu-west-1.amazonaws.com/?prefix={key}.exe'
+    for key, name in entries:
+        url = f'https://redgate-download.s3.eu-west-1.amazonaws.com/?delimiter=/&prefix=installers/{key}/'
         try:
             data = fetch_xml(url)
+            prefixes = data['ListBucketResult'].get('CommonPrefixes')
+            if not prefixes:
+                logger.warning(f'No versions found for {key}')
+                continue
+
+            # Get the latest date folder
+            latest_date = ''
+            for p in prefixes:
+                date_str = p['Prefix'].split('/')[-2]  # Extract date from path
+                if date_str > latest_date:
+                    latest_date = date_str
+
+            # Fetch the actual exe file from the latest date folder
+            files_url = f'https://redgate-download.s3.eu-west-1.amazonaws.com/?prefix=installers/{key}/{latest_date}/'
+            data = fetch_xml(files_url)
             contents = data['ListBucketResult'].get('Contents')
             if not contents:
-                raise ValueError(f'{key}.exe not found in S3')
-            if isinstance(contents, list):
-                contents = contents[0]
-            updated = contents['LastModified'][:10]
-        except Exception as e:
-            logger.warning(f'Could not get date for {name}: {e}')
+                raise ValueError(f'No files found for {key} in {latest_date}')
+            if isinstance(contents, dict):
+                contents = [contents]
+
+            # Find the exe file
+            download_url = ''
             updated = ''
-        products.append({
-            'key': key,
-            'name': name,
-            'version': '',
-            'download_url': download_url,
-            'updated': updated,
-            'status': status_for_date(updated),
-            'doc_url': '',
-            'release_notes_url': '',
-        })
+            for item in contents:
+                if item['Key'].endswith('.exe'):
+                    download_url = f"https://download.red-gate.com/{item['Key']}"
+                    updated = item['LastModified'][:10]
+                    break
+
+            if download_url:
+                products.append({
+                    'key': key,
+                    'name': name,
+                    'version': '',
+                    'download_url': download_url,
+                    'updated': updated,
+                    'status': status_for_date(updated),
+                    'doc_url': '',
+                    'release_notes_url': '',
+                })
+        except Exception as e:
+            logger.warning(f'Could not get {name}: {e}')
+
     return products
 
 
