@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T19:05:29.869539+00:00",
+  "generated_at": "2026-04-28T06:36:39.458225+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
@@ -604,9 +604,9 @@
     {
       "key": "SQLDependencyTracker",
       "name": "SQL Dependency Tracker",
-      "version": "3.6.5",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLDependencyTracker/SQLDependencyTracker_3.6.5.7161.exe",
-      "updated": "2026-04-09",
+      "version": "3.6.6",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDependencyTracker/SQLDependencyTracker_3.6.6.7196.exe",
+      "updated": "2026-04-28",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sdt",
       "release_notes_url": "https://documentation.red-gate.com/sdt/release-notes-and-other-versions"
@@ -695,9 +695,9 @@
       "key": "SQLToolbelt",
       "name": "SQL Toolbelt",
       "version": "",
-      "download_url": "http://download.red-gate.com/SQLToolbelt.exe",
-      "updated": "2026-04-23",
-      "status": "current",
+      "download_url": "https://download.red-gate.com/installers/SQLToolbelt/2024-01-25/SQLToolbelt.exe",
+      "updated": "2024-01-25",
+      "status": "old",
       "doc_url": "",
       "release_notes_url": ""
     },
@@ -705,7 +705,7 @@
       "key": "SQLToolbeltEssentials",
       "name": "SQL Toolbelt Essentials",
       "version": "",
-      "download_url": "http://download.red-gate.com/SQLToolbeltEssentials.exe",
+      "download_url": "https://download.red-gate.com/installers/SQLToolbeltEssentials/2026-04-23/SQLToolbeltEssentials.exe",
       "updated": "2026-04-23",
       "status": "current",
       "doc_url": "",
