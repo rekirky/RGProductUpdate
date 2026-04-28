@@ -136,6 +136,8 @@ function buildRow(p) {
     links.push(`<a href="${esc(p.doc_url)}" class="row-link" target="_blank" rel="noopener">Docs</a>`);
   if (p.release_notes_url)
     links.push(`<a href="${esc(p.release_notes_url)}" class="row-link" target="_blank" rel="noopener">Release Notes</a>`);
+  if (p.key)
+    links.push(`<a href="https://download.red-gate.com/checkforupdates/${esc(p.key)}/" class="row-link" target="_blank" rel="noopener">Older Versions</a>`);
   const linksCell = links.join('<span class="link-sep">|</span>');
 
   const statusLabel = STATUS_LABEL[p.status] || p.status;
