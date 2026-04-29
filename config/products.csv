@@ -1,0 +1,30 @@
+key,name,doc_url,release_notes_url
+ANTSMemoryProfiler,ANTS Memory Profiler,https://documentation.red-gate.com/amp,https://documentation.red-gate.com/amp/release-notes-and-other-versions
+ANTSPerformanceProfiler,ANTS Performance Profiler,https://documentation.red-gate.com/app,https://documentation.red-gate.com/app/release-notes-and-other-versions
+DataCompareforOracle,Data Compare for Oracle,https://documentation.red-gate.com/dco,https://documentation.red-gate.com/dco
+DataMaskerforOracle,Data Masker for Oracle,https://documentation.red-gate.com/dms,https://documentation.red-gate.com/dms/release-notes-and-other-versions
+DataMaskerforSQLServer,Data Masker for SQL Server,https://documentation.red-gate.com/dms,https://documentation.red-gate.com/dms/release-notes-and-other-versions
+FlywayDesktop,Flyway Desktop,https://documentation.red-gate.com/fd,https://documentation.red-gate.com/fd/release-notes
+FlywayDesktopDarwinX64,Flyway Desktop (macOS Intel),https://documentation.red-gate.com/fd,https://documentation.red-gate.com/fd/release-notes
+FlywayDesktopMac,Flyway Desktop (macOS ARM),https://documentation.red-gate.com/fd,https://documentation.red-gate.com/fd/release-notes
+RedgateMonitorWebService,Redgate Monitor,https://documentation.red-gate.com/monitor,https://documentation.red-gate.com/monitor/release-notes
+SCAPowerShell,SQL Change Automation PowerShell,https://documentation.red-gate.com/sca,https://documentation.red-gate.com/sca/release-notes-and-other-versions/powershell-module-release-notes
+SQLBackup,SQL Backup Pro,https://documentation.red-gate.com/sbu,https://documentation.red-gate.com/sbu/release-notes-and-other-versions
+SQLChangeAutomation,SQL Change Automation,https://documentation.red-gate.com/sca,https://documentation.red-gate.com/sca/release-notes-and-other-versions/sql-server-management-studio-add-in-release-notes
+SQLCloneServer,SQL Clone,https://documentation.red-gate.com/clone,https://documentation.red-gate.com/clone/release-notes-and-other-versions
+SQLCompare,SQL Compare,https://documentation.red-gate.com/sc,https://documentation.red-gate.com/sc/release-notes-and-other-versions
+SQLDataCatalog,SQL Data Catalog,https://documentation.red-gate.com/sql-data-catalog,https://documentation.red-gate.com/sql-data-catalog/release-notes
+SQLDataCompare,SQL Data Compare,https://documentation.red-gate.com/sdc,https://documentation.red-gate.com/sdc/release-notes-and-other-versions
+SQLDataGenerator,SQL Data Generator,https://documentation.red-gate.com/sdg,https://documentation.red-gate.com/sdg/release-notes-and-other-versions
+SQLDependencyTracker,SQL Dependency Tracker,https://documentation.red-gate.com/sdt,https://documentation.red-gate.com/sdt/release-notes-and-other-versions
+SQLDoc,SQL Doc,https://documentation.red-gate.com/sdoc,https://documentation.red-gate.com/sdoc/release-notes-and-other-versions
+SQLMonitorWeb,SQL Monitor,https://documentation.red-gate.com/sm,https://documentation.red-gate.com/sm/release-notes-and-other-versions
+SQLMultiScript,SQL Multi Script,https://documentation.red-gate.com/sms,https://documentation.red-gate.com/sms/release-notes-and-other-versions
+SQLPrompt,SQL Prompt,https://documentation.red-gate.com/sp,https://documentation.red-gate.com/sp/release-notes-and-other-versions
+SQLScriptsManager,SQL Scripts Manager,https://documentation.red-gate.com/ssm,https://documentation.red-gate.com/ssm/release-notes-and-other-versions
+SQLSearch,SQL Search,https://documentation.red-gate.com/ss,https://documentation.red-gate.com/ss/release-notes-and-other-versions
+SQLSourceControl,SQL Source Control,https://documentation.red-gate.com/soc,https://documentation.red-gate.com/soc/release-notes-and-other-versions
+SQLTest,SQL Test,https://documentation.red-gate.com/sqt,https://documentation.red-gate.com/sqt/release-notes-and-other-versions
+SchemaCompareforOracle,Schema Compare for Oracle,https://documentation.red-gate.com/sco,https://documentation.red-gate.com/sco
+SmartAssembly,SmartAssembly,https://documentation.red-gate.com/sa,https://documentation.red-gate.com/sa/release-notes-and-other-versions
+SourceControlforOracle,Source Control for Oracle,https://documentation.red-gate.com/soco,https://documentation.red-gate.com/soco/release-notes-and-other-versions
