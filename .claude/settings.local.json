@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:documentation.red-gate.com)",
       "Bash(python backend/scrape_db_support.py)",
-      "Bash(python -c ':*)"
+      "Bash(python -c ':*)",
+      "Bash(python -c \"import json; d=json.load\\(open\\('data/db-support.json'\\)\\); m=[p for p in d['products'] if p['key']=='monitor'][0]; print\\(json.dumps\\(m.get\\('version_support'\\), indent=2\\)[:3000]\\)\")"
     ]
   }
 }

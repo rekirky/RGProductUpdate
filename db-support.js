@@ -7,6 +7,7 @@ let allData = null;
 let selectedProduct = 'tdm';
 let selectedCloud = 'all';
 let selectedFeatureIdx = 0;
+let selectedVersionEngine = null;
 
 // ── Bootstrap ──────────────────────────────────────────────────────────────
 
@@ -89,6 +90,7 @@ function renderProductTabs() {
       selectedProduct = btn.dataset.product;
       selectedFeatureIdx = 0;
       selectedCloud = 'all';
+      selectedVersionEngine = null;
       // Reset cloud filter active state
       document.getElementById('cloud-filters')
         .querySelectorAll('[data-cloud]')
@@ -230,27 +232,55 @@ function renderVersionSection() {
     return;
   }
 
-  tabContainer.innerHTML = features
-    .map((f, i) => {
-      const colour = featureColour(f.feature);
-      const style = colour ? ` style="--btn-accent:${colour}"` : '';
-      return `<button class="filter-btn${i === selectedFeatureIdx ? ' active' : ''}"
-               data-fi="${i}"${style}>${esc(f.feature)}</button>`;
-    })
-    .join('');
+  const currentFeature = features[selectedFeatureIdx];
+  const hasPlatformFilter = currentFeature?.engines?.some(e => e.platform_support != null);
 
-  tabContainer.querySelectorAll('[data-fi]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const idx = parseInt(btn.dataset.fi, 10);
-      if (idx === selectedFeatureIdx) return;
-      selectedFeatureIdx = idx;
-      tabContainer.querySelectorAll('[data-fi]').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      renderVersionTable(features[selectedFeatureIdx]);
+  if (features.length === 1 && hasPlatformFilter) {
+    // Replace single feature tab with per-engine filter buttons
+    const engineNames = currentFeature.engines.map(e => e.name);
+    tabContainer.innerHTML = [
+      `<button class="filter-btn${selectedVersionEngine === null ? ' active' : ''}" data-engine="all">All platforms</button>`,
+      ...engineNames.map(name => {
+        const colour = featureColour(name);
+        const style = colour ? ` style="--btn-accent:${colour}"` : '';
+        return `<button class="filter-btn${selectedVersionEngine === name ? ' active' : ''}" data-engine="${esc(name)}"${style}>${esc(name)}</button>`;
+      }),
+    ].join('');
+
+    tabContainer.querySelectorAll('[data-engine]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = btn.dataset.engine === 'all' ? null : btn.dataset.engine;
+        if (val === selectedVersionEngine) return;
+        selectedVersionEngine = val;
+        tabContainer.querySelectorAll('[data-engine]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderVersionTable(currentFeature);
+      });
     });
-  });
+  } else {
+    tabContainer.innerHTML = features
+      .map((f, i) => {
+        const colour = featureColour(f.feature);
+        const style = colour ? ` style="--btn-accent:${colour}"` : '';
+        return `<button class="filter-btn${i === selectedFeatureIdx ? ' active' : ''}"
+                 data-fi="${i}"${style}>${esc(f.feature)}</button>`;
+      })
+      .join('');
 
-  renderVersionTable(features[selectedFeatureIdx]);
+    tabContainer.querySelectorAll('[data-fi]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.dataset.fi, 10);
+        if (idx === selectedFeatureIdx) return;
+        selectedFeatureIdx = idx;
+        selectedVersionEngine = null;
+        tabContainer.querySelectorAll('[data-fi]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderVersionTable(features[selectedFeatureIdx]);
+      });
+    });
+  }
+
+  renderVersionTable(currentFeature);
 }
 
 const FLYWAY_TIERS = ['community', 'teams', 'enterprise', 'foundational', 'advanced'];
@@ -328,8 +358,11 @@ function hideFlywaySectionExtras() {
 
 function renderVersionsTable(feature, wrapper) {
   hideFlywaySectionExtras();
-  const hasStatus = feature.engines.some(e => e.status != null);
-  const hasPlatformSupport = feature.engines.some(e => e.platform_support != null);
+  const visibleEngines = selectedVersionEngine
+    ? feature.engines.filter(e => e.name === selectedVersionEngine)
+    : feature.engines;
+  const hasStatus = visibleEngines.some(e => e.status != null);
+  const hasPlatformSupport = visibleEngines.some(e => e.platform_support != null);
 
   let html = `<table aria-label="${esc(feature.feature)} supported versions">
     <thead><tr>
@@ -341,7 +374,7 @@ function renderVersionsTable(feature, wrapper) {
     </tr></thead>
     <tbody>`;
 
-  feature.engines.forEach(e => {
+  visibleEngines.forEach(e => {
     const versions = e.versions ?? [];
     const versionTags = versions.length > 0
       ? versions.map(v => `<span class="version-tag">${esc(v)}</span>`).join(' ')
