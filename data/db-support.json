@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T01:51:41.993837+00:00",
+  "generated_at": "2026-04-29T02:44:04.463741+00:00",
   "products": [
     {
       "key": "tdm",
@@ -1059,9 +1059,14 @@
             {
               "name": "PostgreSQL",
               "versions": [
-                "Amazon RDS PostgreSQL",
-                "Amazon Aurora PostgreSQL (including either Provisioned or Serverless V2 - see note)",
-                "Azure Flexible Server for PostgreSQL"
+                "v10",
+                "v11",
+                "v12",
+                "v13",
+                "v14",
+                "v15",
+                "v16",
+                "v17"
               ],
               "platform_support": {
                 "windows": {
@@ -1081,43 +1086,68 @@
             {
               "name": "Oracle",
               "versions": [
-                "Amazon RDS Oracle"
+                "19c onwards"
               ],
               "platform_support": {
                 "windows": {
                   "versions": []
                 },
                 "linux": {
-                  "versions": [],
-                  "support_page": null
+                  "versions": [
+                    "Ubuntu 20.04 or newer",
+                    "Red Hat Enterprise Linux 8.0 or newer",
+                    "Rocky Linux 8.0 or newer",
+                    "SUSE Linux Enterprise Server 15 or newer"
+                  ],
+                  "support_page": "https://documentation.red-gate.com/monitor/monitored-instances-on-linux-machine-284069118.html"
                 }
               }
             },
             {
               "name": "MySQL",
               "versions": [
-                "Amazon RDS MySQL"
+                "8.0.31 onwards",
+                "8.1",
+                "8.2",
+                "8.3",
+                "8.4",
+                "9.0",
+                "9.1"
               ],
               "platform_support": {
                 "windows": {
                   "versions": []
                 },
                 "linux": {
-                  "versions": [],
-                  "support_page": null
+                  "versions": [
+                    "Ubuntu 20.04 or newer",
+                    "Red Hat Enterprise Linux 8.0 or newer",
+                    "Rocky Linux 8.0 or newer",
+                    "SUSE Linux Enterprise Server 15 or newer"
+                  ],
+                  "support_page": "https://documentation.red-gate.com/monitor/monitored-instances-on-linux-machine-284069118.html"
                 }
               }
             },
             {
               "name": "MongoDB",
-              "versions": [],
+              "versions": [
+                "6.0",
+                "7.0",
+                "8.0"
+              ],
               "platform_support": {
                 "windows": {
                   "versions": []
                 },
                 "linux": {
-                  "versions": [],
-                  "support_page": null
+                  "versions": [
+                    "Ubuntu 20.04 or newer",
+                    "Red Hat Enterprise Linux 8.0 or newer",
+                    "Rocky Linux 8.0 or newer",
+                    "SUSE Linux Enterprise Server 15 or newer"
+                  ],
+                  "support_page": "https://documentation.red-gate.com/monitor/monitored-instances-on-linux-machine-284069118.html"
                 }
               }
             }

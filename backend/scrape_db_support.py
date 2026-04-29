@@ -297,6 +297,11 @@ def extract_linux_versions_from_master_page():
 def extract_monitor_support_data(soup, engine_name):
     """Extract database versions and OS support from Monitor engine pages.
 
+    Handles both:
+    1. List-based pages (SQL Server): separate <ul> for versions, Windows, Linux
+    2. Table-based pages (Oracle, MySQL, MongoDB): table with columns for versions, Windows, Linux
+       - Special: if Linux cell contains a link, fetch that page for versions
+
     Returns dict with:
       - versions: list of database engine versions
       - platform_support: dict with windows/linux platform data
@@ -306,10 +311,104 @@ def extract_monitor_support_data(soup, engine_name):
         'platform_support': {'windows': {'versions': []}, 'linux': {'versions': [], 'support_page': None}}
     }
 
-    # Find all lists on the page
+    # Strategy 1: Try table-based extraction (Oracle, MySQL, MongoDB)
+    tables = soup.find_all('table')
+    for table in tables:
+        headers = [th.get_text(strip=True) for th in table.find_all('th')]
+        headers_lower = [h.lower() for h in headers]
+
+        if 'linux' in headers_lower or 'windows' in headers_lower:
+            linux_idx = None
+            windows_idx = None
+            engine_idx = None
+
+            for i, h in enumerate(headers_lower):
+                if 'linux' in h:
+                    linux_idx = i
+                if 'windows' in h:
+                    windows_idx = i
+                # Engine column is usually the one that's NOT windows/linux
+                if 'engine' in h or ('oracle' in h or 'mysql' in h or 'postgresql' in h or 'mongodb' in h):
+                    engine_idx = i
+
+            # If no explicit engine column, assume it's the one that isn't windows/linux
+            if engine_idx is None and headers:
+                for i, h in enumerate(headers_lower):
+                    if 'linux' not in h and 'windows' not in h:
+                        engine_idx = i
+                        break
+
+            # Extract from rows
+            rows = table.find_all('tr')[1:]  # Skip header
+            for row in rows:
+                cells = row.find_all(['td', 'th'])
+
+                # Helper function to extract items from cell (handles nested ul/ol)
+                def extract_cell_items(cell):
+                    """Extract all items from cell, handling nested lists."""
+                    items = []
+                    # Try to find nested lists
+                    lists = cell.find_all(['ul', 'ol'], recursive=False)
+                    if lists:
+                        for lst in lists:
+                            for li in lst.find_all('li', recursive=False):
+                                text = li.get_text(strip=True)
+                                if text and text not in ('-', '—', 'Supported Linux versions', 'Supported Windows versions'):
+                                    items.append(text)
+                    else:
+                        # No nested lists, check for spans/divs
+                        spans = cell.find_all(['span', 'div'], recursive=False)
+                        if spans:
+                            for span in spans:
+                                text = span.get_text(strip=True)
+                                if text and text not in ('-', '—'):
+                                    items.append(text)
+                        else:
+                            # Fallback to plain text
+                            text = cell.get_text(strip=True)
+                            if text and text not in ('-', '—', 'Supported Linux versions', 'Supported Windows versions'):
+                                items.append(text)
+                    return items
+
+                # Extract versions from the engine column
+                if engine_idx is not None and engine_idx < len(cells):
+                    engine_items = extract_cell_items(cells[engine_idx])
+                    for item in engine_items:
+                        if item not in result['versions']:
+                            result['versions'].append(item)
+
+                # Extract Windows versions
+                if windows_idx is not None and windows_idx < len(cells):
+                    windows_items = extract_cell_items(cells[windows_idx])
+                    for item in windows_items:
+                        if item not in result['platform_support']['windows']['versions']:
+                            result['platform_support']['windows']['versions'].append(item)
+
+                # Handle Linux column (check for link first)
+                if linux_idx is not None and linux_idx < len(cells):
+                    linux_cell = cells[linux_idx]
+                    link = linux_cell.find('a')
+                    if link:
+                        href = link.get('href', '')
+                        if not href.startswith('http'):
+                            href = 'https://documentation.red-gate.com' + href
+                        result['platform_support']['linux']['support_page'] = href
+                        logger.info(f'Found Linux support page link in table: {href}')
+                    else:
+                        # Extract Linux versions if no link
+                        linux_items = extract_cell_items(linux_cell)
+                        for item in linux_items:
+                            if item not in result['platform_support']['linux']['versions']:
+                                result['platform_support']['linux']['versions'].append(item)
+
+            if result['versions'] or result['platform_support']['windows']['versions']:
+                logger.info(f'Extracted from table: {len(result["versions"])} db versions, '
+                           f'{len(result["platform_support"]["windows"]["versions"])} Windows versions')
+                return result
+
+    # Strategy 2: Try list-based extraction (SQL Server, PostgreSQL)
     lists = soup.find_all(['ul', 'ol'])
 
-    # Identify which list is which based on content patterns
     db_version_list = None
     windows_list = None
     linux_list = None
@@ -321,8 +420,8 @@ def extract_monitor_support_data(soup, engine_name):
 
         first_item_lower = items[0].lower()
 
-        # Check if this looks like a database version list (e.g., "SQL Server 2008 R2")
-        if any(pattern in first_item_lower for pattern in ['sql server', 'postgresql', 'oracle', 'mysql', 'mongodb']) and db_version_list is None:
+        # Check if this looks like a database version list
+        if any(pattern in first_item_lower for pattern in ['sql server', 'postgresql', 'oracle', 'mysql', 'mongodb', 'rds', 'amazon']) and db_version_list is None:
             db_version_list = items
 
         # Check if this looks like a Windows list
@@ -335,7 +434,7 @@ def extract_monitor_support_data(soup, engine_name):
 
     if db_version_list:
         result['versions'] = db_version_list
-        logger.info(f'Extracted {len(db_version_list)} database versions for {engine_name}')
+        logger.info(f'Extracted {len(db_version_list)} database versions for {engine_name}: {db_version_list[:2]}...')
 
     if windows_list:
         result['platform_support']['windows']['versions'] = windows_list
