@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T01:24:02.590279+00:00",
+  "generated_at": "2026-04-29T01:37:32.224385+00:00",
   "products": [
     {
       "key": "tdm",
@@ -1016,7 +1016,7 @@
       ],
       "version_support": [
         {
-          "feature": "Platform Support",
+          "feature": "Supported Platforms",
           "engines": [
             {
               "name": "SQL Server",
@@ -1034,12 +1034,7 @@
                   "support_page": null
                 }
               }
-            }
-          ]
-        },
-        {
-          "feature": "Platform Support",
-          "engines": [
+            },
             {
               "name": "PostgreSQL",
               "versions": [],
@@ -1054,12 +1049,7 @@
                   "support_page": null
                 }
               }
-            }
-          ]
-        },
-        {
-          "feature": "Platform Support",
-          "engines": [
+            },
             {
               "name": "Oracle",
               "versions": [],
@@ -1077,12 +1067,7 @@
                   "support_page": "https://documentation.red-gate.com/monitor/monitored-instances-on-linux-machine-284069118.html"
                 }
               }
-            }
-          ]
-        },
-        {
-          "feature": "Platform Support",
-          "engines": [
+            },
             {
               "name": "MySQL",
               "versions": [],
@@ -1100,12 +1085,7 @@
                   "support_page": "https://documentation.red-gate.com/monitor/monitored-instances-on-linux-machine-284069118.html"
                 }
               }
-            }
-          ]
-        },
-        {
-          "feature": "Platform Support",
-          "engines": [
+            },
             {
               "name": "MongoDB",
               "versions": [],

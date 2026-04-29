@@ -694,29 +694,32 @@ def scrape_product(source):
     # Special handling for Monitor: scrape individual database pages for platform support
     if source['key'] == 'monitor':
         logger.info('Scraping Redgate Monitor platform support')
+
+        # Consolidate all engines into a single version_support entry
+        engines_data = []
+        for engine_name in ['SQL Server', 'PostgreSQL', 'Oracle', 'MySQL', 'MongoDB']:
+            platform_support = scrape_platform_support(engine_name)
+            if platform_support:
+                engines_data.append({
+                    'name': engine_name,
+                    'versions': [],
+                    'platform_support': platform_support
+                })
+                logger.info(f'Added platform support for {engine_name}')
+
         result = {
             'key': source['key'],
             'name': source['name'],
             'source_url': source['source_url'],
             'engines': ['SQL Server', 'PostgreSQL', 'Oracle', 'MySQL', 'MongoDB'],
             'cloud_matrix': [],
-            'version_support': [],
+            'version_support': [
+                {
+                    'feature': 'Supported Platforms',
+                    'engines': engines_data
+                }
+            ] if engines_data else []
         }
-
-        # For each engine, scrape its dedicated documentation page
-        for engine in result['engines']:
-            platform_support = scrape_platform_support(engine)
-            if platform_support:
-                # Create a version_support entry for each engine
-                result['version_support'].append({
-                    'feature': 'Platform Support',
-                    'engines': [{
-                        'name': engine,
-                        'versions': [],
-                        'platform_support': platform_support
-                    }]
-                })
-                logger.info(f'Added platform support for {engine}')
 
         return result if result['version_support'] else None
 
