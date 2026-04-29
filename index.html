@@ -65,7 +65,13 @@
           <input type="checkbox" id="hide-old" checked>
           Hide older products
         </label>
-        <button id="download-selected" class="download-btn" disabled>Download Installers</button>
+        <div class="split-btn-group">
+          <button id="download-selected" class="download-btn split-btn-main" disabled>Download Installers</button>
+          <button id="download-dropdown-toggle" class="download-btn split-btn-arrow" disabled aria-haspopup="true" aria-expanded="false" title="More options">&#9660;</button>
+          <ul id="download-dropdown-menu" class="split-btn-menu" hidden role="menu">
+            <li><button id="copy-links-btn" role="menuitem">Copy download links</button></li>
+          </ul>
+        </div>
         <span id="selected-count" class="selected-count"></span>
       </div>
 

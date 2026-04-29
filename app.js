@@ -231,14 +231,17 @@ hideOldCheckbox.addEventListener('change', () => {
 function updateSelectedCount() {
   const countEl = document.getElementById('selected-count');
   const downloadBtn = document.getElementById('download-selected');
+  const arrowBtn = document.getElementById('download-dropdown-toggle');
   const count = selectedProducts.size;
 
   if (count > 0) {
     countEl.textContent = `${count} selected`;
     downloadBtn.disabled = false;
+    arrowBtn.disabled = false;
   } else {
     countEl.textContent = '';
     downloadBtn.disabled = true;
+    arrowBtn.disabled = true;
   }
 }
 
@@ -379,6 +382,41 @@ document.getElementById('download-selected').addEventListener('click', () => {
   const products = allProducts.filter(p => selectedProducts.has(p.key) && p.download_url);
   if (products.length === 0) return;
   openQueue(products);
+});
+
+// ── Download dropdown ─────────────────────────────────────────────────────────
+
+const dropdownToggle = document.getElementById('download-dropdown-toggle');
+const dropdownMenu   = document.getElementById('download-dropdown-menu');
+
+dropdownToggle.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const isOpen = !dropdownMenu.hidden;
+  dropdownMenu.hidden = isOpen;
+  dropdownToggle.setAttribute('aria-expanded', String(!isOpen));
+});
+
+document.addEventListener('click', () => {
+  dropdownMenu.hidden = true;
+  dropdownToggle.setAttribute('aria-expanded', 'false');
+});
+
+dropdownMenu.addEventListener('click', (e) => e.stopPropagation());
+
+document.getElementById('copy-links-btn').addEventListener('click', () => {
+  dropdownMenu.hidden = true;
+  dropdownToggle.setAttribute('aria-expanded', 'false');
+
+  const products = allProducts.filter(p => selectedProducts.has(p.key) && p.download_url);
+  if (products.length === 0) return;
+
+  const lines = products.map(p => `${p.name}: ${p.download_url}`);
+  navigator.clipboard.writeText(lines.join('\n')).then(() => {
+    const btn = document.getElementById('copy-links-btn');
+    const orig = btn.textContent;
+    btn.textContent = `Copied ${products.length} link${products.length === 1 ? '' : 's'}!`;
+    setTimeout(() => { btn.textContent = orig; }, 2000);
+  });
 });
 
 // ── Start ────────────────────────────────────────────────────────────────────
