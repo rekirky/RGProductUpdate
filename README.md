@@ -4,7 +4,8 @@ Can be used to get the latest version of a product quickly.
 Check when a product has been updated without checking the release notes, forum or in program.
 
 Status:
-[![kirky-run-python-updated](https://github.com/rekirky/RGProductUpdate/actions/workflows/pythonaction.yml/badge.svg)](https://github.com/rekirky/RGProductUpdate/actions/workflows/pythonaction.yml)  
+[![kirky-run-python-updated](https://github.com/rekirky/RGProductUpdate/actions/workflows/pythonaction.yml/badge.svg)](https://github.com/rekirky/RGProductUpdate/actions/workflows/pythonaction.yml)
+[![AI-Assisted](https://img.shields.io/badge/Built%20with-Claude%20AI-blue?logo=anthropic)](https://claude.ai)
 
 
 # Usage
@@ -43,3 +44,11 @@ Added links to document site for products, defaults to main document site when n
 
 ## Ver 1.5 Apr 2024
 Added Redgate Monitor
+
+## Ver 1.6 Apr 2026
+Enhanced database support scraping with AI assistance:
+- Fixed SQL Toolbelt/Essentials redirect chain handling with S3 pagination
+- Implemented Redgate Monitor OS/platform support detection
+- Added automatic link following for master Linux support pages
+- Smart extraction of Windows and Linux version data for SQL Server, PostgreSQL, Oracle, MySQL, and MongoDB
+- Data storage with reference URLs for future updates
