@@ -290,49 +290,95 @@ document.getElementById('select-all').addEventListener('change', (e) => {
   updateSelectedCount();
 });
 
-document.getElementById('download-selected').addEventListener('click', () => {
-  const productsToDownload = allProducts.filter(p => selectedProducts.has(p.key) && p.download_url);
+// ── Download queue ────────────────────────────────────────────────────────────
 
-  if (productsToDownload.length === 0) return;
+let downloadQueue = [];
+let downloadQueueIndex = 0;
 
-  const downloadBtn = document.getElementById('download-selected');
-  const originalText = downloadBtn.textContent;
-  downloadBtn.disabled = true;
-  downloadBtn.textContent = `Downloading ${productsToDownload.length} file(s)...`;
+function openQueue(products) {
+  downloadQueue = products;
+  downloadQueueIndex = 0;
 
-  console.log(`Starting bulk download of ${productsToDownload.length} products:`, productsToDownload.map(p => p.name));
+  const overlay = document.getElementById('download-queue-overlay');
+  const list    = document.getElementById('queue-list');
 
-  // Create a container for all download links
-  const container = document.createElement('div');
-  container.style.display = 'none';
-  document.body.appendChild(container);
+  list.innerHTML = products.map((p, i) => `
+    <li class="queue-item${i === 0 ? ' active' : ''}" data-index="${i}">
+      <span class="queue-item-icon">${i === 0 ? '▶' : '·'}</span>
+      <span class="queue-item-name" title="${esc(p.name)}">${esc(p.name)}</span>
+    </li>
+  `).join('');
 
-  productsToDownload.forEach((product, index) => {
-    setTimeout(() => {
-      try {
-        console.log(`[${index + 1}/${productsToDownload.length}] Triggering download: ${product.name}`);
+  overlay.hidden = false;
+  triggerQueueDownload();
+}
 
-        const link = document.createElement('a');
-        link.href = product.download_url;
-        link.download = '';
-        link.setAttribute('target', '_blank'); // Open in new tab (will download instead of navigate)
-        container.appendChild(link);
-        link.click();
+function triggerQueueDownload() {
+  const product = downloadQueue[downloadQueueIndex];
+  if (!product) return;
 
-        console.log(`✓ Download initiated: ${product.name}`);
-      } catch (err) {
-        console.error(`✗ Error initiating download for ${product.name}:`, err.message);
-      }
-    }, index * 2000); // Increased to 2 seconds to avoid interference
+  const link = document.createElement('a');
+  link.href   = product.download_url;
+  link.target = '_blank';
+  link.rel    = 'noopener';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  updateQueueUI();
+}
+
+function updateQueueUI() {
+  const items   = document.querySelectorAll('.queue-item');
+  const nextBtn = document.getElementById('queue-next');
+  const isLast  = downloadQueueIndex === downloadQueue.length - 1;
+
+  items.forEach((el, i) => {
+    const isPending = i > downloadQueueIndex;
+    el.className = 'queue-item' +
+      (i < downloadQueueIndex  ? ' done'   :
+       i === downloadQueueIndex ? ' active' :
+                                  ' pending');
+    el.querySelector('.queue-item-icon').textContent =
+      i < downloadQueueIndex  ? '✓' :
+      i === downloadQueueIndex ? '▶' : '·';
+    el.style.cursor = isPending ? 'pointer' : '';
+    el.title = isPending ? `Jump to: ${downloadQueue[i].name}` : '';
   });
 
-  // Clean up after all downloads are initiated
-  setTimeout(() => {
-    console.log('All downloads initiated');
-    document.body.removeChild(container);
-    downloadBtn.textContent = originalText;
-    downloadBtn.disabled = selectedProducts.size === 0;
-  }, productsToDownload.length * 2000 + 3000);
+  nextBtn.textContent = isLast ? 'Done' : 'Download Next';
+}
+
+function advanceQueue() {
+  if (downloadQueueIndex >= downloadQueue.length - 1) {
+    closeQueue();
+    return;
+  }
+  downloadQueueIndex++;
+  triggerQueueDownload();
+}
+
+function closeQueue() {
+  document.getElementById('download-queue-overlay').hidden = true;
+  downloadQueue = [];
+  downloadQueueIndex = 0;
+}
+
+document.getElementById('queue-next').addEventListener('click', advanceQueue);
+document.getElementById('queue-cancel').addEventListener('click', closeQueue);
+document.getElementById('queue-close').addEventListener('click', closeQueue);
+
+document.getElementById('queue-list').addEventListener('click', (e) => {
+  const item = e.target.closest('.queue-item.pending');
+  if (!item) return;
+  downloadQueueIndex = parseInt(item.dataset.index, 10);
+  triggerQueueDownload();
+});
+
+document.getElementById('download-selected').addEventListener('click', () => {
+  const products = allProducts.filter(p => selectedProducts.has(p.key) && p.download_url);
+  if (products.length === 0) return;
+  openQueue(products);
 });
 
 // ── Start ────────────────────────────────────────────────────────────────────

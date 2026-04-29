@@ -634,6 +634,109 @@ tbody td {
 }
 
 /* ============================================================
+   Download queue panel
+   ============================================================ */
+.queue-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.queue-overlay[hidden] { display: none; }
+
+.queue-panel {
+  background: var(--rg-white);
+  border: 1px solid var(--rg-border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  width: 360px;
+  max-height: 480px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.queue-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--rg-border);
+  background: var(--rg-thead-bg);
+}
+
+.queue-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--rg-black);
+}
+
+.queue-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--rg-text-muted);
+  padding: 0 0.25rem;
+}
+.queue-close:hover { color: var(--rg-black); }
+
+.queue-list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+  padding: 0.5rem 0;
+}
+
+.queue-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
+  color: var(--rg-text-muted);
+}
+
+.queue-item.done   { color: var(--status-current-text); }
+.queue-item.active { color: var(--rg-black); font-weight: 500; }
+.queue-item.active .queue-item-icon { color: var(--rg-red); }
+
+.queue-item-icon { font-size: 0.95rem; flex-shrink: 0; width: 1rem; text-align: center; }
+.queue-item-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.queue-item.pending:hover {
+  background: var(--rg-red-light);
+  color: var(--rg-red-dark);
+}
+
+.queue-footer {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--rg-border);
+  background: var(--rg-bg);
+}
+
+.queue-cancel-btn {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--rg-border-dark);
+  border-radius: var(--radius);
+  background: var(--rg-white);
+  color: var(--rg-text);
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: var(--font);
+  cursor: pointer;
+}
+.queue-cancel-btn:hover { background: var(--rg-bg); }
+
+/* ============================================================
    Database Support page
    ============================================================ */
 

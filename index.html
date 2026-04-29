@@ -105,6 +105,21 @@
     </div>
   </footer>
 
-  <script src="app.js?v=6"></script>
+  <!-- Download queue panel -->
+  <div id="download-queue-overlay" class="queue-overlay" hidden>
+    <div class="queue-panel">
+      <div class="queue-header">
+        <span class="queue-title">Download Queue</span>
+        <button id="queue-close" class="queue-close" aria-label="Close">&times;</button>
+      </div>
+      <ul id="queue-list" class="queue-list"></ul>
+      <div class="queue-footer">
+        <button id="queue-next" class="download-btn">Download Next</button>
+        <button id="queue-cancel" class="queue-cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=7"></script>
 </body>
 </html>
