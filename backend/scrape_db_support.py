@@ -294,6 +294,60 @@ def extract_linux_versions_from_master_page():
     return []
 
 
+def extract_monitor_support_data(soup, engine_name):
+    """Extract database versions and OS support from Monitor engine pages.
+
+    Returns dict with:
+      - versions: list of database engine versions
+      - platform_support: dict with windows/linux platform data
+    """
+    result = {
+        'versions': [],
+        'platform_support': {'windows': {'versions': []}, 'linux': {'versions': [], 'support_page': None}}
+    }
+
+    # Find all lists on the page
+    lists = soup.find_all(['ul', 'ol'])
+
+    # Identify which list is which based on content patterns
+    db_version_list = None
+    windows_list = None
+    linux_list = None
+
+    for lst in lists:
+        items = [li.get_text(strip=True) for li in lst.find_all('li', recursive=False)]
+        if not items:
+            continue
+
+        first_item_lower = items[0].lower()
+
+        # Check if this looks like a database version list (e.g., "SQL Server 2008 R2")
+        if any(pattern in first_item_lower for pattern in ['sql server', 'postgresql', 'oracle', 'mysql', 'mongodb']) and db_version_list is None:
+            db_version_list = items
+
+        # Check if this looks like a Windows list
+        elif any(pattern in first_item_lower for pattern in ['windows 10', 'windows 11', 'windows server']) and windows_list is None:
+            windows_list = items
+
+        # Check if this looks like a Linux list
+        elif any(pattern in first_item_lower for pattern in ['ubuntu', 'red hat', 'rocky', 'suse']) and linux_list is None:
+            linux_list = items
+
+    if db_version_list:
+        result['versions'] = db_version_list
+        logger.info(f'Extracted {len(db_version_list)} database versions for {engine_name}')
+
+    if windows_list:
+        result['platform_support']['windows']['versions'] = windows_list
+        logger.info(f'Extracted {len(windows_list)} Windows versions for {engine_name}')
+
+    if linux_list:
+        result['platform_support']['linux']['versions'] = linux_list
+        logger.info(f'Extracted {len(linux_list)} Linux versions for {engine_name}')
+
+    return result
+
+
 def extract_platform_support_from_soup(soup):
     """Extract Windows and Linux OS versions from Monitor documentation page.
 
@@ -419,9 +473,9 @@ def extract_platform_support_from_soup(soup):
 
 
 def scrape_platform_support(engine_name):
-    """Scrape OS/platform support for a specific database engine.
+    """Scrape versions and platform support for a specific database engine.
 
-    Returns dict with 'windows' and 'linux' keys, or None if scraping fails.
+    Returns dict with 'versions' and 'platform_support' keys, or None if scraping fails.
     If the Linux section contains a link to a master support page, fetches that page.
     """
     # Map engine names to Monitor documentation URLs
@@ -439,21 +493,21 @@ def scrape_platform_support(engine_name):
         return None
 
     try:
-        logger.info(f'Fetching platform support for {engine_name} from {url}')
+        logger.info(f'Fetching support data for {engine_name} from {url}')
         html = fetch_html(url)
         soup = BeautifulSoup(html, 'html.parser')
-        platform_support = extract_platform_support_from_soup(soup)
+        result = extract_monitor_support_data(soup, engine_name)
 
         # If a Linux support page link was found, fetch and extract from that page
-        if platform_support['linux'].get('support_page'):
-            logger.info(f'Fetching master Linux support page: {platform_support["linux"]["support_page"]}')
+        if result['platform_support']['linux'].get('support_page'):
+            logger.info(f'Fetching master Linux support page: {result["platform_support"]["linux"]["support_page"]}')
             linux_versions = extract_linux_versions_from_master_page()
             if linux_versions:
-                platform_support['linux']['versions'] = linux_versions
+                result['platform_support']['linux']['versions'] = linux_versions
 
-        return platform_support
+        return result
     except Exception as exc:
-        logger.warning(f'Failed to scrape platform support for {engine_name}: {exc}')
+        logger.warning(f'Failed to scrape support data for {engine_name}: {exc}')
         return None
 
 
@@ -715,12 +769,12 @@ def scrape_product(source):
         # Add platform support for each engine
         platform_support_entry = {'feature': 'Supported Platforms', 'engines': []}
         for engine_name in ['SQL Server', 'PostgreSQL', 'Oracle', 'MySQL', 'MongoDB']:
-            platform_support = scrape_platform_support(engine_name)
-            if platform_support:
+            result_data = scrape_platform_support(engine_name)
+            if result_data:
                 platform_support_entry['engines'].append({
                     'name': engine_name,
-                    'versions': [],
-                    'platform_support': platform_support
+                    'versions': result_data.get('versions', []),
+                    'platform_support': result_data.get('platform_support', {})
                 })
                 logger.info(f'Added platform support for {engine_name}')
 

@@ -356,20 +356,12 @@ function renderVersionsTable(feature, wrapper) {
     const windowsVersions = e.platform_support?.windows?.versions ?? [];
     const linuxVersions = e.platform_support?.linux?.versions ?? [];
 
-    // Split space-separated version strings into individual tags
-    const splitVersions = (versions) => {
-      return versions.flatMap(v => v.split(/\s+/).filter(x => x.length > 0));
-    };
-
-    const windowsAll = splitVersions(windowsVersions);
-    const linuxAll = splitVersions(linuxVersions);
-
-    const windowsTags = windowsAll.length > 0
-      ? windowsAll.map(v => `<span class="version-tag">${esc(v)}</span>`).join(' ')
+    const windowsTags = windowsVersions.length > 0
+      ? windowsVersions.map(v => `<span class="version-tag">${esc(v)}</span>`).join(' ')
       : '<span class="version-tag empty">&mdash;</span>';
 
-    const linuxTags = linuxAll.length > 0
-      ? linuxAll.map(v => `<span class="version-tag">${esc(v)}</span>`).join(' ')
+    const linuxTags = linuxVersions.length > 0
+      ? linuxVersions.map(v => `<span class="version-tag">${esc(v)}</span>`).join(' ')
       : '<span class="version-tag empty">&mdash;</span>';
 
     html += `<tr>
