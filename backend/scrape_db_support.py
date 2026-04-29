@@ -691,34 +691,50 @@ def scrape_product(source):
         logger.warning('beautifulsoup4 not installed — install it to enable scraping')
         return None
 
-    # Special handling for Monitor: scrape individual database pages for platform support
+    # Special handling for Monitor: scrape main page for versions + individual pages for platform support
     if source['key'] == 'monitor':
-        logger.info('Scraping Redgate Monitor platform support')
+        logger.info('Scraping Redgate Monitor with versions and platform support')
 
-        # Consolidate all engines into a single version_support entry
-        engines_data = []
+        url = source['source_url']
+        try:
+            html = fetch_html(url)
+        except Exception as exc:
+            logger.error(f'Failed to fetch {url}: {exc}')
+            return None
+
+        soup = BeautifulSoup(html, 'html.parser')
+        tables = soup.find_all('table')
+
+        # Get cloud matrix
+        engines, cloud_matrix = find_cloud_matrix(tables)
+
+        # Get version support from main page (Monitoring feature)
+        version_support = find_version_tables(tables)
+        logger.info(f'Found {len(version_support)} version table(s) on main page')
+
+        # Add platform support for each engine
+        platform_support_entry = {'feature': 'Supported Platforms', 'engines': []}
         for engine_name in ['SQL Server', 'PostgreSQL', 'Oracle', 'MySQL', 'MongoDB']:
             platform_support = scrape_platform_support(engine_name)
             if platform_support:
-                engines_data.append({
+                platform_support_entry['engines'].append({
                     'name': engine_name,
                     'versions': [],
                     'platform_support': platform_support
                 })
                 logger.info(f'Added platform support for {engine_name}')
 
+        # Add platform support entry if we found data
+        if platform_support_entry['engines']:
+            version_support.append(platform_support_entry)
+
         result = {
             'key': source['key'],
             'name': source['name'],
             'source_url': source['source_url'],
-            'engines': ['SQL Server', 'PostgreSQL', 'Oracle', 'MySQL', 'MongoDB'],
-            'cloud_matrix': [],
-            'version_support': [
-                {
-                    'feature': 'Supported Platforms',
-                    'engines': engines_data
-                }
-            ] if engines_data else []
+            'engines': engines if engines else ['SQL Server', 'PostgreSQL', 'Oracle', 'MySQL', 'MongoDB'],
+            'cloud_matrix': cloud_matrix,
+            'version_support': version_support
         }
 
         return result if result['version_support'] else None
