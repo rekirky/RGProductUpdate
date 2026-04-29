@@ -329,12 +329,15 @@ function hideFlywaySectionExtras() {
 function renderVersionsTable(feature, wrapper) {
   hideFlywaySectionExtras();
   const hasStatus = feature.engines.some(e => e.status != null);
+  const hasPlatformSupport = feature.engines.some(e => e.platform_support != null);
 
   let html = `<table aria-label="${esc(feature.feature)} supported versions">
     <thead><tr>
       <th class="col-engine-name">Database Engine</th>
       ${hasStatus ? '<th class="col-support-level">Support Level</th>' : ''}
       <th class="col-versions">Supported Versions</th>
+      ${hasPlatformSupport ? '<th class="col-platform">Windows</th>' : ''}
+      ${hasPlatformSupport ? '<th class="col-platform">Linux</th>' : ''}
     </tr></thead>
     <tbody>`;
 
@@ -350,10 +353,23 @@ function renderVersionsTable(feature, wrapper) {
         ? '<span class="support-badge compatible">&#9675; Community</span>'
         : '';
 
+    const windowsVersions = e.platform_support?.windows?.versions ?? [];
+    const linuxVersions = e.platform_support?.linux?.versions ?? [];
+
+    const windowsTags = windowsVersions.length > 0
+      ? windowsVersions.map(v => `<span class="version-tag">${esc(v)}</span>`).join(' ')
+      : '<span class="version-tag empty">&mdash;</span>';
+
+    const linuxTags = linuxVersions.length > 0
+      ? linuxVersions.map(v => `<span class="version-tag">${esc(v)}</span>`).join(' ')
+      : '<span class="version-tag empty">&mdash;</span>';
+
     html += `<tr>
       <td class="cell-engine-name">${esc(e.name)}</td>
       ${hasStatus ? `<td class="cell-support-level">${levelBadge}</td>` : ''}
       <td class="cell-versions">${versionTags}</td>
+      ${hasPlatformSupport ? `<td class="cell-platform">${windowsTags}</td>` : ''}
+      ${hasPlatformSupport ? `<td class="cell-platform">${linuxTags}</td>` : ''}
     </tr>`;
   });
 
