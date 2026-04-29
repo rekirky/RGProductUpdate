@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T19:21:39.495711+00:00",
+  "generated_at": "2026-04-29T01:24:02.590279+00:00",
   "products": [
     {
       "key": "tdm",
@@ -1016,59 +1016,113 @@
       ],
       "version_support": [
         {
-          "feature": "Monitoring",
+          "feature": "Platform Support",
           "engines": [
             {
               "name": "SQL Server",
-              "versions": [
-                "2008R2",
-                "2012",
-                "2014",
-                "2016",
-                "2017",
-                "2019",
-                "2022",
-                "2025"
-              ]
-            },
+              "versions": [],
+              "platform_support": {
+                "windows": {
+                  "versions": [
+                    "Windows 10 Windows 11 Windows Server 2008 Windows Server 2008 R2 Windows Server 2012 Windows Server 2012 R2 Windows Server 2016 Windows Server 2019 Windows Server 2022 Windows Server 2025"
+                  ]
+                },
+                "linux": {
+                  "versions": [
+                    "Ubuntu 20.04 or newer Red Hat Enterprise Linux 8.0 or newer Rocky Linux 8.0 or newer SUSE Linux Enterprise Server 15 (SP3) or newer"
+                  ],
+                  "support_page": null
+                }
+              }
+            }
+          ]
+        },
+        {
+          "feature": "Platform Support",
+          "engines": [
             {
               "name": "PostgreSQL",
-              "versions": [
-                "10",
-                "11",
-                "12",
-                "13",
-                "14",
-                "15",
-                "16",
-                "17"
-              ]
-            },
+              "versions": [],
+              "platform_support": {
+                "windows": {
+                  "versions": []
+                },
+                "linux": {
+                  "versions": [
+                    "Ubuntu 20.04 or newer Red Hat Enterprise Linux 8.0 or newer Rocky Linux 8.0 or newer SUSE Linux Enterprise Server 15 or newer"
+                  ],
+                  "support_page": null
+                }
+              }
+            }
+          ]
+        },
+        {
+          "feature": "Platform Support",
+          "engines": [
             {
               "name": "Oracle",
-              "versions": [
-                "19c+"
-              ]
-            },
+              "versions": [],
+              "platform_support": {
+                "windows": {
+                  "versions": []
+                },
+                "linux": {
+                  "versions": [
+                    "Ubuntu 20.04 or newer",
+                    "Red Hat Enterprise Linux 8.0 or newer",
+                    "Rocky Linux 8.0 or newer",
+                    "SUSE Linux Enterprise Server 15 or newer"
+                  ],
+                  "support_page": "https://documentation.red-gate.com/monitor/monitored-instances-on-linux-machine-284069118.html"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "feature": "Platform Support",
+          "engines": [
             {
               "name": "MySQL",
-              "versions": [
-                "8.0.31+",
-                "8.1",
-                "8.2",
-                "8.3",
-                "8.4",
-                "9.0",
-                "9.1"
-              ]
-            },
+              "versions": [],
+              "platform_support": {
+                "windows": {
+                  "versions": []
+                },
+                "linux": {
+                  "versions": [
+                    "Ubuntu 20.04 or newer",
+                    "Red Hat Enterprise Linux 8.0 or newer",
+                    "Rocky Linux 8.0 or newer",
+                    "SUSE Linux Enterprise Server 15 or newer"
+                  ],
+                  "support_page": "https://documentation.red-gate.com/monitor/monitored-instances-on-linux-machine-284069118.html"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "feature": "Platform Support",
+          "engines": [
             {
               "name": "MongoDB",
-              "versions": [
-                "6.0",
-                "7.0",
-                "8.0"
-              ]
+              "versions": [],
+              "platform_support": {
+                "windows": {
+                  "versions": []
+                },
+                "linux": {
+                  "versions": [
+                    "Ubuntu 20.04 or newer",
+                    "Red Hat Enterprise Linux 8.0 or newer",
+                    "Rocky Linux 8.0 or newer",
+                    "SUSE Linux Enterprise Server 15 or newer"
+                  ],
+                  "support_page": "https://documentation.red-gate.com/monitor/monitored-instances-on-linux-machine-284069118.html"
+                }
+              }
             }
           ]
         }

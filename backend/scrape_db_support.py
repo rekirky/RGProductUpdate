@@ -267,6 +267,196 @@ def find_version_tables(tables):
     return results
 
 
+def extract_linux_versions_from_master_page():
+    """Extract Linux versions from the master Redgate Monitor Linux support page.
+
+    Returns list of supported Linux versions.
+    """
+    url = 'https://documentation.red-gate.com/monitor/monitored-instances-on-linux-machine-284069118.html'
+    try:
+        html = fetch_html(url)
+        soup = BeautifulSoup(html, 'html.parser')
+
+        # Look for list items containing Linux versions
+        versions = []
+        for li in soup.find_all('li'):
+            text = li.get_text(strip=True)
+            # Look for typical Linux version patterns
+            if any(os_name in text for os_name in ['Ubuntu', 'Red Hat', 'Rocky', 'SUSE', 'Enterprise']):
+                versions.append(text)
+
+        if versions:
+            logger.info(f'Extracted {len(versions)} Linux versions from master page')
+            return versions
+    except Exception as exc:
+        logger.warning(f'Failed to fetch master Linux page: {exc}')
+
+    return []
+
+
+def extract_platform_support_from_soup(soup):
+    """Extract Windows and Linux OS versions from Monitor documentation page.
+
+    Looks for sections labeled 'Windows' or 'Linux' followed by lists of OS versions.
+    Also checks for links in the Linux section that point to a master Linux support page.
+    Returns dict with 'windows' and 'linux' keys, each containing 'versions' list.
+    """
+    platform_support = {'windows': {'versions': []}, 'linux': {'versions': [], 'support_page': None}}
+
+    # Find h2/h3/h4/strong elements that indicate Windows or Linux sections
+    for header in soup.find_all(['h2', 'h3', 'h4', 'strong', 'b']):
+        header_text = header.get_text(strip=True)
+        header_lower = header_text.lower()
+
+        if header_lower == 'windows':
+            # Find the next list after this header
+            next_list = header.find_next(['ul', 'ol'])
+            if next_list:
+                items = [li.get_text(strip=True) for li in next_list.find_all('li')]
+                if items:
+                    platform_support['windows']['versions'].extend(items)
+
+        elif header_lower == 'linux':
+            # Check if there's a link in the next element (could be in a table cell or list)
+            next_elem = header.find_next(['ul', 'ol', 'p', 'td', 'div'])
+            if next_elem:
+                link = next_elem.find('a')
+                if link and 'linux' in link.get('href', '').lower():
+                    # Found a link to Linux support page
+                    support_page_url = link.get('href', '')
+                    if not support_page_url.startswith('http'):
+                        support_page_url = 'https://documentation.red-gate.com' + support_page_url
+                    platform_support['linux']['support_page'] = support_page_url
+                    # Fetch and extract versions from the master page
+                    logger.info(f'Found Linux support page link: {support_page_url}')
+                    continue
+
+                # If no link, extract list items normally
+                if next_elem.name in ['ul', 'ol']:
+                    items = [li.get_text(strip=True) for li in next_elem.find_all('li')]
+                    if items:
+                        platform_support['linux']['versions'].extend(items)
+
+    # Also check tables with Windows/Linux columns
+    tables = soup.find_all('table')
+    for table in tables:
+        headers, data_rows = expand_rowspans(table)
+        if not headers:
+            continue
+
+        norm = [h.strip().lower() for h in headers]
+        windows_idx = None
+        linux_idx = None
+
+        for i, h in enumerate(norm):
+            if 'windows' in h:
+                windows_idx = i
+            if 'linux' in h:
+                linux_idx = i
+
+        if windows_idx is None and linux_idx is None:
+            continue
+
+        # Look for links in table cells
+        for row_idx, row in enumerate(data_rows):
+            if linux_idx is not None and linux_idx < len(row):
+                # Check if there's a link in the table cell
+                try:
+                    row_elem = table.find_all('tr')[row_idx + (1 if headers else 0)]
+                    cells = row_elem.find_all(['td', 'th'])
+                    if linux_idx < len(cells):
+                        cell = cells[linux_idx]
+                        link = cell.find('a')
+                        if link and 'linux' in link.get('href', '').lower():
+                            support_page_url = link.get('href', '')
+                            if not support_page_url.startswith('http'):
+                                support_page_url = 'https://documentation.red-gate.com' + support_page_url
+                            platform_support['linux']['support_page'] = support_page_url
+                            logger.info(f'Found Linux support page link in table: {support_page_url}')
+                            continue
+                except:
+                    pass
+
+                # Extract text if no link
+                linux_text = row[linux_idx].strip()
+                if linux_text:
+                    versions = [v.strip() for v in re.split(r'[•\n]', linux_text) if v.strip()]
+                    platform_support['linux']['versions'].extend(versions)
+
+            if windows_idx is not None and windows_idx < len(row):
+                win_text = row[windows_idx].strip()
+                if win_text:
+                    versions = [v.strip() for v in re.split(r'[•\n]', win_text) if v.strip()]
+                    platform_support['windows']['versions'].extend(versions)
+
+    # Remove duplicates and filter out noise
+    def clean_versions(versions):
+        noise_patterns = ['visit', 'contact', 'forum', 'support', 'http://', 'https://', '@redgate']
+        cleaned = []
+        seen = set()
+
+        for v in versions:
+            v_lower = v.lower()
+            # Skip noise
+            if any(pattern in v_lower for pattern in noise_patterns):
+                continue
+            # Skip very short entries
+            if len(v) < 3:
+                continue
+            # Remove duplicates
+            if v not in seen:
+                seen.add(v)
+                cleaned.append(v)
+
+        return cleaned
+
+    for os_type in ['windows', 'linux']:
+        platform_support[os_type]['versions'] = clean_versions(platform_support[os_type]['versions'])
+
+    return platform_support
+
+    return platform_support
+
+
+def scrape_platform_support(engine_name):
+    """Scrape OS/platform support for a specific database engine.
+
+    Returns dict with 'windows' and 'linux' keys, or None if scraping fails.
+    If the Linux section contains a link to a master support page, fetches that page.
+    """
+    # Map engine names to Monitor documentation URLs
+    engine_urls = {
+        'SQL Server': 'https://documentation.red-gate.com/monitor/monitored-sql-servers-239667386.html',
+        'PostgreSQL': 'https://documentation.red-gate.com/monitor/monitored-postgresql-instances-239667387.html',
+        'Oracle': 'https://documentation.red-gate.com/monitor/monitored-oracle-285802540.html',
+        'MySQL': 'https://documentation.red-gate.com/monitor/monitored-mysql-285802551.html',
+        'MongoDB': 'https://documentation.red-gate.com/monitor/monitored-mongodb-285802548.html',
+    }
+
+    url = engine_urls.get(engine_name)
+    if not url:
+        logger.debug(f'No documentation URL for engine: {engine_name}')
+        return None
+
+    try:
+        logger.info(f'Fetching platform support for {engine_name} from {url}')
+        html = fetch_html(url)
+        soup = BeautifulSoup(html, 'html.parser')
+        platform_support = extract_platform_support_from_soup(soup)
+
+        # If a Linux support page link was found, fetch and extract from that page
+        if platform_support['linux'].get('support_page'):
+            logger.info(f'Fetching master Linux support page: {platform_support["linux"]["support_page"]}')
+            linux_versions = extract_linux_versions_from_master_page()
+            if linux_versions:
+                platform_support['linux']['versions'] = linux_versions
+
+        return platform_support
+    except Exception as exc:
+        logger.warning(f'Failed to scrape platform support for {engine_name}: {exc}')
+        return None
+
+
 _FLYWAY_TIER_NAMES = ('community', 'teams', 'enterprise', 'foundational', 'advanced')
 
 
@@ -442,6 +632,93 @@ def scrape_product(source):
     if not BS4_AVAILABLE:
         logger.warning('beautifulsoup4 not installed — install it to enable scraping')
         return None
+
+    url = source['source_url']
+    logger.info(f'Fetching {url}')
+    try:
+        html = fetch_html(url)
+    except Exception as exc:
+        logger.error(f'Failed to fetch {url}: {exc}')
+        return None
+
+    soup = BeautifulSoup(html, 'html.parser')
+    tables = soup.find_all('table')
+    logger.info(f'Found {len(tables)} table(s) on page')
+
+    engines, cloud_matrix = find_cloud_matrix(tables)
+    if source['key'] == 'flyway':
+        version_support = find_flyway_sections(soup)
+        if not version_support:
+            logger.info('Flyway: h3/h4 strategy found nothing — falling back to tier-table scan')
+            version_support = find_version_tables(tables)
+    else:
+        version_support = find_version_tables(tables)
+
+    if not cloud_matrix and not version_support:
+        # Log table headers to help diagnose why nothing matched.
+        for i, t in enumerate(tables[:10]):
+            hdrs, _ = expand_rowspans(t)
+            if hdrs:
+                logger.warning(f'  table[{i}] headers: {hdrs}')
+            else:
+                first = t.find('tr')
+                if first:
+                    sample = [c.get_text(strip=True)[:30] for c in first.find_all(['th', 'td'])[:6]]
+                    logger.warning(f'  table[{i}] no headers detected, first-row cells: {sample}')
+        logger.warning(f'No usable data extracted from {url}')
+        return None
+
+    # Sanity-check quality: a cloud matrix where every support value is None
+    # almost certainly means emoji/status parsing failed — discard it.
+    def has_real_support(matrix):
+        return any(
+            status is not None
+            for row in matrix
+            for status in row.get('support', {}).values()
+        )
+
+    if cloud_matrix and not has_real_support(cloud_matrix):
+        logger.warning(
+            f'Cloud matrix for {source["name"]} has no non-null support values '
+            f'(emoji parsing likely failed) — discarding matrix'
+        )
+        cloud_matrix = []
+        engines = []
+
+def scrape_product(source):
+    """Scrape one product page. Returns product dict or None on failure."""
+    if not BS4_AVAILABLE:
+        logger.warning('beautifulsoup4 not installed — install it to enable scraping')
+        return None
+
+    # Special handling for Monitor: scrape individual database pages for platform support
+    if source['key'] == 'monitor':
+        logger.info('Scraping Redgate Monitor platform support')
+        result = {
+            'key': source['key'],
+            'name': source['name'],
+            'source_url': source['source_url'],
+            'engines': ['SQL Server', 'PostgreSQL', 'Oracle', 'MySQL', 'MongoDB'],
+            'cloud_matrix': [],
+            'version_support': [],
+        }
+
+        # For each engine, scrape its dedicated documentation page
+        for engine in result['engines']:
+            platform_support = scrape_platform_support(engine)
+            if platform_support:
+                # Create a version_support entry for each engine
+                result['version_support'].append({
+                    'feature': 'Platform Support',
+                    'engines': [{
+                        'name': engine,
+                        'versions': [],
+                        'platform_support': platform_support
+                    }]
+                })
+                logger.info(f'Added platform support for {engine}')
+
+        return result if result['version_support'] else None
 
     url = source['source_url']
     logger.info(f'Fetching {url}')
