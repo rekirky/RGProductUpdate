@@ -375,17 +375,20 @@ main {
 .split-btn-group {
   position: relative;
   display: inline-flex;
+  gap: 0;
 }
 
 .split-btn-main {
   border-radius: var(--radius) 0 0 var(--radius);
-  border-right: 1px solid rgba(255,255,255,0.3);
+  border-right: none;
 }
 
 .split-btn-arrow {
   border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 1px solid rgba(255,255,255,0.35);
   padding: 0.45rem 0.55rem;
   font-size: 0.65rem;
+  margin-left: 0;
 }
 
 .split-btn-menu {
