@@ -152,6 +152,8 @@ function buildRow(p) {
   if (p.key) {
     if (p.key.toLowerCase().includes('flyway')) {
       olderVersionsUrl = 'https://download.red-gate.com/maven/release/com/redgate/flyway/flyway-commandline';
+    } else if (p.key === 'SQLToolbelt' || p.key === 'SQLToolbeltEssentials') {
+      olderVersionsUrl = `https://download.red-gate.com/installers/${esc(p.key)}`;
     } else {
       olderVersionsUrl = `https://download.red-gate.com/checkforupdates/${esc(p.key)}/`;
     }
