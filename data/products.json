@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-29T19:11:19.060900+00:00",
+  "generated_at": "2026-04-30T19:06:55.550574+00:00",
   "products": [
     {
       "key": "ANTSMemoryProfiler",
       "name": "ANTS Memory Profiler",
-      "version": "11.6.13",
-      "download_url": "https://download.red-gate.com/checkforupdates/ANTSMemoryProfiler/ANTSMemoryProfiler_11.6.13.3738.exe",
-      "updated": "2026-04-14",
+      "version": "11.6.14",
+      "download_url": "https://download.red-gate.com/checkforupdates/ANTSMemoryProfiler/ANTSMemoryProfiler_11.6.14.3802.exe",
+      "updated": "2026-04-30",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/amp",
       "release_notes_url": "https://documentation.red-gate.com/amp/release-notes-and-other-versions"
@@ -14,9 +14,9 @@
     {
       "key": "ANTSPerformanceProfiler",
       "name": "ANTS Performance Profiler",
-      "version": "11.4.13",
-      "download_url": "https://download.red-gate.com/checkforupdates/ANTSPerformanceProfiler/ANTSPerformanceProfiler_11.4.13.4970.exe",
-      "updated": "2026-04-14",
+      "version": "11.4.14",
+      "download_url": "https://download.red-gate.com/checkforupdates/ANTSPerformanceProfiler/ANTSPerformanceProfiler_11.4.14.5028.exe",
+      "updated": "2026-04-30",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/app",
       "release_notes_url": "https://documentation.red-gate.com/app/release-notes-and-other-versions"
@@ -594,9 +594,9 @@
     {
       "key": "SQLDataGenerator",
       "name": "SQL Data Generator",
-      "version": "4.8.6",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLDataGenerator/SQLDataGenerator_4.8.6.7457.exe",
-      "updated": "2026-04-09",
+      "version": "4.8.7",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDataGenerator/SQLDataGenerator_4.8.7.7497.exe",
+      "updated": "2026-04-30",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sdg",
       "release_notes_url": "https://documentation.red-gate.com/sdg/release-notes-and-other-versions"
@@ -614,9 +614,9 @@
     {
       "key": "SQLDoc",
       "name": "SQL Doc",
-      "version": "5.5.6",
-      "download_url": "https://download.red-gate.com/checkforupdates/SQLDoc/SQLDoc_5.5.6.6352.exe",
-      "updated": "2026-04-08",
+      "version": "5.5.7",
+      "download_url": "https://download.red-gate.com/checkforupdates/SQLDoc/SQLDoc_5.5.7.6431.exe",
+      "updated": "2026-04-30",
       "status": "current",
       "doc_url": "https://documentation.red-gate.com/sdoc",
       "release_notes_url": "https://documentation.red-gate.com/sdoc/release-notes-and-other-versions"
@@ -695,8 +695,8 @@
       "key": "SQLToolbelt",
       "name": "SQL Toolbelt",
       "version": "",
-      "download_url": "https://download.red-gate.com/installers/SQLToolbelt/2026-04-28/SQLToolbelt.exe",
-      "updated": "2026-04-28",
+      "download_url": "https://download.red-gate.com/installers/SQLToolbelt/2026-04-30/SQLToolbelt.exe",
+      "updated": "2026-04-30",
       "status": "current",
       "doc_url": "",
       "release_notes_url": ""
@@ -705,8 +705,8 @@
       "key": "SQLToolbeltEssentials",
       "name": "SQL Toolbelt Essentials",
       "version": "",
-      "download_url": "https://download.red-gate.com/installers/SQLToolbeltEssentials/2026-04-28/SQLToolbeltEssentials.exe",
-      "updated": "2026-04-28",
+      "download_url": "https://download.red-gate.com/installers/SQLToolbeltEssentials/2026-04-30/SQLToolbeltEssentials.exe",
+      "updated": "2026-04-30",
       "status": "current",
       "doc_url": "",
       "release_notes_url": ""
