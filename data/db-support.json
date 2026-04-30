@@ -280,6 +280,16 @@
       "source_url": "https://documentation.red-gate.com/flyway/getting-started-with-flyway/system-requirements/supported-databases-and-versions",
       "engines": [],
       "cloud_matrix": [],
+      "capabilities": [
+        {
+          "name": "Foundational",
+          "description": "Flyway's foundational migrations capabilities, including Flyway's core commands (info, migrate, repair, validate, baseline, undo (Flyway Teams+)), are supported by 50+ DBMS. Expand your database below for more details."
+        },
+        {
+          "name": "Advanced",
+          "description": "Flyway's advanced capabilities for state and migrations approaches are built on Redgate's renowned database comparison engine, in continual development and testing since 2000. We offer support for our advanced capabilities across the major DBMS platforms, including Microsoft SQL Server, PostgreSQL, Oracle and MySQL. Expand your database below for more details."
+        }
+      ],
       "version_support": [
         {
           "feature": "SQL Server",
